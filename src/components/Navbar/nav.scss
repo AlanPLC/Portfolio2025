@@ -1,0 +1,19 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+
+    .nav2{
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+        
+    }
+    img{
+        width: 20px;
+    }
+}
