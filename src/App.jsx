@@ -7,7 +7,6 @@ function App() {
 
   return (
     <>
-      <h1>Portfolio Inicial</h1>
       <Nav/>
       <Presentation/>
       <About/>
