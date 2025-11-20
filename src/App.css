@@ -1,47 +1,63 @@
-:root{
+:root {
   --bg-duration: 12s;
-  --glass-border: rgba(255,255,255,0.18);
-  --glass-highlight: rgba(255,255,255,0.06);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-highlight: rgba(255, 255, 255, 0.06);
   --noise-opacity: 0.03;
   --blur-amount: 10px;
+  --scroll: 0px;
 }
 
-html {
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
+
 body {
   margin: 0;
   padding: 0 3rem;
-  min-height: 200vh;
+  min-height: 500vh;
   background: #0f1724;
   font-family: "Roboto Condensed", sans-serif;
   color: #fff;
   overflow-x: hidden;
 }
-html::before {
-  content: "";
+
+#blobs-container {
   position: fixed;
-  inset: -10%;
+  inset: -40%;
   pointer-events: none;
-  z-index: -6;
-  opacity: 0.9;
+  z-index: -4;
   mix-blend-mode: screen;
+  filter: blur(100px) saturate(160%);
+  opacity: 1;
 }
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  transform: translateY(calc(var(--scroll, 0px) * var(--speed, -0.15)));
+  will-change: transform;
+  pointer-events: none;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.blob--small  { width: 20vmin; height: 20vmin; }
+.blob--medium { width: 45vmin; height: 45vmin; }
+.blob--large  { width: 80vmin; height: 80vmin; }
 
 body::before {
   content: "";
   position: fixed;
   inset: -20%;
   background:
-    radial-gradient(40% 40% at 30% 20%, rgba(255,120,120,0.9), transparent 20%),
-    radial-gradient(60% 60% at 80% 30%, rgba(255,120,120,0.9), transparent 15%),
-    radial-gradient(70% 70% at 50% 80%, rgba(255,120,120,0.9), transparent 15%);
-  filter: blur(100px) saturate(160%);
+    radial-gradient(40% 40% at 30% 20%, rgba(255,120,120,0.06), transparent 20%);
+  filter: blur(10px) saturate(160%);
   animation: floatBG var(--bg-duration) linear infinite;
-  opacity: 0.95;
+  opacity: 0.3;
   pointer-events: none;
-  z-index: -3;
+  z-index: -5;
 }
 
 body::after {
@@ -58,11 +74,80 @@ body::after {
 }
 
 @keyframes floatBG {
-  0% { transform: translateY(0) scale(1.05) rotate(0deg); }
-  50% { transform: translateY(-6%) scale(1.08) rotate(3deg); }
-  100% { transform: translateY(0) scale(1.05) rotate(0deg); }
+  0% {
+    filter: blur(100px) saturate(160%);
+  }
+  50% {
+    filter: blur(103px) saturate(170%);
+  }
+  100% {
+    filter: blur(100px) saturate(160%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .blob { transform: translateY(calc(var(--scroll, 0px) * -0.05)); transition: none; }
   body::before { animation: none; }
+}
+
+
+
+
+
+
+
+
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+
+  background-image:
+    url("data:image/svg+xml;utf8,%3Csvg xmlns='https://www.w3.org/TR/SVG' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.55' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45' fill='%23ffffff'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(180deg,
+      rgba(255,255,255,0.012) 0px,
+      rgba(255,255,255,0.012) 1px,
+      rgba(255,255,255,0) 6px
+    ),
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,0.035), rgba(255,255,255,0.01) 20%, rgba(255,255,255,0) 40%);
+
+  background-repeat: repeat, repeat, no-repeat;
+  background-size: 180px 180px, auto, cover;
+  background-position: 0 0, 0 0, center;
+
+  /* mezcla y apariencia */
+  mix-blend-mode: overlay;
+  opacity: 0.85; 
+  filter: blur(0.6px) contrast(1.02);
+  -webkit-backdrop-filter: blur(2px) saturate(110%);
+  backdrop-filter: blur(2px) saturate(110%);
+
+  /* animación sutil*/
+  animation: wetShift 6s linear infinite;
+  will-change: background-position, transform, filter;
+}
+
+@keyframes wetShift {
+  0% { background-position: 0 0, 0 0, center; }
+  50% { background-position: 0 -12px, 0 3px, center; }
+  100% { background-position: 0 0, 0 0, center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  body::after {
+    background-size: 120px 120px, auto, cover;
+    filter: blur(0.3px) contrast(1.01);
+    backdrop-filter: blur(1px) saturate(105%);
+    opacity: 0.7;
+  }
 }
