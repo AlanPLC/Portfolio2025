@@ -39,10 +39,10 @@ function App() {
             width: "60vmin",
             height: "60vmin",
             // velocidad parallax: número negativo -> sube al bajar; mayor valor = más movimiento
-            ["--speed"]: "-0.15",
+            ["--speed"]: "-1.50",
             background:
               "radial-gradient(closest-side, rgba(255,120,120,0.9) 0%, rgba(255,120,120,0.9) 40%, transparent 60%)",
-            opacity: 0.45,
+            opacity: 0.55,
           }}
         />
 
