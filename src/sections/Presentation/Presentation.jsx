@@ -1,6 +1,6 @@
 import React from "react";
-import profile from "../../data/profileSimon";
-import "./Presentation.scss";
+import { profile } from "../../data/profile.js";
+import "./presentation.scss";
 
 export default function Presentation() {
   const { greeting, name, role, description, avatar, links } = profile;

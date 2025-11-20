@@ -3,6 +3,7 @@ import "./App.css";
 import Nav from "./components/Navbar/nav.jsx";
 import Presentation from "./sections/Presentation/Presentation";
 import About from "./sections/About/About";
+import Tools from "./sections/Tools/herramientas.jsx"
 
 function App() {
   const rafRef = useRef(null);
@@ -107,6 +108,7 @@ function App() {
       <Nav />
       <Presentation />
       <About />
+      <Tools />
     </>
   );
 }

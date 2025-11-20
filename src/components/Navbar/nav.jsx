@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import './nav.scss'
-
+import { profile } from "../../data/profile.jsx"
 
 
 function Nav() {
-
+  const { name } = profile
   const [visible, setVisible] = useState(true);
   const [lastScroll, setLastScroll] = useState(0);
-  var nombre = "Nombre"
   var link = "https://www.youtube.com/watch?v=QxqiI50WPoM"
   //Efecto ocultar navbar scroll
   useEffect(() => {
@@ -34,7 +33,7 @@ function Nav() {
     <>
       <nav className={visible ? "nav show" : "nav hide"}>
         <div className='nav1'>
-            <h2>{nombre}.</h2>
+            <h2>{name}.</h2>
         </div>
         <div className='nav2'>
             <ul>
