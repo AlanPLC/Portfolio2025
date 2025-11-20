@@ -35,14 +35,6 @@ export default function Presentation() {
 
           <p className="presentation__desc">{description}</p>
 
-          <nav className="presentation__social" aria-label="Enlaces sociales">
-            {links.github && (
-              <a className="presentation__social-link" href={links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-            )}
-            {links.linkedin && (
-              <a className="presentation__social-link" href={links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            )}
-          </nav>
         </div>
 
         <div className="presentation__avatar-wrap" aria-hidden="false">

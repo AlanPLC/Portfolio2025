@@ -17,6 +17,8 @@ body {
   margin: 0;
   padding: 0 3rem;
   min-height: 500vh;
+  padding: 1rem 6rem;
+  min-height: 200vh;
   background: #0f1724;
   font-family: "Roboto Condensed", sans-serif;
   color: #fff;
