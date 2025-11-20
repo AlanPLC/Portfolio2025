@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import './nav.scss'
-import { profile } from "../../data/profile.jsx"
+import { profile } from "../../data/profile.js"
 
 
 function Nav() {
