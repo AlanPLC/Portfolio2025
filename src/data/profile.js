@@ -27,6 +27,6 @@ export const experience = [
       "Desarrollé un dashboard completo con autenticación JWT",
       "Diseñé componentes reutilizables con patrones avanzados de React"
     ],
-    tech: ["React", "Node.js", "Express", "MongoDB", "Docker"]
+    tech: ["React", "Node", "MongoDB","sql", "Docker"]
   }
 ] 

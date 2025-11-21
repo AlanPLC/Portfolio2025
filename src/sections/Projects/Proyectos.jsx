@@ -1,6 +1,7 @@
 import "./proyectos.scss";
-import { experience } from "../../data/profile.js"
-// img, role, company, period, description, achievements, tech
+import ProjectCard from "../../components/ProjectCard/ProjectCard"; 
+import { experience } from "../../data/profile.js";
+
 export default function Projects() {
     return (
         <section className="projects">
@@ -8,31 +9,18 @@ export default function Projects() {
                 <img src="./boost-for-reddit-svgrepo-com.svg" alt="project-icon" />
                 <h2>Proyectos</h2>
             </div>
-            <div>
-                {experience.map((proj, index)=>(
-                    <div className="proyecto" key={index}>
-                        <img src={proj.img} alt="project-img" className="project-img"/>
-                        <div className="right-project">
-                            <h3>{proj.role}</h3>
-                            <p>{proj.company}</p>
-                            <p>{proj.period}</p>
-                            <p>{proj.description}</p>
-                            
-                        <ul className="achievements-list">
-                                {proj.achievements.map((item, i) => (
-                                <li key={i}>{item}</li>
-                                ))}
-                            </ul>
 
-                            <div className="tech-list">
-                                {proj.tech.map((t, i) => (
-                                <span className="tech-pill" key={i}>
-                                    {t}
-                                </span>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+            <div className="projects-wrapper">
+                {experience.map((proj, index) => (
+                    <ProjectCard
+                        key={index}
+                        title={proj.role}
+                        desc={proj.description}
+                        image={proj.img}
+                        techs={proj.tech}
+                        live={proj.liveUrl}
+                        code={proj.codeUrl}
+                    />
                 ))}
             </div>
         </section>
