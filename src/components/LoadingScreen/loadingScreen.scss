@@ -1,0 +1,112 @@
+:root {
+    --accent: #ff4d4f;
+    --accent-600: #e04345;
+    --bg-dark: #0f1724;
+  }
+  
+  .loading-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-dark);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .loading-screen.loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* -----------------------
+          BLOBS
+  ------------------------*/
+  
+  .blob {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    background: var(--accent);
+    filter: blur(120px);
+    opacity: 0.35;
+    border-radius: 50%;
+    animation-timing-function: linear;
+  }
+  
+  .blob1 {
+    left: -120px;
+    top: -160px;
+    animation: moveDown 2.4s infinite alternate-reverse;
+  }
+  
+  .blob2 {
+    right: -150px;
+    top: 30%;
+    background: var(--accent-600);
+    animation: moveUp 1.8s infinite alternate;
+  }
+  
+  .blob3 {
+    left: 30%;
+    bottom: -180px;
+    background: #ff2f30;
+    opacity: 0.3;
+    animation: moveDown 3s infinite alternate;
+  }
+  
+  @keyframes moveDown {
+    from { transform: translateY(-140px) scale(1); }
+    to   { transform: translateY(160px) scale(1.18); }
+  }
+  
+  @keyframes moveUp {
+    from { transform: translateY(140px) scale(1.05); }
+    to   { transform: translateY(-160px) scale(1.2); }
+  }
+  
+  /* -----------------------
+          LOADER
+  ------------------------*/
+  
+  .loader {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border-top: 3px solid rgba(255, 60, 60, 0.9);
+    border-right: 3px solid transparent;
+    animation: spin 0.7s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(255, 60, 60, 0.6));
+  }
+  
+  .pulse {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, var(--accent), var(--accent-600));
+    animation: pulseAnim 1.2s infinite ease-in-out;
+    box-shadow: 0 0 20px rgba(255, 77, 79, 0.4);
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loader p {
+    margin-top: 0.8rem;
+    font-size: 1.05rem;
+    opacity: 0.9;
+  }
+  
+  @keyframes pulseAnim {
+    0% { transform: scale(0.82); opacity: 0.7; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.82); opacity: 0.7; }
+  }
+  
