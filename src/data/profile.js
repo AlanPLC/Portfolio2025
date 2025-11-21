@@ -30,3 +30,37 @@ export const experience = [
     tech: ["React", "Node.js", "Express", "MongoDB", "Docker"]
   }
 ] 
+// "React", "Node.js", "Express", "Mysql", "ReactNative"
+export const tools = [
+  {
+    name: "React",
+    // Porcentajes del 1 al 100
+    percentage: 70,
+    img: "./vite.svg"
+  },
+  {
+    name: "Node.js",
+    percentage: 50,
+    img: "./vite.svg"
+  },
+  {
+    name: "Express",
+    percentage: 90,
+    img: "./vite.svg"
+  },
+  {
+    name: "Mysql",
+    percentage: 100,
+    img: "./vite.svg"
+  },
+  {
+    name: "ReactNative",
+    percentage: 30,
+    img: "./vite.svg"
+  },
+  {
+    name: "Pesuti",
+    percentage: 100,
+    img: "./vite.svg"
+  }
+]
