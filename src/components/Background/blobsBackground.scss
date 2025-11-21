@@ -1,52 +1,105 @@
-:root{
-    --blobs-inset: -30%;
-    --blobs-blur: 60px;
-    --blobs-saturate: 140%;
-  }
-  
-  #blobs-container {
-    position: fixed;
-    inset: var(--blobs-inset);
-    pointer-events: none;
-    z-index: -4;
-    mix-blend-mode: screen;
-    filter: blur(var(--blobs-blur)) saturate(var(--blobs-saturate));
-    opacity: 1;
-    contain: paint;
-  }
-  
-  .blob {
-    position: absolute;
-    border-radius: 50%;
-    transform: translate3d(0, calc(var(--scroll, 0px) * var(--speed, -0.15)), 0);
-    will-change: transform;
-    pointer-events: none;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    overflow: visible;
-  }
-  
-  .blob--small  { width: 14vmin; height: 14vmin; }
-  .blob--medium { width: 36vmin; height: 36vmin; }
-  .blob--large  { width: 60vmin; height: 60vmin; }
-  
-  @media (max-width: 900px) {
-    :root {
-      --blobs-inset: -20%;
-      --blobs-blur: 28px;
-      --blobs-saturate: 125%;
-    }
-  
-    #blobs-container { filter: blur(var(--blobs-blur)) saturate(var(--blobs-saturate)); }
-    .blob { will-change: auto; }
-  }
-  
-  @media (prefers-reduced-motion: reduce) {
-    .blob {
-      transform: translate3d(0, calc(var(--scroll, 0px) * -0.05), 0);
-      transition: none;
-      will-change: auto;
-    }
-    #blobs-container { animation: none; filter: blur(10px) saturate(110%); }
-  }
-  
+#blobs-container {
+  position: fixed;
+  inset: -30%;
+  pointer-events: none;
+  z-index: -5;
+  mix-blend-mode: screen;
+  filter: blur(60px) saturate(130%);
+  opacity: 0.96;
+  contain: paint;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+#blobs-dim-overlay {
+  position: fixed;
+  inset: -30%;
+  z-index: -4;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.45)
+  );
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  transform: translate3d(0, calc(var(--scroll, 0px) * var(--speed, -0.15)), 0);
+  will-change: transform;
+  pointer-events: none;
+  opacity: 0.45;
+  box-shadow: inset 0 0 0 transparent;
+}
+
+.blob--large {
+  width: 80vmin;
+  height: 80vmin;
+  opacity: 0.35;
+  filter: saturate(110%) contrast(0.95);
+}
+.blob--medium {
+  width: 45vmin;
+  height: 45vmin;
+  opacity: 0.5;
+}
+.blob--small {
+  width: 20vmin;
+  height: 20vmin;
+  opacity: 0.35;
+}
+
+.blob::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+      circle at 25% 20%,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0) 35%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0) 45%
+    );
+  mix-blend-mode: overlay;
+  filter: blur(0.6px);
+}
+.blob::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.008) 0 1px,
+    rgba(255, 255, 255, 0) 6px
+  );
+  mix-blend-mode: overlay;
+  filter: blur(0.8px);
+  opacity: 0.65;
+}
+
+.card,
+.presentation__card {
+  position: relative;
+  z-index: 1;
+  background: rgba(2, 6, 23, 0.45);
+  backdrop-filter: blur(6px);
+}
