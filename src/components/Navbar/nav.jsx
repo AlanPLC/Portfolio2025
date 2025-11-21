@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import './nav.scss'
-import { profile } from "../../data/profile.jsx"
+import { profile } from "../../data/profile.js"
 
 
 function Nav() {
@@ -39,8 +39,8 @@ function Nav() {
             <ul>
                 <li>Inicio</li>
                 <li>Sobre mí</li>
+                <li>Proyectos</li>
                 <li>Herramientas</li>
-                <li>Ambiciones</li>
             </ul>
         </div>
         <div className='nav3'>

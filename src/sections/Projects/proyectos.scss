@@ -1,9 +1,9 @@
-.about {
-    padding: 1rem 2rem 0 2rem;
+.projects{
+    padding: 1rem 2rem 1rem 2rem;
     width: 100%;
     margin: 0 auto;
-    
-    .about-title{
+
+     .projects-title{
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -16,11 +16,13 @@
         font-size: 2rem;
         }
     }
-    
-    
-    p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    opacity: 0.85;
+    .project-img{
+        width: 18rem;
     }
+    .proyecto{
+        gap: 1rem;
+        display: flex;
+        flex-direction: row;
+
     }
+}
