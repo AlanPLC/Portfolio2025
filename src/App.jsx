@@ -16,7 +16,9 @@ function App() {
       <Nav />
       <Presentation />
       <About />
+      <hr />
       <Projects />
+      <hr />
       <Tools />
     </>
   );
