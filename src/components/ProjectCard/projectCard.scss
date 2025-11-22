@@ -5,13 +5,12 @@
     --card-radius: 14px;
     --card-bg: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   }
-  
+   
   .project-card {
     display: grid;
     grid-template-columns: 320px 1fr;
     gap: 1.9rem;
-    align-items: center;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: var(--card-radius);
     background: var(--card-bg);
     border: 1px solid rgba(255,255,255,0.04);
@@ -20,14 +19,12 @@
     transition: transform .28s cubic-bezier(.2,.9,.25,1), box-shadow .28s;
     cursor: default;
   }
-  
-  /* Hover elevates and sets accent */
-  .project-card:hover,
-  .project-card:focus-within {
+   
+  .project-card:hover{
     transform: translateY(-6px);
     box-shadow: 0 18px 60px rgba(2,6,23,0.6);
   }
-  
+   
   /* Thumbnail */
   .project-card__thumb {
     position: relative;
@@ -38,8 +35,7 @@
     background: #06111a;
     isolation: isolate;
   }
-  
-  /* image cover; use object-fit so it crops like the screenshot */
+   
   .project-card__thumb img {
     width: 100%;
     height: 100%;
@@ -48,8 +44,8 @@
     transform-origin: center;
     transition: transform .6s cubic-bezier(.2,.9,.25,1);
   }
-  
-  /* the animated fill that "completes" the square on hover */
+   
+  /* the animated fill */
   .project-card__fill {
     position: absolute;
     inset: 0;
@@ -61,40 +57,49 @@
     pointer-events: none;
     mix-blend-mode: screen;
   }
-  
-  /* On hover: zoom image slightly and expand the fill */
+   
   .project-card:hover .project-card__thumb img,
   .project-card:focus-within .project-card__thumb img {
-    transform: scale(1.06);
+    transform: scale(1.10);
   }
   .project-card:hover .project-card__fill,
   .project-card:focus-within .project-card__fill {
     transform: scaleY(1);
     opacity: 1;
   }
-  
-  /* content area */
-  .project-card__meta { padding: 0.2rem 0; }
-  .project-card__title {
-    margin: 0 0 .4rem 0;
-    font-size: 1.6rem;
-    color: #fff;
+   
+  .project-card__meta { 
+      padding: 0;
   }
+  
+  .project-card__title {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--accent);
+  }
+  
   .project-card__desc {
-    margin: 0 0 1rem 0;
+    margin: 0;
     color: rgba(255,255,255,0.85);
     max-width: 60ch;
     line-height: 1.5;
   }
   
-  /* bottom row */
+  .project-card__left {
+      display: grid;
+      grid-template-rows: auto 1fr auto; 
+      gap: 0.8rem;
+      height: 200px; 
+  }
+   
   .project-card__bottom {
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap: 1rem;
+    padding-bottom: 0;
   }
-  
+   
   /* buttons */
   .btn {
     display:inline-flex;
@@ -115,10 +120,89 @@
     border:1px solid rgba(255,255,255,0.06);
     color: rgba(255,255,255,0.9);
   }
-  
-  /* responsive: stack for small screens */
-  @media (max-width:880px){
-    .project-card{ grid-template-columns: 1fr; }
-    .project-card__thumb { height: 220px; }
+   
+  /* Split y derecha */
+  .project-card__content-split {
+    display: grid;
+    grid-template-columns: 3fr 1px 1.5fr; 
+    gap: 2.5rem; 
+    height: 100%; 
   }
-  
+   
+  .project-card__separator {
+    background: rgba(255, 255, 255, 0.08);
+  }
+   
+  .project-card__right {
+    padding-top: 0.3rem;
+  }
+   
+  .project-card__section-title {
+    font-size: 1rem;
+    color: var(--accent);
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+  }
+   
+  .project-card__achievements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+  }
+   
+  .project-card__achievements-list li {
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.75);
+  }
+   
+  .achievement-icon {
+    margin-right: 0.7rem;
+    color: #ffd700;
+  }
+   
+  .project-card__meta-item {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 0.3rem;
+  }
+   
+  .detail-label {
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+      margin-right: 0.3rem;
+  }
+   
+  /* responsive */
+  @media (max-width:880px){
+    .project-card{ 
+          grid-template-columns: 1fr; 
+      }
+    .project-card__thumb { 
+          height: 220px; 
+      }
+      .project-card__meta {
+          height: auto; 
+      }
+    .project-card__content-split {
+       grid-template-columns: 1fr;
+       gap: 2rem;
+    }
+    .project-card__separator {
+       display: none;
+    }
+    .project-card__right {
+       padding-top: 0;
+       margin-top: 1rem;
+    }
+      .project-card__left {
+          height: auto;
+          display: block; 
+      }
+      .project-card__bottom {
+          margin-top: 2rem; 
+      }
+  }

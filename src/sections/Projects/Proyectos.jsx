@@ -18,6 +18,7 @@ export default function Projects() {
                         desc={proj.description}
                         image={proj.img}
                         techs={proj.tech}
+                        achievements={proj.achievements}
                         live={proj.liveUrl}
                         code={proj.codeUrl}
                     />
