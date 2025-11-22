@@ -37,7 +37,9 @@ export default function Tools() {
               <img src={tool.img} alt={tool.name} />
               <div className="progressbar" 
               style={{ "--percent": `${tool.percentage}%` }}
-              ref={(el) => (progressRefs.current[index] = el)}></div>
+              ref={(el) => (progressRefs.current[index] = el)}>
+                <div className="inner-progressbar"></div>
+              </div>
             </div>
           ))}
         </div>
