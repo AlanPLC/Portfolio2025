@@ -1,9 +1,9 @@
 import "./herramientas.scss";
-import { useEffect, useRef } from 'react'
-import { tools } from "../../data/profile.js"
+import { useEffect, useRef } from "react";
+import { tools } from "../../data/profile.js";
+import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 
 export default function Tools() {
-
   const progressRefs = useRef([]);
 
   useEffect(() => {
@@ -11,7 +11,8 @@ export default function Tools() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.width = entry.target.style.getPropertyValue("--percent");
+            entry.target.style.width =
+              entry.target.style.getPropertyValue("--percent");
             observer.unobserve(entry.target); // Solo animar una vez
           }
         });
@@ -24,25 +25,25 @@ export default function Tools() {
     });
   }, []);
 
-
   return (
-    <section className="tools">
-        <div className="tools-title">
-          <img src="code-editor-svgrepo-com.svg" alt="code-icon" />
-          <h2>Herramientas</h2>
-        </div>
+    <>
+      <SectionTitle title="Herramientas" />
+      <section className="tools">
         <div className="progressbar-container">
-          {tools.map((tool, index)=>(
+          {tools.map((tool, index) => (
             <div className="tool-container" key={index}>
               <img src={tool.img} alt={tool.name} />
-              <div className="progressbar" 
-              style={{ "--percent": `${tool.percentage}%` }}
-              ref={(el) => (progressRefs.current[index] = el)}>
+              <div
+                className="progressbar"
+                style={{ "--percent": `${tool.percentage}%` }}
+                ref={(el) => (progressRefs.current[index] = el)}
+              >
                 <div className="inner-progressbar"></div>
               </div>
             </div>
           ))}
         </div>
-    </section>
+      </section>
+    </>
   );
 }
