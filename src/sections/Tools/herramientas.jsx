@@ -29,7 +29,7 @@ export default function Tools() {
     <section className="tools">
         <div className="tools-title">
           <img src="code-editor-svgrepo-com.svg" alt="code-icon" />
-          <h2>Tools</h2>
+          <h2>Herramientas</h2>
         </div>
         <div className="progressbar-container">
           {tools.map((tool, index)=>(
