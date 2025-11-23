@@ -5,7 +5,6 @@ export default function LoadingScreen() {
   const [loaded, setLoaded] = useState(false);
 
   const MIN_DURATION = 1200;
-  const FADE_OUT_DURATION = 200;
 
   useEffect(() => {
     const start = performance.now();
@@ -39,7 +38,7 @@ export default function LoadingScreen() {
     if (loaded) {
       const timeoutId = setTimeout(() => {
         unlockScroll();
-      }, FADE_OUT_DURATION);
+      }, 0);
 
       return () => clearTimeout(timeoutId);
     }
