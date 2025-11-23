@@ -90,33 +90,51 @@ export const profile = {
 export const tools = [
   {
     name: "React",
+    category: "Framework",
+    complement: "Vite",
     // Porcentajes del 1 al 100
     percentage: 70,
-    img: "./vite.svg"
+    img: "./vite.svg",
+    complement_img: "./vite.svg"
   },
   {
-    name: "Node.js",
-    percentage: 50,
-    img: "./vite.svg"
+    name: "React Native",
+    category: "Framework",
+    complement: "Expo",
+    percentage: 70,
+    img: "./vite.svg",
+    complement_img: "./vite.svg"
   },
   {
-    name: "Express",
-    percentage: 90,
-    img: "./vite.svg"
+    name: "Javascript",
+    category: "Lenguaje",
+    complement: "",
+    percentage: 70,
+    img: "./vite.svg",
+    complement_img: "./vite.svg"
   },
   {
-    name: "Mysql",
-    percentage: 100,
-    img: "./vite.svg"
+    name: "MySQL",
+    category: "Bases de Datos",
+    complement: "",
+    percentage: 70,
+    img: "./vite.svg",
+    complement_img: "./vite.svg"
   },
   {
-    name: "ReactNative",
-    percentage: 30,
-    img: "./vite.svg"
+    name: "NodeJS",
+    category: "Framework",
+    complement: "Express",
+    percentage: 70,
+    img: "./vite.svg",
+    complement_img: "./vite.svg"
   },
   {
-    name: "Pesuti",
-    percentage: 100,
-    img: "./vite.svg"
+    name: "GIT",
+    category: "Control de Versiones",
+    complement: "Github",
+    percentage: 70,
+    img: "./vite.svg",
+    complement_img: "./vite.svg"
   }
 ]
