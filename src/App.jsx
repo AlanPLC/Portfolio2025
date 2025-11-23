@@ -15,11 +15,9 @@ function App() {
       <BlobsBackground />
       <Nav />
       <Presentation />
-      <About />
-      <hr />
       <Projects />
-      <hr />
       <Tools />
+      <About />
     </>
   );
 }

@@ -22,6 +22,31 @@ export default function LoadingScreen() {
     }
   }, []);
 
+  useEffect(() => {
+    const lockScroll = () => {
+      document.body.classList.add('no-scroll');
+      document.documentElement.classList.add('no-scroll');
+    };
+
+    const unlockScroll = () => {
+        document.body.classList.remove('no-scroll');
+        document.documentElement.classList.remove('no-scroll');
+    };
+    
+    lockScroll();
+
+    if (loaded) {
+      const timeoutId = setTimeout(() => {
+        unlockScroll();
+      }, 0);
+
+      return () => clearTimeout(timeoutId);
+    }
+    
+    return () => unlockScroll(); 
+    
+  }, [loaded]);
+
   return (
     <div className={`loading-screen ${loaded ? "loaded" : ""}`}>
       <div className="blob blob1"></div>

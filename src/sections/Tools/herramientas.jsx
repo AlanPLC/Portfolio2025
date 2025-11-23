@@ -1,9 +1,11 @@
 import "./herramientas.scss";
 import { useEffect, useRef } from "react";
 import { tools } from "../../data/profile.js";
+import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 
 export default function Tools() {
   const progressRefs = useRef([]);
+
 
   // Agrupar herramientas por categoría
   const grouped = tools.reduce((acc, item) => {
@@ -42,46 +44,49 @@ export default function Tools() {
 }, []);
 
   return (
-    <section className="tools">
-      <div className="progressbar-container">
-        {Object.entries(grouped).map(([category, items], index) => (
-          <div key={index} className="tools-category">
-            <h3>{category}</h3>
+    <>
+      <SectionTitle title="Herramientas"/>
+      <section className="tools">
+        <div className="progressbar-container">
+          {Object.entries(grouped).map(([category, items], index) => (
+            <div key={index} className="tools-category">
+              <h3>{category}</h3>
 
-            {items.map((tool) => {
-              const id = `${category}-${tool.name}`;
+              {items.map((tool) => {
+                const id = `${category}-${tool.name}`;
 
-              return (
-                <div className="tool-container" key={id}>
-                  <div className="tecnology-table">
-                    <div className="tecnology">
-                      <img src={tool.img} alt={tool.name} />
-                      <p>{tool.name}</p>
-                    </div>
-                    {tool.complement && (
-                      <>
-                      <img src="./code-editor-svgrepo-com.svg" alt="plus-img" />
-                      <div className="complement">
-                        <img src={tool.complement_img} alt="complement-img" />
-                        <p>{tool.complement}</p>
+                return (
+                  <div className="tool-container" key={id}>
+                    <div className="tecnology-table">
+                      <div className="tecnology">
+                        <img src={tool.img} alt={tool.name} />
+                        <p>{tool.name}</p>
                       </div>
-                      </>
-                    )}
-                  </div>
+                      {tool.complement && (
+                        <>
+                        <img src="./code-editor-svgrepo-com.svg" alt="plus-img" />
+                        <div className="complement">
+                          <img src={tool.complement_img} alt="complement-img" />
+                          <p>{tool.complement}</p>
+                        </div>
+                        </>
+                      )}
+                    </div>
 
-                  <div className="progressbar">
-                    <div
-                      className="inner-progressbar"
-                      style={{ "--percent": `${tool.percentage}%` }}
-                      ref={(el) => (progressRefs.current[id] = el)}
-                    ></div>
+                    <div className="progressbar">
+                      <div
+                        className="inner-progressbar"
+                        style={{ "--percent": `${tool.percentage}%` }}
+                        ref={(el) => (progressRefs.current[id] = el)}
+                      ></div>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        ))}
-      </div>
-    </section>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
