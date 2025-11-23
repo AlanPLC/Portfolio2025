@@ -90,7 +90,7 @@ export const profile = {
 export const tools = [
   {
     name: "React",
-    category: "Framework",
+    category: "Frameworks",
     complement: "Vite",
     // Porcentajes del 1 al 100
     percentage: 70,
@@ -99,7 +99,7 @@ export const tools = [
   },
   {
     name: "React Native",
-    category: "Framework",
+    category: "Frameworks",
     complement: "Expo",
     percentage: 70,
     img: "./assets/icons/react.svg",
@@ -123,7 +123,7 @@ export const tools = [
   },
   {
     name: "NodeJS",
-    category: "Framework",
+    category: "Frameworks",
     complement: "Express",
     percentage: 70,
     img: "./assets/icons/node.svg",
