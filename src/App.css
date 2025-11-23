@@ -45,3 +45,12 @@ body::-webkit-scrollbar-thumb {
   border: 2px solid transparent; 
   background-clip: content-box; 
 }
+
+/*utilizado por LoadingScreen*/
+.no-scroll {
+  overflow: hidden !important; 
+}
+
+html.no-scroll {
+  overflow: hidden !important;
+}

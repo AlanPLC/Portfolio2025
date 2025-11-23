@@ -5,6 +5,7 @@ export default function LoadingScreen() {
   const [loaded, setLoaded] = useState(false);
 
   const MIN_DURATION = 1200;
+  const FADE_OUT_DURATION = 200;
 
   useEffect(() => {
     const start = performance.now();
@@ -21,6 +22,31 @@ export default function LoadingScreen() {
       return () => window.removeEventListener("load", finish);
     }
   }, []);
+
+  useEffect(() => {
+    const lockScroll = () => {
+      document.body.classList.add('no-scroll');
+      document.documentElement.classList.add('no-scroll');
+    };
+
+    const unlockScroll = () => {
+        document.body.classList.remove('no-scroll');
+        document.documentElement.classList.remove('no-scroll');
+    };
+    
+    lockScroll();
+
+    if (loaded) {
+      const timeoutId = setTimeout(() => {
+        unlockScroll();
+      }, FADE_OUT_DURATION);
+
+      return () => clearTimeout(timeoutId);
+    }
+    
+    return () => unlockScroll(); 
+    
+  }, [loaded]);
 
   return (
     <div className={`loading-screen ${loaded ? "loaded" : ""}`}>
