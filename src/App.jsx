@@ -8,6 +8,7 @@ import About from "./sections/About/About";
 import Projects from "./sections/Projects/Proyectos.jsx"
 import Tools from "./sections/Tools/herramientas.jsx"
 import Experience from "./sections/Experience/Experience.jsx";
+import Footer from "./components/Footer/Footer.jsx"
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
       <Nav />
       <Presentation />
       <Experience />
+      <About />
       <Projects />
       <Tools />
-      <About />
+      <Footer />
     </>
   );
 }
