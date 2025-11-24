@@ -13,14 +13,14 @@ export default function Presentation() {
           <h1 id="presentation-heading" className="presentation__name">
             {name}
           </h1>
-          <div className="presentation__meta">
-            <span className="presentation__role" aria-hidden="true">
-              {role}
-            </span>
-          </div>
 
           <p className="presentation__desc">{description}</p>
           <div className="presentation__actions">
+            <div className="presentation__meta">
+              <span className="presentation__role" aria-hidden="true">
+                {role}
+              </span>
+            </div>
             <a
               className="btn btn--primary"
               href={links.cv}
