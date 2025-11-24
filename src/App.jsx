@@ -7,6 +7,7 @@ import Presentation from "./sections/Presentation/Presentation";
 import About from "./sections/About/About";
 import Projects from "./sections/Projects/Proyectos.jsx"
 import Tools from "./sections/Tools/herramientas.jsx"
+import Footer from "./components/Footer/Footer.jsx"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Projects />
       <Tools />
       <About />
+      <Footer />
     </>
   );
 }
