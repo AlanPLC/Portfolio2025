@@ -157,7 +157,7 @@ export const tools = [
 export const about = [
   {
     title: "Quién soy",
-    description: "Soy un desarrollador web con enfoque en frontend y mobile u perro amigo mira que yo nunca lloré por un tema igual no estoy llorando por el tema amigo osea me hizo re reflexionar una banda de cosas perro que yo capaz no me rescato este vago un fla amigo me hace pone pensar na amigo me hace poner pensar que ahora capaz cuando vuelva a mi casa yo voy a poder decir que tengo una isla del encanto con coscu amigo",
+    description: "Soy un desarrollador web con enfoque en frontend y mobile u perro amigo mira que yo nunca lloré por un tema igual no estoy llorando por el tema amigo osea me hizo re reflexionar una banda de cosas perro que yo capaz no me rescato este vago un fla amigo me hace pone pensar na amigo me hace poner pensar que ahora capaz cuando vuelva a mi casa yo voy a poder decir que tengo una isla del encanto con coscu amigo ue en frontend y mobile u perro amigo mira que yo nunca lloré por un tema igual no estoy llorando por el tema amigo osea me hizo re reflexionar una banda de cosas perro que yo capaz no me rescato este vago un fla amigo me hace pone pensar na amigo me hace poner pensar que ahora capaz cuando vuelva a mi casa yo voy a poder decir que tengo una isla del encanto con coscu amigo ",
     img: "./projects-imgs/vector.png"
   },
   {
