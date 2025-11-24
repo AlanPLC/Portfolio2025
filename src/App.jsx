@@ -7,6 +7,7 @@ import Presentation from "./sections/Presentation/Presentation";
 import About from "./sections/About/About";
 import Projects from "./sections/Projects/Proyectos.jsx"
 import Tools from "./sections/Tools/herramientas.jsx"
+import Experience from "./sections/Experience/Experience.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <BlobsBackground />
       <Nav />
       <Presentation />
+      <Experience />
       <Projects />
       <Tools />
       <About />

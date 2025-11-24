@@ -1,10 +1,18 @@
 :root {
+  --accent: #ff4d4f;
+  --accent-600: #e04345;
   --bg-duration: 12s;
   --glass-border: rgba(255, 255, 255, 0.18);
   --glass-highlight: rgba(255, 255, 255, 0.06);
   --noise-opacity: 0.03;
   --blur-amount: 10px;
   --scroll: 0px;
+}
+
+body::selection {
+  background: var(--accent-600);
+  
+  color: #000000;
 }
 
 html{
