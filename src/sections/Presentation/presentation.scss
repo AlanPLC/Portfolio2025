@@ -27,6 +27,8 @@
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: var(--radius);
     padding: 2.25rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     box-shadow: 0 10px 40px rgba(2,6,23,0.55);
     backdrop-filter: blur(8px) saturate(120%);
     overflow: visible;
@@ -39,17 +41,38 @@
   .presentation__greeting {
     margin: 0 0 0.35rem 0;
     color: var(--muted);
-    font-size: 0.95rem;
+    font-size: 1.95rem;
     letter-spacing: 0.02em;
+  }
+
+  .presentation__name-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    
+    svg {
+      color: var(--accent);
+      width: 100%;
+      height: 100%;
+    }
   }
   
   .presentation__name {
+    display: flex;
     margin: 0 0 0.5rem 0;
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(3rem, calc(4vw + 1rem), 4rem);
     line-height: 1;
     color: #fff;
     font-weight: 700;
     letter-spacing: -0.02em;
+  }
+
+  .presentation__name::after{
+    content: ".";
+    color: var(--accent);
+    font-size: 4rem;
   }
   
   .presentation__meta {
@@ -67,8 +90,12 @@
     padding: 0.45rem 0.65rem;
     border-radius: 999px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     box-shadow: 0 6px 18px rgba(224,67,69,0.06), inset 0 1px 0 rgba(255,255,255,0.02);
+    margin-top: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
   }
   
   .presentation__actions {
@@ -89,6 +116,9 @@
     transition: transform 140ms ease, box-shadow 140ms ease;
     border: none;
     cursor: pointer;
+    max-height: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
   }
   
   .btn:focus { outline: 2px solid rgba(255,77,79,0.18); outline-offset: 2px; }
@@ -112,7 +142,7 @@
   .presentation__desc {
     margin-top: 0.8rem;
     color: var(--text-soft);
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     max-width: 60ch;
     opacity: 0.95;
