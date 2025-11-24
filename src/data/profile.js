@@ -92,6 +92,7 @@ export const tools = [
     name: "React",
     category: "Frameworks",
     complement: "Vite",
+    techs: ["React", "Vite"],
     // Porcentajes del 1 al 100
     percentage: 70,
     img: "./assets/icons/react.svg",
@@ -101,6 +102,7 @@ export const tools = [
     name: "React Native",
     category: "Frameworks",
     complement: "Expo",
+    techs: ["R Native", "Expo"],
     percentage: 70,
     img: "./assets/icons/react.svg",
     complement_img: "./vite.svg"
@@ -109,6 +111,7 @@ export const tools = [
     name: "Javascript",
     category: "Lenguajes",
     complement: "",
+    techs: ["Javascript"],
     percentage: 100,
     img: "./assets/icons/js.svg",
     complement_img: ""
@@ -117,6 +120,7 @@ export const tools = [
     name: "MySQL",
     category: "Bases de Datos",
     complement: "",
+    techs: ["MySQL"],
     percentage: 30,
     img: "./assets/icons/sql.svg",
     complement_img: ""
@@ -125,6 +129,7 @@ export const tools = [
     name: "NodeJS",
     category: "Frameworks",
     complement: "Express",
+    techs: ["NodeJS", "Express"],
     percentage: 70,
     img: "./assets/icons/node.svg",
     complement_img: "./vite.svg"
@@ -133,6 +138,7 @@ export const tools = [
     name: "GIT",
     category: "Control de Versiones",
     complement: "Github",
+    techs: ["GIT", "Github"],
     percentage: 100,
     img: "./vite.svg",
     complement_img: "././assets/icons/github.svg"
@@ -141,6 +147,7 @@ export const tools = [
     name: "Python",
     category: "Lenguajes",
     complement: "PyQT",
+    techs: ["Python", "PyQT"],
     percentage: 40,
     img: "./vite.svg",
     complement_img: "./vite.svg"

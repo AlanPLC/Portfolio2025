@@ -2,6 +2,7 @@ import "./herramientas.scss";
 import { useEffect, useRef } from "react";
 import { tools } from "../../data/profile.js";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
+import TechIconsTools from "../../components/TechIcons/techIconsTools.jsx";
 
 export default function Tools() {
   const progressRefs = useRef([]);
@@ -16,6 +17,7 @@ export default function Tools() {
       complement: item.complement,
       complement_img: item.complement_img,
       percentage: item.percentage,
+      techs: item.techs
     });
     return acc;
   }, {});
@@ -51,6 +53,7 @@ export default function Tools() {
           {Object.entries(grouped).map(([category, items], index) => (
             <div key={index} className="tools-category">
               <h3>{category}</h3>
+              <hr />
 
               {items.map((tool) => {
                 const id = `${category}-${tool.name}`;
@@ -58,7 +61,8 @@ export default function Tools() {
                 return (
                   <div className="tool-container" key={id}>
                     <div className="tecnology-table">
-                      <div className="tecnology">
+                      <TechIconsTools techs={tool.techs} className="techicons"/>
+                      {/* <div className="tecnology">
                         <img src={tool.img} alt={tool.name} />
                         <p>{tool.name}</p>
                       </div>
@@ -70,7 +74,7 @@ export default function Tools() {
                           <p>{tool.complement}</p>
                         </div>
                         </>
-                      )}
+                      )} */}
                     </div>
 
                     <div className="progressbar">

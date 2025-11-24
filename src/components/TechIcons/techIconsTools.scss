@@ -1,0 +1,91 @@
+.tech-icons-tools{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+    gap: 1rem;
+  
+
+  .tech-icons-tools__group{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .tech-plus{
+    // width: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+    .tech-icons-tools__pill {
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.5rem;
+      border-radius: 15px;
+      letter-spacing: 0.1rem;
+      width: 5rem;
+      text-align: center;
+      font-weight: 600;
+      
+      
+      
+      color: rgba(255, 255, 255, 0.85);
+      border: 1px solid #ff7b00; 
+; 
+      
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    
+      position: relative;
+      z-index: 1; 
+      cursor: pointer;
+      
+      transition: 
+        border-color 0.2s ease, 
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+        
+      animation: none; 
+    }
+    
+    .tech-icons-tools__pill:hover {
+      border-color: transparent; 
+      
+      color: #ff7b00; 
+      box-shadow: 0 0 10px rgba(255, 75, 0, 0.6); 
+      
+      animation: lavaGlowEffect 2.5s ease-in-out infinite; 
+    }
+    
+    @keyframes lavaGlowEffect {
+      0% {
+        border-color: rgba(255, 75, 0, 0.1); 
+        box-shadow: 0 0 5px rgba(255, 75, 0, 0.2); 
+      }
+      25% {
+        border-color: #ff7b00;
+        box-shadow: 0 0 10px rgba(255, 75, 0, 0.6);
+      }
+      50% {
+        border-color: #ff6200;
+        box-shadow: 0 0 18px rgba(255, 0, 0, 0.9);
+      }
+      75% {
+        border-color: #ff7b00;
+        box-shadow: 0 0 10px rgba(255, 75, 0, 0.6);
+      }
+      100% {
+        border-color: rgba(255, 75, 0, 0.1); 
+        box-shadow: 0 0 5px rgba(255, 75, 0, 0.2); 
+      }
+    }
+}
