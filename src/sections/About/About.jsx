@@ -6,7 +6,6 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 export default function About() {
   const [active, setActive] = useState(0); // Primer acordeón abierto
   const items = about
-  console.log(items)
   return (
     <>
       <SectionTitle title="Sobre mí"/>

@@ -1,22 +1,27 @@
 import "./proyectos.scss";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
-import { experience } from "../../data/profile.js";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
+import { projectsData } from "../../data/profile.js";
+import useLanguage from "../../hooks/useLanguage.js"
+console.log(projectsData)
 
 export default function Projects() {
+
+  const { translation } = useLanguage()
+
   return (
     <section className="projects">
       <SectionTitle title="Proyectos" />
 
       <div className="projects-wrapper">
-        {experience.map((proj, index) => (
+        {projectsData.map((proj, index) => (
           <ProjectCard
             key={index}
-            title={proj.role}
-            desc={proj.description}
+            title={translation[proj.roleKey]}
+            desc={translation[proj.descriptionKey]}
             image={proj.img}
             techs={proj.tech}
-            achievements={proj.achievements}
+            achievements={translation[proj.achievementsKey]}
             live={proj.liveUrl}
             code={proj.codeUrl}
           />

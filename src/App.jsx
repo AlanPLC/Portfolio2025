@@ -9,10 +9,11 @@ import Projects from "./sections/Projects/Proyectos.jsx"
 import Tools from "./sections/Tools/herramientas.jsx"
 import Experience from "./sections/Experience/Experience.jsx";
 import Footer from "./components/Footer/Footer.jsx"
+import { LanguageProvider } from "./hooks/languageContext.jsx";
 
 function App() {
   return (
-    <>
+    <LanguageProvider>
       <LoadingScreen />
       <BlobsBackground />
       <Nav />
@@ -22,7 +23,7 @@ function App() {
       <Projects />
       <Tools />
       <Footer />
-    </>
+    </LanguageProvider>
   );
 }
 
