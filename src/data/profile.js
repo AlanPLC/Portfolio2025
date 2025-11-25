@@ -96,35 +96,24 @@ export const profile = {
 
 
 
-  export const projectsData = [
-    {
+  export const projectsData = {
+
+  "project1":{
       img: "./projects-imgs/vector.png",
-      roleKey: "projects.project1.role",
-      companyKey: "projects.project1.company",
-      descriptionKey: "projects.project1.description",
-      achievementsKey: "projects.project1.archievements",
       tech: ["React", "Node", "MongoDB","sql", "Docker"],
       impactLevel: 5 
     },
-    {
+    "project2":{
       img: "./projects-imgs/ecommerce.png",
-      roleKey: "projects.project2.role",
-      companyKey: "projects.project2.company",
-      descriptionKey: "projects.project2.description",
-      achievementsKey: "projects.project2.archievements",
       tech: ["Express.js", "PostgreSQL", "Prisma", "AWS S3", "Redis"],
       impactLevel: 4 
     },
-    {
+    "project3":{
       img: "./projects-imgs/saas.png",
-      roleKey: "projects.project3.role",
-      companyKey: "projects.project3.company",
-      descriptionKey: "projects.project3.description",
-      achievementsKey: "projects.project3.archievements",
       tech: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Jest"],
       impactLevel: 3
     }
-  ];
+  }
 // "React", "Node.js", "Express", "Mysql", "ReactNative"
 export const tools = [
   {

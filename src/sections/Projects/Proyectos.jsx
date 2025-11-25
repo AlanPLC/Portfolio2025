@@ -1,31 +1,33 @@
-import "./proyectos.scss";
+import { projectsData } from "../../data/profile.js";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
-import { projectsData } from "../../data/profile.js";
-import useLanguage from "../../hooks/useLanguage.js"
-console.log(projectsData)
+import useLanguage from "../../hooks/useLanguage";
 
 export default function Projects() {
-
-  const { translation } = useLanguage()
+  const { translation } = useLanguage();
+  const translatedProjects = translation.projects;
 
   return (
     <section className="projects">
       <SectionTitle title="Proyectos" />
-
       <div className="projects-wrapper">
-        {projectsData.map((proj, index) => (
-          <ProjectCard
-            key={index}
-            title={translation[proj.roleKey]}
-            desc={translation[proj.descriptionKey]}
-            image={proj.img}
-            techs={proj.tech}
-            achievements={translation[proj.achievementsKey]}
-            live={proj.liveUrl}
-            code={proj.codeUrl}
-          />
-        ))}
+        {Object.entries(translatedProjects).map(([projectId, proj], index) => {
+          
+          const staticData = projectsData[projectId];
+
+          return (
+            <ProjectCard
+              key={index}
+              title={proj.role}
+              desc={proj.description}
+              image={staticData.img}
+              techs={staticData.tech}
+              achievements={proj.achievements}
+              live={staticData.liveUrl}
+              code={staticData.codeUrl}
+            />
+          );
+        })}
       </div>
     </section>
   );
