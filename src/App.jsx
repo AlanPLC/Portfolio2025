@@ -7,6 +7,7 @@ import Presentation from "./sections/Presentation/Presentation";
 import About from "./sections/About/About";
 import Projects from "./sections/Projects/Proyectos.jsx"
 import Tools from "./sections/Tools/herramientas.jsx"
+import Experience from "./sections/Experience/Experience.jsx";
 import Footer from "./components/Footer/Footer.jsx"
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <BlobsBackground />
       <Nav />
       <Presentation />
+      <Experience />
       <About />
       <Projects />
       <Tools />
