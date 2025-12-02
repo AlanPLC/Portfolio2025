@@ -13,11 +13,11 @@ function Nav() {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
 
-      // si baja → ocultar
+      // si baja se oculta
       if (currentScroll > lastScroll) {
         setVisible(false);
       } 
-      // si sube → mostrar
+      // si sube se muestra
       else {
         setVisible(true);
       }

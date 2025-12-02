@@ -2,6 +2,7 @@ import { projectsData } from "../../data/profile.js";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import useLanguage from "../../hooks/useLanguage";
+import "./proyectos.scss"
 
 export default function Projects() {
   const { translation } = useLanguage();
