@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./about.scss";
 import { about } from "../../data/profile.js"
+import { sectionRefs } from "../../hooks/useActiveSection.jsx"
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 
 export default function About() {
@@ -8,8 +9,8 @@ export default function About() {
   const items = about
   return (
     <>
-      <SectionTitle title="Sobre mí"/>
-      <section className="about-accordion">
+      <SectionTitle title="Sobre mí" id="about"/>
+      <section className="about-accordion" ref={el=>sectionRefs.current["about"] = el}>
         {/* Imagen que cambia según el activo */}
         <div className="about-accordion-image">
           <img src={items[active].img} alt={items[active].title} />

@@ -1,12 +1,13 @@
 import React from "react";
 import { profile } from "../../data/profile.js";
+import { sectionRefs } from "../../hooks/useActiveSection.jsx"
 import "./presentation.scss";
 
 export default function Presentation() {
   const { greeting, name, role, description, avatar, links } = profile;
 
   return (
-    <section className="presentation" aria-labelledby="presentation-heading">
+    <section className="presentation" aria-labelledby="presentation-heading" id="presentation" ref={el => sectionRefs.current["home"] = el}>
       <div className="presentation__card">
         <div className="presentation__left">
           <p className="presentation__greeting">{greeting}</p>

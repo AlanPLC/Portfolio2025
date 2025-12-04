@@ -1,17 +1,13 @@
 import "./experience.scss";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import { experienceData } from "../../data/profile.js"; 
+import { sectionRefs } from "../../hooks/useActiveSection.jsx"
 
 export default function Experience() {
   return (
     <>
-      {/*
-          - 'title' prop para el texto del título
-          - 'icon' prop para el icono
-      */}
-      <SectionTitle title="Experiencia"/> 
-
-      <section className="experience">
+      <SectionTitle title="Experiencia" id="experience"/> 
+      <section className="experience" ref={el => sectionRefs.current["experience"] = el}>
         <div className="experience-container">
           {experienceData.map((exp, index) => (
             <div key={index} className="experience-item">

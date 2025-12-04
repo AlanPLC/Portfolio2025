@@ -1,6 +1,7 @@
 import "./herramientas.scss";
 import { useEffect, useRef } from "react";
 import { tools } from "../../data/profile.js";
+import { sectionRefs } from "../../hooks/useActiveSection.jsx"
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import TechIconsTools from "../../components/TechIcons/techIconsTools.jsx";
 
@@ -21,6 +22,7 @@ export default function Tools() {
     });
     return acc;
   }, {});
+
 
   //Observer para cada barra cambiando su tamaño según porcentaje cuando entra al vp
   useEffect(() => {
@@ -47,8 +49,8 @@ export default function Tools() {
 
   return (
     <>
-      <SectionTitle title="Herramientas"/>
-      <section className="tools">
+      <SectionTitle title="Herramientas" id="tools"/>
+      <section className="tools" ref={el=>sectionRefs.current["tools"] = el}>
         <div className="progressbar-container">
           {Object.entries(grouped).map(([category, items], index) => (
             <div key={index} className="tools-category">
