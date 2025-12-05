@@ -19,28 +19,42 @@ nav{
     transition: transform 0.4s ease, opacity 0.3s ease;
     z-index: 999;
     margin-top: 1rem;
+    user-select: none;
 
     .nav1{
         font-size: 1rem;
     }
 
-    .nav2{
-        ul{
-            cursor: pointer;
-            list-style: none;
+    .nav2 {
+        position: relative;
+        
+        
+        ul {
             display: flex;
-            flex-direction: row;
+            position: relative;
             gap: 1rem;
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 0.3rem;
             li{
-                font-size: 1rem;
-                transition: transform 0.3s ease;
+                margin: 0;
+                cursor: pointer;
             }
             li:hover{
                 transform: scale(1.1);
             }
         }
-        
+        .underline {
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            background: #ff4d4f;
+            border-radius: 40px;
+            transition: all 0.3s ease;
+        }
     }
+
+
     .nav3{
         cursor: pointer;
         img{

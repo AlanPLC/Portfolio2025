@@ -1,16 +1,18 @@
 import { useState } from "react";
 import "./about.scss";
 import { about } from "../../data/profile.js"
-import { sectionRefs } from "../../hooks/useActiveSection.jsx"
+import useActiveSection from "../../contexts/useActiveSection.js"
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 
 export default function About() {
   const [active, setActive] = useState(0); // Primer acordeón abierto
   const items = about
+  const { sectionsRefs } = useActiveSection()
+  
   return (
     <>
-      <SectionTitle title="Sobre mí" id="about"/>
-      <section className="about-accordion" ref={el=>sectionRefs.current["about"] = el}>
+      <SectionTitle title="Sobre mí"/>
+      <section className="about-accordion" ref={el=>sectionsRefs.current["about"] = el} id="about">
         {/* Imagen que cambia según el activo */}
         <div className="about-accordion-image">
           <img src={items[active].img} alt={items[active].title} />

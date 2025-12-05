@@ -1,18 +1,19 @@
 import { projectsData } from "../../data/profile.js";
-import { sectionRefs } from "../../hooks/useActiveSection.jsx"
+import useActiveSection from "../../contexts/useActiveSection.js"
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
-import useLanguage from "../../hooks/useLanguage";
+import useLanguage from "../../contexts/useLanguage.js";
 import "./proyectos.scss"
 
 export default function Projects() {
   const { translation } = useLanguage();
   const translatedProjects = translation.projects;
+  const { sectionsRefs } = useActiveSection()
 
   return (
     <>
-      <SectionTitle title="Proyectos" id="projects"/>
-      <section className="projects" ref={el => sectionRefs.current["projects"] = el}> 
+      <SectionTitle title="Proyectos"/>
+      <section className="projects" ref={el => sectionsRefs.current["projects"] = el} id="projects"> 
         <div className="projects-wrapper">
           {Object.entries(translatedProjects).map(([projectId, proj], index) => {
             

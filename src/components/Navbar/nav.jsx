@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import './nav.scss'
 import { profile } from "../../data/profile.js"
-
+import useActiveSection from "../../contexts/useActiveSection.js";
 
 function Nav() {
   const { name } = profile
   const [visible, setVisible] = useState(true);
   const [lastScroll, setLastScroll] = useState(0);
+  const {active, sectionsRefs} = useActiveSection()
+  const [underlineStyle, setUnderlineStyle] = useState({});
   var link = "https://www.youtube.com/watch?v=QxqiI50WPoM"
   //Efecto ocultar navbar scroll
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScrollVisibility = () => {
       const currentScroll = window.scrollY;
 
       // si baja se oculta
@@ -25,9 +27,27 @@ function Nav() {
       setLastScroll(currentScroll);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScrollVisibility);
+    return () => window.removeEventListener("scroll", handleScrollVisibility);
   }, [lastScroll]);
+
+  useEffect(() => {
+    const activeItem = document.querySelector(`.nav2 ul li.active`);
+    if (activeItem) {
+      const rect = activeItem.getBoundingClientRect();
+      const parentRect = activeItem.parentNode.getBoundingClientRect();
+
+      setUnderlineStyle({
+        width: rect.width,
+        left: rect.left - parentRect.left
+      });
+    }
+  }, [active]);
+
+  const handleScroll = (id)=>{
+    const section = sectionsRefs.current[id]
+    section?.scrollIntoView( {behavior: "smooth"} )
+  }
 
   return (
     <>
@@ -37,11 +57,28 @@ function Nav() {
         </div>
         <div className='nav2'>
             <ul>
-                <li>Inicio</li>
-                <li>Sobre mí</li>
-                <li>Proyectos</li>
-                <li>Herramientas</li>
+                <li
+                className={active === "home" ? "active" : ""}
+                onClick={()=>handleScroll("home")}
+                >Inicio</li>
+                <li
+                className={active === "experience" ? "active" : ""}
+                onClick={()=>handleScroll("experience")}
+                >Experiencia</li>
+                <li
+                className={active === "about" ? "active" : ""}
+                onClick={()=>handleScroll("about")}
+                >Sobre Mí</li>
+                <li
+                className={active === "projects" ? "active" : ""}
+                onClick={()=>handleScroll("projects")}
+                >Proyectos</li>
+                <li
+                className={active === "tools" ? "active" : ""}
+                onClick={()=>handleScroll("tools")}
+                >Herramientas</li>
             </ul>
+            <span className="underline" style={underlineStyle}></span>
         </div>
         <div className='nav3'>
           <a href={link} target="_blank" rel="noopener noreferrer">
