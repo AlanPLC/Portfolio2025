@@ -8,8 +8,9 @@ export default function Experience() {
   
   return (
     <>
+    <section id="experience" ref={el => sectionsRefs.current["experience"] = el}>
       <SectionTitle title="Experiencia" /> 
-      <section className="experience" id="experience" ref={el => sectionsRefs.current["experience"] = el}>
+      <div className="experience" >
         <div className="experience-container">
           {experienceData.map((exp, index) => (
             <div key={index} className="experience-item">
@@ -36,7 +37,8 @@ export default function Experience() {
             </div>
           ))}
         </div>
-      </section>
+      </div>
+    </section>
     </>
   );
 }

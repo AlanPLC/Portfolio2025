@@ -44,10 +44,23 @@ function Nav() {
     }
   }, [active]);
 
-  const handleScroll = (id)=>{
-    const section = sectionsRefs.current[id]
-    section?.scrollIntoView( {behavior: "smooth"} )
-  }
+  //Scroll a section
+  const handleScroll = (id) => {
+    const section = sectionsRefs.current[id];
+    if (!section) return;
+
+    const closeNav = () => {
+      setVisible(false);
+      window.removeEventListener("scrollend", closeNav);
+    };
+
+    // Si el navegador soporta scrollend
+    window.addEventListener("scrollend", closeNav, { once: true });
+
+    section.scrollIntoView({ behavior: "smooth" });
+  };
+
+
 
   return (
     <>

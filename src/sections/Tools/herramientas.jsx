@@ -49,8 +49,9 @@ export default function Tools() {
 
   return (
     <>
+    <section ref={el=>sectionsRefs.current["tools"] = el} id="tools">
       <SectionTitle title="Herramientas"/>
-      <section className="tools" ref={el=>sectionsRefs.current["tools"] = el} id="tools">
+      <section className="tools">
         <div className="progressbar-container">
           {Object.entries(grouped).map(([category, items], index) => (
             <div key={index} className="tools-category">
@@ -93,6 +94,7 @@ export default function Tools() {
           ))}
         </div>
       </section>
+    </section>
     </>
   );
 }

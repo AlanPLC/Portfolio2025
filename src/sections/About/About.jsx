@@ -11,8 +11,9 @@ export default function About() {
   
   return (
     <>
+    <section ref={el=>sectionsRefs.current["about"] = el} id="about">
       <SectionTitle title="Sobre mí"/>
-      <section className="about-accordion" ref={el=>sectionsRefs.current["about"] = el} id="about">
+      <div className="about-accordion">
         {/* Imagen que cambia según el activo */}
         <div className="about-accordion-image">
           <img src={items[active].img} alt={items[active].title} />
@@ -44,7 +45,8 @@ export default function About() {
             </div>
           ))}
         </div>
-      </section>
+      </div>
+    </section>
     </>
   );
 }

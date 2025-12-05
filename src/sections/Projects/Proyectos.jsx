@@ -12,8 +12,9 @@ export default function Projects() {
 
   return (
     <>
+    <section ref={el => sectionsRefs.current["projects"] = el} id="projects">
       <SectionTitle title="Proyectos"/>
-      <section className="projects" ref={el => sectionsRefs.current["projects"] = el} id="projects"> 
+      <div className="projects"> 
         <div className="projects-wrapper">
           {Object.entries(translatedProjects).map(([projectId, proj], index) => {
             
@@ -33,7 +34,8 @@ export default function Projects() {
             );
           })}
         </div>
-      </section>
+      </div>
+    </section>
     </>
   );
 }
