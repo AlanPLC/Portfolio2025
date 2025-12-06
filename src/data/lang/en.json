@@ -1,23 +1,42 @@
 {
-    "nav":{
-
+  "nav": {
+    "navItems": ["Home", "Experience", "About me", "Projects", "Tools"]
+  },
+  "presentation": {},
+  "experience": {},
+  "about": {},
+  "projects": {
+    "project1": {
+      "role": "Full Stack Developer",
+      "company": "Empresa X",
+      "description": "Development of web applications using React, Node.js, and SQL/NoSQL databases. Performance improvement and UX optimization. Performance improvement and UX optimization.",
+      "achievements": [
+        "I implemented a system that reduced loading times by 40%.",
+        "I developed a complete dashboard with JWT authentication.",
+        "I designed reusable components with advanced React patterns."
+      ]
     },
-    "presentation":{
-        
+    "project2": {
+      "role": "E-commerce Platform Backend",
+      "company": "Freelance Project",
+      "description": "Full backend development for a scalable e-commerce platform, handling inventory, purchase orders, and payment gateways. Implementation of microservices to decouple business logic.",
+      "achievements": [
+        "I designed and implemented a RESTful API for product and user management.",
+        "Successful integration with Stripe for payment processing.",
+        "I ensured data consistency through database transactions."
+      ]
     },
-    "experience":{
-
-    },
-    "about":{
-
-    },
-    "projects":{
-
-    },
-    "tools":{
-
-    },
-    "footer":{
-        
+    "project3": {
+      "role": "SaaS Analytics Dashboard (Frontend Focus)",
+      "company": "Startup Innovadora",
+      "description": "Creation of an advanced user interface for a data analytics SaaS product. Development of interactive real-time data visualizations and highly configurable table components.",
+      "achievements": [
+        "Complete UI/UX redesign, resulting in a 25% increase in user retention.",
+        "I implemented dynamic charts with D3.js and Chart.js to display key metrics.",
+        "Frontend performance optimization using React Context and memoization."
+      ]
     }
+  },
+  "tools": {},
+  "footer": {}
 }

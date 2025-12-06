@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import './nav.scss'
 import { profile } from "../../data/profile.js"
 import useActiveSection from "../../contexts/useActiveSection.js";
+import useLanguage from "../../contexts/useLanguage.js";
 
 function Nav() {
   const { name } = profile
@@ -9,7 +10,17 @@ function Nav() {
   const [lastScroll, setLastScroll] = useState(0);
   const {active, sectionsRefs} = useActiveSection()
   const [underlineStyle, setUnderlineStyle] = useState({});
+  const { toogleLang, lang, translation } = useLanguage();
   var link = "https://www.youtube.com/watch?v=QxqiI50WPoM"
+
+  const NAV_ITEMS = [
+    { key: "home", section: "home" },
+    { key: "experience", section: "experience" },
+    { key: "about", section: "about" },
+    { key: "projects", section: "projects" },
+    { key: "tools", section: "tools" },
+  ];
+
   //Efecto ocultar navbar scroll
   useEffect(() => {
     const handleScrollVisibility = () => {
@@ -50,7 +61,7 @@ function Nav() {
     if (!section) return;
 
     const closeNav = () => {
-      setVisible(false);
+      setVisible(true);
       window.removeEventListener("scrollend", closeNav);
     };
 
@@ -65,31 +76,22 @@ function Nav() {
   return (
     <>
       <nav className={visible ? "nav show" : "nav hide"}>
-        <div className='nav1'>
-            <h2>{name}.</h2>
+        <div className='nav1' onClick={()=>toogleLang()}>
+            <div className="icon-wrapper">
+              <img src="naver-dictionary-svgrepo-com.svg" className="icon icon-front" alt="language-icon" />
+              <img src="davx5-svgrepo-com.svg" className="icon icon-back" alt="language-icon" />
+            </div>
+            <p key={lang}>{lang === "es" ? "Español" : "English"}</p>
         </div>
         <div className='nav2'>
             <ul>
-                <li
-                className={active === "home" ? "active" : ""}
-                onClick={()=>handleScroll("home")}
-                >Inicio</li>
-                <li
-                className={active === "experience" ? "active" : ""}
-                onClick={()=>handleScroll("experience")}
-                >Experiencia</li>
-                <li
-                className={active === "about" ? "active" : ""}
-                onClick={()=>handleScroll("about")}
-                >Sobre Mí</li>
-                <li
-                className={active === "projects" ? "active" : ""}
-                onClick={()=>handleScroll("projects")}
-                >Proyectos</li>
-                <li
-                className={active === "tools" ? "active" : ""}
-                onClick={()=>handleScroll("tools")}
-                >Herramientas</li>
+                {NAV_ITEMS.map((item, i)=>(
+                  <li key={item.key}
+                   className={active === item.section ? "active" : "" }
+                   onClick={()=>handleScroll(item.section)}>
+                    {translation.nav.navItems[i]}
+                  </li>
+                ))}
             </ul>
             <span className="underline" style={underlineStyle}></span>
         </div>

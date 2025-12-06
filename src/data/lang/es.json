@@ -1,56 +1,52 @@
 {
-    "nav":{
-        "navItems":["Inicio", "Experiencia", "Sobre mí", "Proyectos", "Herramientas"]
+  "nav": {
+    "navItems": [
+      "Inicio",
+      "Experiencia",
+      "Sobre mí",
+      "Proyectos",
+      "Herramientas"
+    ]
+  },
+  "presentation": {
+    "description": "Me especializo en construir experiencias web rápidas, accesibles y con diseño cuidado. Trabajo con React, Vite y APIs modernas. Me interesa el rendimiento y la UX pixel-perfect.",
+    "role": ["Full Stack Developer"],
+    "cvButton": "Descargar CV"
+  },
+  "experience": {},
+  "about": {},
+  "projects": {
+    "project1": {
+      "role": "Desarrollador Full Stack",
+      "company": "Empresa X",
+      "description": "Desarrollo de aplicaciones web usando React, Node.js y bases de datos SQL/NoSQL. Mejora de performance y optimización de UX. Mejora de performance y optimización de UX.",
+      "achievements": [
+        "Implementé un sistema que redujo los tiempos de carga en un 40%",
+        "Desarrollé un dashboard completo con autenticación JWT",
+        "Diseñé componentes reutilizables con patrones avanzados de React"
+      ]
     },
-    "presentation":{
-        "description": "Me especializo en construir experiencias web rápidas, accesibles y con diseño cuidado. Trabajo con React, Vite y APIs modernas. Me interesa el rendimiento y la UX pixel-perfect.",
-        "role":["Full Stack Developer"],
-        "cvButton": "Descargar CV"
+    "project2": {
+      "role": "Backend para Plataforma de E-commerce",
+      "company": "Proyecto Freelance",
+      "description": "Desarrollo completo del backend para una plataforma de e-commerce escalable, manejando inventario, órdenes de compra y pasarelas de pago. Implementación de microservicios para desacoplar la lógica de negocio.",
+      "achievements": [
+        "Diseñé e implementé una API RESTful para la gestión de productos y usuarios.",
+        "Integración exitosa con Stripe para el procesamiento de pagos.",
+        "Aseguré la consistencia de datos mediante transacciones en la base de datos."
+      ]
     },
-    "experience":{
-    },
-    "about":{
-        
-    },
-    "projects":{
-        "project1":{
-            "role": "Full Stack Developer",
-            "company": "Empresa X",
-            "description":
-                "Desarrollo de aplicaciones web usando React, Node.js y bases de datos SQL/NoSQL. Mejora de performance y optimización de UX. Mejora de performance y optimización de UX.",
-            "achievements": [
-                "Implementé un sistema que redujo los tiempos de carga en un 40%",
-                "Desarrollé un dashboard completo con autenticación JWT",
-                "Diseñé componentes reutilizables con patrones avanzados de React"
-            ]
-        },
-        "project2":{
-            "role": "E-commerce Platform Backend",
-            "company": "Freelance Project",
-            "description":
-                "Desarrollo completo del backend para una plataforma de e-commerce escalable, manejando inventario, órdenes de compra y pasarelas de pago. Implementación de microservicios para desacoplar la lógica de negocio.",
-            "achievements": [
-                "Diseñé e implementé una API RESTful para la gestión de productos y usuarios.",
-                "Integración exitosa con Stripe para el procesamiento de pagos.",
-                "Aseguré la consistencia de datos mediante transacciones en la base de datos."
-            ]
-        },
-        "project3":{
-            "role": "SaaS Analytics Dashboard (Frontend Focus)",
-            "company": "Startup Innovadora",
-            "description":
-                "Creación de una interfaz de usuario avanzada para un producto SaaS de análisis de datos. Desarrollo de visualizaciones interactivas de datos en tiempo real y componentes de tabla altamente configurables.",
-            "achievements": [
-                "Rediseño completo de la UI/UX, resultando en un aumento del 25% en la retención de usuarios.",
-                "Implementé gráficos dinámicos con D3.js y Chart.js para mostrar métricas clave.",
-                "Optimización del rendimiento del frontend usando React Context y memoization."
-            ]
-        }
-    },
-    "tools":{
-
-    },
-    "footer":{
-
+    "project3": {
+      "role": "Dashboard de Análisis SaaS (Enfoque Frontend)",
+      "company": "Startup Innovadora",
+      "description": "Creación de una interfaz de usuario avanzada para un producto SaaS de análisis de datos. Desarrollo de visualizaciones interactivas de datos en tiempo real y componentes de tabla altamente configurables.",
+      "achievements": [
+        "Rediseño completo de la UI/UX, resultando en un aumento del 25% en la retención de usuarios.",
+        "Implementé gráficos dinámicos con D3.js y Chart.js para mostrar métricas clave.",
+        "Optimización del rendimiento del frontend usando React Context y memoization."
+      ]
     }
+  },
+  "tools": {},
+  "footer": {}
 }

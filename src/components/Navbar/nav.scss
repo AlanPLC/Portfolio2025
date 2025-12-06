@@ -22,14 +22,71 @@ nav{
     user-select: none;
 
     .nav1{
+        display: flex;
+        gap: 0.5rem;
         font-size: 1rem;
+        align-items: center;
+        min-width: 8rem;
+        cursor: pointer;
+        .icon-wrapper {
+            position: relative;
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+                position: absolute;  
+                top: 0;
+                left: 0;
+                width: 1.5rem;
+                height: 1.5rem;
+                transition: opacity .3s ease, transform .4s ease;
+            }
+
+            .icon-front {
+                opacity: 1;
+                transform: rotate(0deg);
+            }
+
+            .icon-back {
+                opacity: 0;
+                transform: rotate(-90deg); 
+            }
+
+        }
+        &:hover .icon-front {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.8);
+        }
+
+        &:hover .icon-back {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
+        p{  
+            width: 0ch;
+            margin: 0;
+            letter-spacing: 0.2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 1s steps(12) forwards;
+        }
+        @keyframes typing {
+            to {
+                width: 12ch; /* cantidad de caracteres del texto */
+            }
+        }
     }
 
     .nav2 {
         position: relative;
-        
-        
+        display: flex;
         ul {
+            padding: 0;
+            margin: auto;
             display: flex;
             position: relative;
             gap: 1rem;
@@ -37,6 +94,9 @@ nav{
             list-style: none;
             margin-bottom: 0.3rem;
             li{
+                font-weight: 400;
+                font-size: 1.05rem;
+                transition: transform 0.2s ease;
                 margin: 0;
                 cursor: pointer;
             }
@@ -45,11 +105,13 @@ nav{
             }
         }
         .underline {
+            margin: 0;
+            padding: 0;
             position: absolute;
             bottom: 0;
             height: 2px;
             background: #ff4d4f;
-            border-radius: 40px;
+            
             transition: all 0.3s ease;
         }
     }
