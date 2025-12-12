@@ -1,5 +1,5 @@
 import "./footer.scss"
-import { profile } from "../../data/profile"
+import { profile } from "../../data/staticData.js"
 export default function Footer() {
     const { name } = profile
 

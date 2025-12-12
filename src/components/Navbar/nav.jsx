@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import './nav.scss'
-import { profile } from "../../data/profile.js"
+import "./nav.scss";
+import { profile } from "../../data/staticData.js";
 import useActiveSection from "../../contexts/useActiveSection.js";
 import useLanguage from "../../contexts/useLanguage.js";
 
 function Nav() {
-  const { name } = profile
+  const { name } = profile;
   const [visible, setVisible] = useState(true);
   const [lastScroll, setLastScroll] = useState(0);
-  const {active, sectionsRefs} = useActiveSection()
+  const { active, sectionsRefs } = useActiveSection();
   const [underlineStyle, setUnderlineStyle] = useState({});
   const { toogleLang, lang, translation } = useLanguage();
-  var link = "https://www.youtube.com/watch?v=QxqiI50WPoM"
+  var link = "https://www.youtube.com/watch?v=QxqiI50WPoM";
 
   const NAV_ITEMS = [
     { key: "home", section: "home" },
@@ -29,7 +29,7 @@ function Nav() {
       // si baja se oculta
       if (currentScroll > lastScroll) {
         setVisible(false);
-      } 
+      }
       // si sube se muestra
       else {
         setVisible(true);
@@ -50,7 +50,7 @@ function Nav() {
 
       setUnderlineStyle({
         width: rect.width,
-        left: rect.left - parentRect.left
+        left: rect.left - parentRect.left,
       });
     }
   }, [active]);
@@ -71,33 +71,41 @@ function Nav() {
     section.scrollIntoView({ behavior: "smooth" });
   };
 
-
-
   return (
     <>
       <nav className={visible ? "nav show" : "nav hide"}>
-        <div className='nav1' onClick={()=>toogleLang()}>
-            <div className="icon-wrapper">
-              <img src="naver-dictionary-svgrepo-com.svg" className="icon icon-front" alt="language-icon" />
-              <img src="davx5-svgrepo-com.svg" className="icon icon-back" alt="language-icon" />
-            </div>
-            <p key={lang}>{lang === "es" ? "Español" : "English"}</p>
+        <div className="nav1" onClick={() => toogleLang()}>
+          <div className="icon-wrapper">
+            <img
+              src="naver-dictionary-svgrepo-com.svg"
+              className="icon icon-front"
+              alt="language-icon"
+            />
+            <img
+              src="davx5-svgrepo-com.svg"
+              className="icon icon-back"
+              alt="language-icon"
+            />
+          </div>
+          <p key={lang}>{lang === "es" ? "Español" : "English"}</p>
         </div>
-        <div className='nav2'>
-            <ul>
-                {NAV_ITEMS.map((item, i)=>(
-                  <li key={item.key}
-                   className={active === item.section ? "active" : "" }
-                   onClick={()=>handleScroll(item.section)}>
-                    {translation.nav.navItems[i]}
-                  </li>
-                ))}
-            </ul>
-            <span className="underline" style={underlineStyle}></span>
+        <div className="nav2">
+          <ul>
+            {NAV_ITEMS.map((item, i) => (
+              <li
+                key={item.key}
+                className={active === item.section ? "active" : ""}
+                onClick={() => handleScroll(item.section)}
+              >
+                {translation.nav.navItems[i]}
+              </li>
+            ))}
+          </ul>
+          <span className="underline" style={underlineStyle}></span>
         </div>
-        <div className='nav3'>
+        <div className="nav3">
           <a href={link} target="_blank" rel="noopener noreferrer">
-            <img src="among-us-svgrepo-com.svg" alt="amongus"/>
+            <img src="among-us-svgrepo-com.svg" alt="amongus" />
           </a>
           <a href={link} target="_blank" rel="noopener noreferrer">
             <img src="github-svgrepo-com.svg" alt="github" />
@@ -108,7 +116,7 @@ function Nav() {
         </div>
       </nav>
     </>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

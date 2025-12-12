@@ -1,24 +1,23 @@
-import { useState, createContext } from 'react'
-import es from '../data/lang/es.json'
-import en from '../data/lang/en.json'
+import { useState, createContext } from "react";
+import es from "../data/lang/es.json";
+import en from "../data/lang/en.json";
 
-const LanguageContext = createContext()
+const LanguageContext = createContext();
 
-export function LanguageProvider( {children} ){
+export function LanguageProvider({ children }) {
+  const [lang, setLang] = useState("es");
 
-    const [lang, setLang] = useState("es")
-    
-    const translation = lang === "es" ? es : en
+  const translation = lang === "es" ? es : en;
 
-    const toogleLang = () =>{
-        setLang(prev => (prev==="es" ? "en" : "es"))
-    }
+  const toogleLang = () => {
+    setLang((prev) => (prev === "es" ? "en" : "es"));
+  };
 
-    return(
-        <LanguageContext.Provider value={ {lang, translation, toogleLang} }>
-            {children}
-        </LanguageContext.Provider>
-    )
+  return (
+    <LanguageContext.Provider value={{ lang, translation, toogleLang }}>
+      {children}
+    </LanguageContext.Provider>
+  );
 }
 
 export default LanguageContext;

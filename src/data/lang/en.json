@@ -2,14 +2,101 @@
   "nav": {
     "navItems": ["Home", "Experience", "About me", "Projects", "Tools"]
   },
-  "presentation": {},
-  "experience": {},
-  "about": {},
+
+  "sections":{
+    "home": "Home",
+    "experience": "Experience",
+    "about": "About me",
+    "projects": "Projects",
+    "tools": "Tools"
+  },
+
+  "presentation": 
+  {
+    "description": "I specialize in building fast, accessible, and well-designed web experiences. I work with React, Vite, and modern APIs. I'm interested in performance and pixel-perfect UX.",
+    "role": ["Full Stack Developer"],
+    "cvButton": "Download CV"
+  },
+
+  "experience": {
+    "experience1":{
+      "role": "Full Stack Developer",
+      "company": "Freelance Project",
+      "description":
+        "Web application development using React, Node.js, and SQL/NoSQL databases. Performance improvement and UX optimization. Performance improvement and UX optimization.",
+      "achievements": [
+        "I implemented a system that reduced loading times by 40%.",
+        "I developed a complete dashboard with JWT authentication.",
+        "I designed reusable components with advanced React patterns."
+      ]
+    },
+    "experience2":{
+      "role": "E-commerce Platform Backend",
+      "company": "Freelance Project",
+      "description":
+        "Full backend development for a scalable e-commerce platform, handling inventory, purchase orders, and payment gateways. Implementation of microservices to decouple business logic.",
+      "achievements": [
+        "I designed and implemented a RESTful API for product and user management.",
+        "Successful integration with Stripe for payment processing.",
+        "I ensured data consistency through database transactions."
+      ]
+    },
+    "experience3":{
+      "role": "SaaS Analytics Dashboard (Frontend Focus)",
+      "company": "Innovative Startup",
+      "description":
+        "Creation of an advanced user interface for a data analytics SaaS product. Development of interactive real-time data visualizations and highly configurable table components.",
+      "achievements": [
+        "Complete UI/UX redesign, resulting in a 25% increase in user retention.",
+        "I implemented dynamic charts with D3.js and Chart.js to display key metrics.",
+        "Frontend performance optimization using React Context and memoization."
+      ]
+    },
+    "experience4":{
+      "role": "Custom CMS Development",
+      "company": "Agencia Digital",
+      "description":
+        "Development of a custom Content Management System (CMS) for clients. The system allows dynamic content creation and publishing, with a powerful rich text editor.",
+      "achievements": [
+        "Construction of a custom WYSIWYG content editor based on Draft.js.",
+        "Implementation of role-based access control (RBAC) for different user levels.",
+        "Configuration of infrastructure with continuous deployment (CI/CD) using GitHub Actions."
+      ]
+    },
+    "experience5": {
+      "role": "Mobile Game API & Database",
+      "company": "Indie Studio Collab",
+      "description":
+        "Development of a backend API and database schema for a mobile multiplayer game. The system handles player data, game state, and real-time interactions.",
+      "achievements": [
+        "Designed a scalable database schema using MongoDB and Redis for real-time data.",
+        "Developed RESTful API endpoints with Node.js and Express.",
+        "Implemented real-time features using WebSockets for multiplayer interactions."
+      ]
+    }
+  },
+
+  "about": {
+    "about1":{
+    "title": "Who I am",
+    "description":
+      "I am a web developer focused on frontend and mobile u dog friend look that I never cried over a topic like I'm not crying over the topic friend I mean it made me reflect a lot of things dog that I maybe don't rescue myself this guy a fla friend makes me think na friend makes me think that now maybe when I return to my house I will be able to say that I have an island of charm with coscu friend ue in frontend and mobile u dog friend look that I never cried over a topic like I'm not crying over the topic friend I mean it made me reflect a lot of things dog that I maybe don't rescue myself this guy a fla friend makes me think na friend makes me think that now maybe when I return to my house I will be able to say that I have an island of charm with coscu friend "
+    },
+    "about2":{
+      "title": "My experience",
+      "description": "I have worked on various fullstack projects..."
+    },
+    "about3":{
+      "title": "My approach",
+      "description": "I like to create functional and modern interfaces..."
+    }
+  },
+
   "projects": {
     "project1": {
       "role": "Full Stack Developer",
       "company": "Empresa X",
-      "description": "Development of web applications using React, Node.js, and SQL/NoSQL databases. Performance improvement and UX optimization. Performance improvement and UX optimization.",
+      "description": "Development of web applications using React, Node.js, and SQL/NoSQL databases. Performance improvement and UX optimization. Performance imp>rovement and UX optimization.",
       "achievements": [
         "I implemented a system that reduced loading times by 40%.",
         "I developed a complete dashboard with JWT authentication.",
@@ -37,6 +124,8 @@
       ]
     }
   },
+
   "tools": {},
+
   "footer": {}
 }

@@ -1,13 +1,15 @@
 import "./herramientas.scss";
 import { useEffect, useRef } from "react";
-import { tools } from "../../data/profile.js";
+import { tools } from "../../data/staticData.js";
 import useActiveSection from "../../contexts/useActiveSection.js"
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import TechIconsTools from "../../components/TechIcons/techIconsTools.jsx";
+import useLanguage from "../../contexts/useLanguage.js";
 
 export default function Tools() {
   const progressRefs = useRef([]);
   const { sectionsRefs } = useActiveSection()
+  const { translation } = useLanguage();
 
   // Agrupar herramientas por categoría
   const grouped = tools.reduce((acc, item) => {
@@ -50,7 +52,7 @@ export default function Tools() {
   return (
     <>
     <section ref={el=>sectionsRefs.current["tools"] = el} id="tools">
-      <SectionTitle title="Herramientas"/>
+      <SectionTitle id="tools" title={translation.sections.tools}/>
       <section className="tools">
         <div className="progressbar-container">
           {Object.entries(grouped).map(([category, items], index) => (

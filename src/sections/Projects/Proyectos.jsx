@@ -1,4 +1,4 @@
-import { projectsData } from "../../data/profile.js";
+import { projectsData } from "../../data/staticData.js";
 import useActiveSection from "../../contexts/useActiveSection.js"
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
@@ -13,7 +13,7 @@ export default function Projects() {
   return (
     <>
     <section ref={el => sectionsRefs.current["projects"] = el} id="projects">
-      <SectionTitle title="Proyectos"/>
+      <SectionTitle id="projects" title={translation.sections.projects}/>
       <div className="projects"> 
         <div className="projects-wrapper">
           {Object.entries(translatedProjects).map(([projectId, proj], index) => {

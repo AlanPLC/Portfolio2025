@@ -1,11 +1,13 @@
 import React from "react";
-import { profile } from "../../data/profile.js";
 import useActiveSection from "../../contexts/useActiveSection.js"
+import useLanguage from "../../contexts/useLanguage.js";
 import "./presentation.scss";
+import { profile } from "../../data/staticData.js";
 
 export default function Presentation() {
-  const { greeting, name, role, description, avatar, links } = profile;
+  const { greeting, name, avatar, links } = profile;
   const { sectionsRefs } = useActiveSection()
+  const { translation } = useLanguage();
 
   return (
     <section className="presentation" aria-labelledby="presentation-heading" id="home" ref={el => sectionsRefs.current["home"] = el}>
@@ -16,11 +18,11 @@ export default function Presentation() {
             {name}
           </h1>
 
-          <p className="presentation__desc">{description}</p>
-          <div className="presentation__actions">
+          <p className="presentation__desc">{translation.presentation.description}</p>
+          <div className="p__actions">
             <div className="presentation__meta">
               <span className="presentation__role" aria-hidden="true">
-                {role}
+                {translation.presentation.role[0]}
               </span>
             </div>
             <a
@@ -29,7 +31,7 @@ export default function Presentation() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Descargar CV
+              {translation.presentation.cvButton}
             </a>
           </div>
         </div>
