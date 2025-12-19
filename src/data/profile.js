@@ -109,7 +109,8 @@ export const profile = {
         "Diseñé componentes reutilizables con patrones avanzados de React"
       ],
       tech: ["React", "Node", "MongoDB","sql", "Docker"],
-      impactLevel: 5 
+      impactLevel: 5,
+      codeUrl: "...",
     },
     {
       img: "./projects-imgs/ecommerce.png",
@@ -123,7 +124,8 @@ export const profile = {
         "Aseguré la consistencia de datos mediante transacciones en la base de datos.",
       ],
       tech: ["Express.js", "PostgreSQL", "Prisma", "AWS S3", "Redis"],
-      impactLevel: 4 
+      impactLevel: 4,
+      codeUrl: "...",
     },
     {
       img: "./projects-imgs/saas.png",
@@ -137,7 +139,8 @@ export const profile = {
         "Optimización del rendimiento del frontend usando React Context y memoization.",
       ],
       tech: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Jest"],
-      impactLevel: 3
+      impactLevel: 3,
+      codeUrl: "...",
     },
     {
       img: "./projects-imgs/cms.png",
@@ -151,7 +154,8 @@ export const profile = {
         "Configuración de la infraestructura con despliegue continuo (CI/CD) usando GitHub Actions.",
       ],
       tech: ["Next.js", "Strapi (Headless CMS)", "SQL", "Vercel", "Chakra UI"],
-      impactLevel: 4
+      impactLevel: 4,
+      codeUrl: "...",
     },
     {
       img: "./projects-imgs/game.png",
@@ -165,7 +169,8 @@ export const profile = {
         "Optimicé las consultas de la base de datos para manejar picos de tráfico de usuarios.",
       ],
       tech: ["Node.js", "AWS Lambda", "DynamoDB", "Serverless Framework", "Jest"],
-      impactLevel: 2
+      impactLevel: 2,
+      codeUrl: "...",
     },
   ];
 // "React", "Node.js", "Express", "Mysql", "ReactNative"
