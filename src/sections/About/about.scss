@@ -20,9 +20,8 @@
     position: relative;
     z-index: 1;
 
-    //padre
-    &::before,
-    &::after {
+    // --- ANILLOS PADRES ---
+    &::before, &::after {
       content: "";
       position: absolute;
       width: 220px;
@@ -38,28 +37,18 @@
       -webkit-mask-composite: xor;
       mask-composite: exclude;
     }
+    &::before { left: -330px; animation: techRotate 4s linear infinite, pulseGlow 4s ease-in-out infinite; }
+    &::after { right: -330px; animation: techRotate 4s linear infinite reverse, pulseGlow 4s ease-in-out infinite; }
 
-    //control giro y distancia
-    &::before {
-      left: -330px;
-      animation: techRotate 4s linear infinite, pulseGlow 4s ease-in-out infinite;
-    }
-
-    &::after {
-      right: -330px;
-      animation: techRotate 4s linear infinite reverse, pulseGlow 4s ease-in-out infinite;
-    }
-
-    //hijos
-    .about-accordion::before,
-    .about-accordion::after {
+    // --- ANILLOS HIJOS ---
+    .about-accordion::before, .about-accordion::after {
       content: "";
       position: absolute;
       width: 140px;
       height: 140px;
       border-radius: 50%;
       top: 50%;
-      z-index: -2; // Por detrás del padre
+      z-index: -2;
       pointer-events: none;
       border: 2px solid transparent;
       background-image: conic-gradient(from 0deg, rgba(255, 77, 79, 0.8) 0%, rgba(255, 77, 79, 0.2) 25%, transparent 50%);
@@ -68,16 +57,8 @@
       -webkit-mask-composite: xor;
       mask-composite: exclude;
     }
-     //control giro y distancia
-    .about-accordion::before {
-      left: -290px; 
-      animation: techRotate 5s linear infinite reverse, pulseGlow 4s ease-in-out infinite;
-    }
-
-    .about-accordion::after {
-      right: -290px;
-      animation: techRotate 5s linear infinite, pulseGlow 4s ease-in-out infinite;
-    }
+    .about-accordion::before { left: -290px; animation: techRotate 5s linear infinite reverse, pulseGlow 4s ease-in-out infinite; }
+    .about-accordion::after { right: -290px; animation: techRotate 5s linear infinite, pulseGlow 4s ease-in-out infinite; }
   }
 
   .about-accordion {
@@ -86,9 +67,12 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
+
       .accordion-item {
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         padding: 1rem 0;
+        overflow: hidden;
+
         .accordion-title {
           width: 100%;
           text-align: left;
@@ -102,51 +86,61 @@
           align-items: center;
           gap: 1.5rem;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
           .title-number {
             font-size: 0.9rem;
             color: var(--accent);
             opacity: 0.4;
             font-family: "JetBrains Mono", monospace;
           }
-          &:hover {
-            color: #fff;
-            transform: translateX(10px);
-          }
+          &:hover { color: #fff; transform: translateX(10px); }
         }
-        &.active {
-          border-bottom: 1px solid var(--accent);
-          .accordion-title {
-            color: #fff;
-            .title-number {
-              opacity: 1;
-              text-shadow: 0 0 10px var(--accent);
-            }
-          }
-        }
+
         .accordion-content {
+          max-height: 0;
           overflow-y: auto;
+          opacity: 0;
+          transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+
           p {
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.8;
             padding: 1.2rem 0 1rem 2.8rem;
           }
+
+          &::-webkit-scrollbar {
+            width: 8px; 
+            background-color: transparent;
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: #ff4d4f; 
+            border-radius: 10px;
+            border: 2px solid transparent; 
+            background-clip: content-box; 
+          }
         }
-        .accordion-content::-webkit-scrollbar {
-          width: 8px; 
-          background-color: transparent;
-        }
-        .accordion-content::-webkit-scrollbar-thumb {
-          background-color: #ff4d4f; 
-          border-radius: 10px;
-          border: 2px solid transparent; 
-          background-clip: content-box; 
+
+        &.active {
+          border-bottom: 1px solid var(--accent);
+          
+          .accordion-title {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            .title-number { opacity: 1; text-shadow: 0 0 10px var(--accent); }
+          }
+
+          .accordion-content {
+            max-height: 300px;
+            opacity: 1;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
+          }
         }
       }
     }
   }
 }
 
-// Keyframes
+// --- KEYFRAMES ---
 @keyframes pulseGlow {
   0%, 100% {
     filter: drop-shadow(0 0 15px rgba(255, 77, 79, 0.4));
