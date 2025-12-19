@@ -9,20 +9,24 @@ import Projects from "./sections/Projects/Proyectos.jsx"
 import Tools from "./sections/Tools/herramientas.jsx"
 import Experience from "./sections/Experience/Experience.jsx";
 import Footer from "./components/Footer/Footer.jsx"
+import { LanguageProvider } from "./contexts/languageContext.jsx";
+import { ActiveSectionProvider } from "./contexts/ActiveSectionContext.jsx";
 
 function App() {
   return (
-    <>
-      <LoadingScreen />
-      <BlobsBackground />
-      <Nav />
-      <Presentation />
-      <Experience />
-      <About />
-      <Projects />
-      <Tools />
-      <Footer />
-    </>
+    <ActiveSectionProvider>
+      <LanguageProvider>
+        <LoadingScreen />
+        <BlobsBackground />
+        <Nav />
+        <Presentation />
+        <Experience />
+        <About />
+        <Projects />
+        <Tools />
+        <Footer />
+      </LanguageProvider>
+    </ActiveSectionProvider>
   );
 }
 

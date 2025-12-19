@@ -3,12 +3,13 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color: white;
-    background-color: #fafafa10;
+    color: #ffffff;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
     backdrop-filter: blur(0.4rem);
     padding: 1rem;
     height: 2rem;
-    border: 1px solid #fafafa10;
     border-radius: 10px;
     position: fixed;
     top: 0;
@@ -18,29 +19,104 @@ nav{
     transition: transform 0.4s ease, opacity 0.3s ease;
     z-index: 999;
     margin-top: 1rem;
-   
+    user-select: none;
 
     .nav1{
+        display: flex;
+        gap: 0.5rem;
         font-size: 1rem;
+        align-items: center;
+        min-width: 8rem;
+        cursor: pointer;
+        .icon-wrapper {
+            position: relative;
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+                position: absolute;  
+                top: 0;
+                left: 0;
+                width: 1.5rem;
+                height: 1.5rem;
+                transition: opacity .3s ease, transform .4s ease;
+            }
+
+            .icon-front {
+                opacity: 1;
+                transform: rotate(0deg);
+            }
+
+            .icon-back {
+                opacity: 0;
+                transform: rotate(-90deg); 
+            }
+
+        }
+        &:hover .icon-front {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.8);
+        }
+
+        &:hover .icon-back {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
+        p{  
+            width: 0ch;
+            margin: 0;
+            letter-spacing: 0.2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 1s steps(12) forwards;
+        }
+        @keyframes typing {
+            to {
+                width: 12ch; /* cantidad de caracteres del texto */
+            }
+        }
     }
 
-    .nav2{
-        ul{
-            cursor: pointer;
-            list-style: none;
+    .nav2 {
+        position: relative;
+        display: flex;
+        ul {
+            padding: 0;
+            margin: auto;
             display: flex;
-            flex-direction: row;
+            position: relative;
             gap: 1rem;
+            text-decoration: none;
+            list-style: none;
+            margin-bottom: 0.3rem;
             li{
-                font-size: 1rem;
-                transition: transform 0.3s ease;
+                font-weight: 400;
+                font-size: 1.05rem;
+                transition: transform 0.2s ease;
+                margin: 0;
+                cursor: pointer;
             }
             li:hover{
                 transform: scale(1.1);
             }
         }
-        
+        .underline {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            background: #ff4d4f;
+            
+            transition: all 0.3s ease;
+        }
     }
+
+
     .nav3{
         cursor: pointer;
         img{

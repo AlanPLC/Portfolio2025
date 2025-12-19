@@ -1,116 +1,119 @@
-.tools {
-  padding: 6rem 0;
-  display: flex;
-  flex-direction: column;
-  background: transparent;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.02)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius);
-  padding: 2.25rem;
-  box-shadow: 0 10px 40px rgba(2, 6, 23, 0.55);
-  backdrop-filter: blur(8px) saturate(120%);
-  gap: 2rem;
-
-  .progressbar-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
-  .tools-category {
+#tools{
+  scroll-margin-top: 8rem;
+  .tools {
+    padding: 6rem 0;
     display: flex;
     flex-direction: column;
-   
-    h3{
-      font-size: 1.5rem;
-      margin: 0;
-    }
-    hr{
-      margin-top: 1rem;
-      width: 100%;
-    }
-
-    .tool-container {
+    background: transparent;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0.02)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius);
+    padding: 2.25rem;
+    box-shadow: 0 10px 40px rgba(2, 6, 23, 0.55);
+    backdrop-filter: blur(8px) saturate(120%);
+    gap: 2rem;
+  
+    .progressbar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+    .tools-category {
       display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin: 0.5rem;
-
-      .tecnology-table {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 1rem;
-        flex: 1;
-        align-items: center;
-        .techicons{
-          font-size: 10rem;
-        }
-
-        .tecnology,
-        .complement {
-          min-width: 4rem;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          flex: 1;
-        }
-
-        img {
-          width: 2rem;
-        }
+      flex-direction: column;
+     
+      h3{
+        font-size: 1.5rem;
+        margin: 0;
       }
-
-      .progressbar {
-        display: flex;
-        flex: 3;
+      hr{
+        margin-top: 1rem;
         width: 100%;
-        min-width: 200px;
-        background: linear-gradient(
-          90deg,
-          rgba(255, 77, 79, 0.14),
-          rgba(255, 77, 79, 0.08)
-        );
-        border-radius: 10px;
-        border: 2px solid rgba(255, 77, 79, 0.15);
-        padding: 0.75rem;
-        height: 0.5rem;
-
-        .inner-progressbar {
-          width: 0; 
-          height: 100%;
-          max-width: 100%;
+      }
+  
+      .tool-container {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 0.5rem;
+  
+        .tecnology-table {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 1rem;
+          flex: 1;
+          align-items: center;
+          .techicons{
+            font-size: 10rem;
+          }
+  
+          .tecnology,
+          .complement {
+            min-width: 4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+          }
+  
+          img {
+            width: 2rem;
+          }
+        }
+  
+        .progressbar {
+          display: flex;
+          flex: 3;
+          width: 100%;
+          min-width: 200px;
+          background: linear-gradient(
+            90deg,
+            rgba(255, 77, 79, 0.14),
+            rgba(255, 77, 79, 0.08)
+          );
           border-radius: 10px;
-
-          // Lava glow
-          background: linear-gradient(90deg, #ff4d4f, #fa8c16, #ff4d4f);
-          background-size: 200% 100%;
-          animation: lavaGlow 2.5s ease-in-out infinite;
-
-          transition: width 2s ease;
-
-          box-shadow: 0 0 12px rgba(255, 77, 79, 0.6),
-            0 0 24px rgba(255, 77, 79, 0.4);
+          border: 2px solid rgba(255, 77, 79, 0.15);
+          padding: 0.75rem;
+          height: 0.5rem;
+  
+          .inner-progressbar {
+            width: 0; 
+            height: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+  
+            // Lava glow
+            background: linear-gradient(90deg, #ff4d4f, #fa8c16, #ff4d4f);
+            background-size: 200% 100%;
+            animation: lavaGlow 2.5s ease-in-out infinite;
+  
+            transition: width 2s ease;
+  
+            box-shadow: 0 0 12px rgba(255, 77, 79, 0.6),
+              0 0 24px rgba(255, 77, 79, 0.4);
+          }
         }
       }
     }
   }
-}
-
-// Animación lava glow
-@keyframes lavaGlow {
-  0% {
-    background-position: 0% 0%;
+  
+  // Animación lava glow
+  @keyframes lavaGlow {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
   }
-  50% {
-    background-position: 100% 0%;
   }
-  100% {
-    background-position: 0% 0%;
-  }
-}
 }

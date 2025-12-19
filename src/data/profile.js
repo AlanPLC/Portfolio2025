@@ -159,7 +159,7 @@ export const profile = {
     },
     {
       img: "./projects-imgs/game.png",
-      role: "Mobile Game API & Database",
+      role: "Mobile Game API & Database",g
       company: "Indie Studio Collab",
       description:
         "Diseño y desarrollo de la API y la base de datos para manejar datos de jugadores, puntuaciones altas y logros para un juego móvil independiente. Priorización de baja latencia y alta concurrencia.",
