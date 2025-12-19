@@ -1,6 +1,6 @@
 import "./herramientas.scss";
 import { useEffect, useRef } from "react";
-import { tools } from "../../data/staticData.js";
+import { toolsData } from "../../data/staticData.js";
 import useActiveSection from "../../contexts/useActiveSection.js"
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import TechIconsTools from "../../components/TechIcons/techIconsTools.jsx";
@@ -10,20 +10,28 @@ export default function Tools() {
   const progressRefs = useRef([]);
   const { sectionsRefs } = useActiveSection()
   const { translation } = useLanguage();
+  const translatedTools = translation.tools;
 
   // Agrupar herramientas por categoría
-  const grouped = tools.reduce((acc, item) => {
-    acc[item.category] = acc[item.category] || [];
-    acc[item.category].push({
-      name: item.name,
-      img: item.img,
-      complement: item.complement,
-      complement_img: item.complement_img,
-      percentage: item.percentage,
-      techs: item.techs
-    });
-    return acc;
-  }, {});
+ const grouped = Object.entries(toolsData).reduce((acc, [toolId, staticInfo]) => {
+  const toolTranslation = translatedTools[toolId] || {};
+
+  const fullTool = {
+    id: toolId,
+    ...staticInfo,    
+    category: toolTranslation.category || "Otros"
+  };
+
+  const category = fullTool.category;
+  
+  if (!acc[category]) {
+    acc[category] = [];
+  }
+  
+  acc[category].push(fullTool);
+  
+  return acc;
+}, {});
 
 
   //Observer para cada barra cambiando su tamaño según porcentaje cuando entra al vp
@@ -47,56 +55,44 @@ export default function Tools() {
   allRefs.forEach((ref) => ref && observer.observe(ref));
 
   return () => observer.disconnect();
-}, []);
+}, [grouped]);
 
   return (
     <>
-    <section ref={el=>sectionsRefs.current["tools"] = el} id="tools">
-      <SectionTitle id="tools" title={translation.sections.tools}/>
-      <section className="tools">
-        <div className="progressbar-container">
-          {Object.entries(grouped).map(([category, items], index) => (
-            <div key={index} className="tools-category">
-              <h3>{category}</h3>
-              <hr />
+      <section ref={el => sectionsRefs.current["tools"] = el} id="tools">
+        <SectionTitle id="tools" title={translation.sections.tools} />
+        <section className="tools">
+          <div className="progressbar-container">
+          
+            {Object.entries(grouped).map(([category, items], index) => (
+              <div key={index} className="tools-category">
+                <h3>{category}</h3>
+                <hr />
 
-              {items.map((tool) => {
-                const id = `${category}-${tool.name}`;
+                {items.map((tool) => {
+                  const id = `${category}-${tool.id}`;
 
-                return (
-                  <div className="tool-container" key={id}>
-                    <div className="tecnology-table">
-                      <TechIconsTools techs={tool.techs} className="techicons"/>
-                      {/* <div className="tecnology">
-                        <img src={tool.img} alt={tool.name} />
-                        <p>{tool.name}</p>
+                  return (
+                    <div className="tool-container" key={id}>
+                      <div className="tecnology-table">
+                        <TechIconsTools techs={tool.techs} className="techicons" />
                       </div>
-                      {tool.complement && (
-                        <>
-                        <img src="./code-editor-svgrepo-com.svg" alt="plus-img" />
-                        <div className="complement">
-                          <img src={tool.complement_img} alt="complement-img" />
-                          <p>{tool.complement}</p>
-                        </div>
-                        </>
-                      )} */}
-                    </div>
 
-                    <div className="progressbar">
-                      <div
-                        className="inner-progressbar"
-                        style={{ "--percent": `${tool.percentage}%` }}
-                        ref={(el) => (progressRefs.current[id] = el)}
-                      ></div>
+                      <div className="progressbar">
+                        <div
+                          className="inner-progressbar"
+                          style={{ "--percent": `${tool.percentage}%` }}
+                          ref={(el) => (progressRefs.current[id] = el)}
+                        ></div>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          ))}
-        </div>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
+        </section>
       </section>
-    </section>
     </>
   );
 }

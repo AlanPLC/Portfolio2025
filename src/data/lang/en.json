@@ -125,7 +125,15 @@
     }
   },
 
-  "tools": {},
+  "tools": {
+  "react": { "category": "Libraries / Frameworks" },
+  "reactNative": { "category": "Libraries / Frameworks" },
+  "javascript": { "category": "Languages" },
+  "mysql": { "category": "Databases" },
+  "nodejs": { "category": "Libraries / Frameworks" },
+  "git": { "category": "Version Control" },
+  "python": { "category": "Languages" }
+},
 
   "footer": {}
 }

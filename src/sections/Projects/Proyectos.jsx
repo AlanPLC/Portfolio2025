@@ -10,6 +10,7 @@ export default function Projects() {
   const translatedProjects = translation.projects;
   const { sectionsRefs } = useActiveSection()
 
+
   return (
     <>
     <section ref={el => sectionsRefs.current["projects"] = el} id="projects">
