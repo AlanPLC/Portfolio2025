@@ -140,5 +140,7 @@
   "python": { "category": "Lenguajes" }
 },
 
-  "footer": {}
+  "footer": {
+    "copyright": "Copyright © Todos los derechos reservados."
+  }
 }

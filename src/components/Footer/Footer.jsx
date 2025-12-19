@@ -1,12 +1,14 @@
 import "./footer.scss"
 import { profile } from "../../data/staticData.js"
+import useLanguage from "../../contexts/useLanguage.js"
 export default function Footer() {
     const { name } = profile
+    const { translation } = useLanguage();
 
     return(
         <footer>
             <h3>{name}</h3>
-            <p>Copyright © Todos los derechos reservados.</p>
+            <p>{translation.footer.copyright}</p>
         </footer>
     )
 }
