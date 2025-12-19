@@ -77,12 +77,12 @@ function Nav() {
         <div className="nav1" onClick={() => toogleLang()}>
           <div className="icon-wrapper">
             <img
-              src="naver-dictionary-svgrepo-com.svg"
+              src="/project-icons/naver-dictionary-svgrepo-com.svg"
               className="icon icon-front"
               alt="language-icon"
             />
             <img
-              src="davx5-svgrepo-com.svg"
+              src="/project-icons/davx5-svgrepo-com.svg"
               className="icon icon-back"
               alt="language-icon"
             />
@@ -105,13 +105,13 @@ function Nav() {
         </div>
         <div className="nav3">
           <a href={link} target="_blank" rel="noopener noreferrer">
-            <img src="among-us-svgrepo-com.svg" alt="amongus" />
+            <img src="/project-icons/among-us-svgrepo-com.svg" alt="amongus" />
           </a>
           <a href={link} target="_blank" rel="noopener noreferrer">
-            <img src="github-svgrepo-com.svg" alt="github" />
+            <img src="/project-icons/github-svgrepo-com.svg" alt="github" />
           </a>
           <a href={link} target="_blank" rel="noopener noreferrer">
-            <img src="linkedin-svgrepo-com.svg" alt="linkedin" />
+            <img src="/project-icons/linkedin-svgrepo-com.svg" alt="linkedin" />
           </a>
         </div>
       </nav>

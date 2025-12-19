@@ -1,14 +1,15 @@
 import { projectsData } from "../../data/staticData.js";
 import useActiveSection from "../../contexts/useActiveSection.js"
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import ProjectCard from "../../components/ProjectCard/ProjectCard.jsx";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import useLanguage from "../../contexts/useLanguage.js";
-import "./proyectos.scss"
+import "./projects.scss"
 
 export default function Projects() {
   const { translation } = useLanguage();
   const translatedProjects = translation.projects;
   const { sectionsRefs } = useActiveSection()
+
 
   return (
     <>
