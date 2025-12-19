@@ -1,4 +1,4 @@
-import "./herramientas.scss";
+import "./tools.scss";
 import { useEffect, useRef } from "react";
 import { toolsData } from "../../data/staticData.js";
 import useActiveSection from "../../contexts/useActiveSection.js"
