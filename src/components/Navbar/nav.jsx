@@ -1,17 +1,35 @@
 import { useEffect, useState } from "react";
 import "./nav.scss";
-import { profile } from "../../data/staticData.js";
 import useActiveSection from "../../contexts/useActiveSection.js";
 import useLanguage from "../../contexts/useLanguage.js";
 
 function Nav() {
-  const { name } = profile;
   const [visible, setVisible] = useState(true);
   const [lastScroll, setLastScroll] = useState(0);
   const { active, sectionsRefs } = useActiveSection();
   const [underlineStyle, setUnderlineStyle] = useState({});
   const { toogleLang, lang, translation } = useLanguage();
   var link = "https://www.youtube.com/watch?v=QxqiI50WPoM";
+  const [showModal, setShowModal] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
+  const email = "tuemail@ejemplo.com";
+
+ const handleCopy = () => {
+  navigator.clipboard.writeText(email);
+  setShowModal(true);
+  setIsExiting(false);
+
+  // 1. Iniciamos la salida un poco antes de borrarlo
+  setTimeout(() => {
+    setIsExiting(true);
+  }, 1000);
+
+  // 2. Finalmente lo borramos del DOM cuando termine la animación
+  setTimeout(() => {
+    setShowModal(false);
+    setIsExiting(false);
+  }, 1500);
+};
 
   const NAV_ITEMS = [
     { key: "home", section: "home" },
@@ -105,15 +123,21 @@ function Nav() {
         </div>
         <div className="nav3">
           <a href={link} target="_blank" rel="noopener noreferrer">
-            <img src="/project-icons/among-us-svgrepo-com.svg" alt="amongus" />
-          </a>
-          <a href={link} target="_blank" rel="noopener noreferrer">
             <img src="/project-icons/github-svgrepo-com.svg" alt="github" />
           </a>
+          <button onClick={handleCopy}>
+              <img src="/project-icons/fairemail-svgrepo-com.svg" alt="amongus" />
+          </button>
           <a href={link} target="_blank" rel="noopener noreferrer">
             <img src="/project-icons/linkedin-svgrepo-com.svg" alt="linkedin" />
           </a>
         </div>
+        {showModal && (
+        <div className={`copy-toast ${isExiting ? 'exit' : ''}`}>
+          <p>¡Correo copiado!</p>
+          <div className="progress-bar"></div>
+        </div>
+      )}
       </nav>
     </>
   );
