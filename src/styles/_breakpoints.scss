@@ -1,0 +1,26 @@
+@use "sass:map";
+
+$breakpoints: (
+  "mobile-lg": 600px,
+  "tablet":    880px,
+  "laptop":    1024px,
+  "desktop-sm": 1100px,
+  "desktop-lg": 1400px,
+  "desktop": 1600px,
+);
+
+@mixin respond-down($size) {
+  @if map.has-key($breakpoints, $size) {
+    @media (max-width: map.get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "El valor '#{$size}' no está definido en el mapa $breakpoints.";
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}

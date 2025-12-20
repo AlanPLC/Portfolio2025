@@ -54,7 +54,6 @@ body::-webkit-scrollbar-thumb {
   background-clip: content-box; 
 }
 
-/*utilizado por LoadingScreen*/
 .no-scroll {
   overflow: hidden !important; 
 }
