@@ -20,8 +20,8 @@ function App() {
         <BlobsBackground />
         <Nav />
         <Presentation />
-        <Experience />
         <About />
+        <Experience />
         <Projects />
         <Tools />
         <Footer />
