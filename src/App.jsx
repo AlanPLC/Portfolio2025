@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 import BlobsBackground from "./components/Background/BlobsBackground";
 import Nav from "./components/Navbar/Nav.jsx";

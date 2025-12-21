@@ -1,3 +1,5 @@
+@use "../../styles/breakpoints" as *;
+
 #about {
   scroll-margin-top: 8rem;
   position: relative;
@@ -10,15 +12,24 @@
     padding: 3rem;
     box-shadow: 0 8px 30px rgba(2, 6, 23, 0.45);
     backdrop-filter: blur(10px);
-    max-width: 800px;
+    max-width: 50rem;
     margin: 0 auto;
-    min-height: 400px;
+    min-height: 25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
+
+    @include respond-down("mobile-lg") {
+      padding: 1.5rem;
+      min-height: auto;
+    }
+
+    @include respond-down("mobile-l") {
+      max-width: 100%; 
+    }
 
     // --- ANILLOS PADRES ---
     &::before, &::after {
@@ -36,9 +47,38 @@
       mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
+
+      @include respond-down("desktop-lg") {
+        width: 180px;
+        height: 180px;
+      }
+
+      @include respond-down("desktop-md") {
+        display: none;
+      }
+
+      @include respond-down("desktop-sm") {
+        display: none;
+      }
     }
-    &::before { left: -330px; animation: techRotate 4s linear infinite, pulseGlow 4s ease-in-out infinite; }
-    &::after { right: -330px; animation: techRotate 4s linear infinite reverse, pulseGlow 4s ease-in-out infinite; }
+
+    &::before { 
+      left: -330px; 
+      animation: techRotate 4s linear infinite, pulseGlow 4s ease-in-out infinite; 
+      @include respond-down("desktop") { left: -290px; }
+      @include respond-down("desktop-l") { left: -250px; }
+      @include respond-down("desktop-lg") { left: -220px; }
+
+    }
+
+    &::after { 
+      right: -330px; 
+      animation: techRotate 4s linear infinite reverse, pulseGlow 4s ease-in-out infinite; 
+      @include respond-down("desktop") { right: -290px; }
+      @include respond-down("desktop-l") { right: -250px; }
+      @include respond-down("desktop-lg") { right: -220px; }
+
+    }
 
     // --- ANILLOS HIJOS ---
     .about-accordion::before, .about-accordion::after {
@@ -56,13 +96,41 @@
       mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
+      
+      @include respond-down("desktop-lg") {
+        width: 120px;
+        height: 120px;
+      }
+
+      @include respond-down("desktop-md") {
+        display: none;
+      }
+
+      @include respond-down("desktop-sm") {
+        display: none;
+      }
     }
-    .about-accordion::before { left: -290px; animation: techRotate 5s linear infinite reverse, pulseGlow 4s ease-in-out infinite; }
-    .about-accordion::after { right: -290px; animation: techRotate 5s linear infinite, pulseGlow 4s ease-in-out infinite; }
+
+    .about-accordion::before { 
+      left: -290px; 
+      animation: techRotate 5s linear infinite reverse, pulseGlow 4s ease-in-out infinite;
+      @include respond-down("desktop") { left: -250px; } 
+      @include respond-down("desktop-l") { left: -210px; }
+      @include respond-down("desktop-lg") { left: -190px; }
+    }
+
+    .about-accordion::after { 
+      right: -290px; 
+      animation: techRotate 5s linear infinite, pulseGlow 4s ease-in-out infinite;
+      @include respond-down("desktop") { right: -250px; }  
+      @include respond-down("desktop-l") { right: -210px; }
+      @include respond-down("desktop-lg") { right: -190px; }
+    }
   }
 
   .about-accordion {
     width: 100%;
+
     &-list {
       display: flex;
       flex-direction: column;
@@ -87,13 +155,26 @@
           gap: 1.5rem;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
+          @include respond-down("mobile-lg") {
+            font-size: 1.2rem;
+            gap: 1rem;
+          }
+
           .title-number {
             font-size: 0.9rem;
             color: var(--accent);
             opacity: 0.4;
             font-family: "JetBrains Mono", monospace;
           }
-          &:hover { color: #fff; transform: translateX(10px); }
+
+          &:hover { 
+            color: #fff; 
+          }
+        }
+
+        // --- HOVER CONDICIONAL ---
+        &:not(.active) .accordion-title:hover {
+          transform: translateX(10px);
         }
 
         .accordion-content {
@@ -106,12 +187,18 @@
             color: rgba(255, 255, 255, 0.8);
             line-height: 1.8;
             padding: 1.2rem 0 1rem 2.8rem;
+
+            @include respond-down("mobile-lg") {
+              padding: 1rem 0 0.5rem 2.2rem;
+              font-size: 0.95rem;
+            }
           }
 
           &::-webkit-scrollbar {
             width: 8px; 
             background-color: transparent;
           }
+
           &::-webkit-scrollbar-thumb {
             background-color: #ff4d4f; 
             border-radius: 10px;
@@ -155,19 +242,4 @@
 @keyframes techRotate {
   0% { transform: translateY(-50%) rotate(0deg); }
   100% { transform: translateY(-50%) rotate(360deg); }
-}
-
-@media (max-width: 1400px) {
-  #about .about-accordion-container {
-    &::before { left: -220px; width: 180px; height: 180px; }
-    &::after { right: -220px; width: 180px; height: 180px; }
-    .about-accordion::before { left: -190px; width: 120px; height: 120px; }
-    .about-accordion::after { right: -190px; width: 120px; height: 120px; }
-  }
-}
-
-@media (max-width: 1100px) {
-  #about .about-accordion-container {
-    &::before, &::after, .about-accordion::before, .about-accordion::after { display: none; }
-  }
 }

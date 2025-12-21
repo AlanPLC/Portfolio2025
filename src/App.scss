@@ -1,3 +1,5 @@
+@use "./styles/breakpoints" as *;
+
 :root {
   --accent: #ff4d4f;
   --accent-600: #e04345;
@@ -30,6 +32,26 @@ body {
   color: #fff;
   overflow-x: hidden;
   max-width: 100%;
+
+  @include respond-down("desktop-md") {
+    padding: 1rem 5rem;
+  }
+
+  @include respond-down("laptop") {
+    padding: 1rem 3rem;
+  }
+
+  @include respond-down("tablet") {
+    padding: 1rem 2rem;
+  }
+
+  @include respond-down("mobile-l") {
+    padding: 1rem 1.5rem;
+  }
+
+  @include respond-down("mobile-lg") {
+    padding: 1rem 1rem;
+  }
 }
 
 hr{

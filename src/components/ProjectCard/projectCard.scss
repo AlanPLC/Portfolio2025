@@ -34,20 +34,30 @@
 
   @include respond-down("laptop") {
     grid-template-columns: 1fr;
-    max-width: 700px;
-    padding: 1.5rem;
     gap: 1.5rem;
   }
 
-  @include respond-down("mobile-lg") {
-    width: 92%;
-    max-width: 22rem; 
-    padding: 1.2rem;
+
+  @include respond-down("tablet") {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 2rem;
+  }
+
+  @include respond-down("mobile-l") {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  @include respond-down("mobile-lg") {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
 
   // --- ELEMENTOS INTERNOS ---
@@ -63,6 +73,10 @@
 
     @include respond-down("laptop") {
       height: 300px;
+    }
+
+    @include respond-down("tablet") {
+      height: 200px;
     }
 
     @include respond-down("mobile-lg") {
@@ -128,6 +142,11 @@
     padding: 0;
     margin: 0;
 
+    @include respond-down("tablet") {
+      display: inline-block;
+      text-align: left;
+    }
+
     @include respond-down("mobile-lg") {
       display: inline-block;
       text-align: left;
@@ -160,11 +179,15 @@
     @include respond-down("tablet") {
       flex-direction: column;
       align-items: flex-start;
+      display: inline-block;
+      text-align: left;
     }
 
     @include respond-down("mobile-lg") {
-      align-items: center;
-      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      display: inline-block;
+      text-align: left;
     }
   }
 
