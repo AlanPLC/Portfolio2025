@@ -13,6 +13,7 @@
 
   "presentation": 
   {
+    "greeting": "Hello, I'm",
     "description": "I specialize in building fast, accessible, and well-designed web experiences. I work with React, Vite, and modern APIs. I'm interested in performance and pixel-perfect UX.",
     "role": ["Full Stack Developer"],
     "cvButton": "Download CV"

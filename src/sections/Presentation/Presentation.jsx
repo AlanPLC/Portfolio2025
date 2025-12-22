@@ -5,7 +5,7 @@ import "./presentation.scss";
 import { profile } from "../../data/staticData.js";
 
 export default function Presentation() {
-  const { greeting, name, avatar, links } = profile;
+  const { name, avatar, links } = profile;
   const { sectionsRefs } = useActiveSection()
   const { translation } = useLanguage();
 
@@ -13,7 +13,7 @@ export default function Presentation() {
     <section className="presentation" aria-labelledby="presentation-heading" id="home" ref={el => sectionsRefs.current["home"] = el}>
       <div className="presentation__card">
         <div className="presentation__left">
-          <p className="presentation__greeting">{greeting}</p>
+          <p className="presentation__greeting">{translation.presentation.greeting}</p>
           <h1 id="presentation-heading" className="presentation__name">
             {name}
           </h1>

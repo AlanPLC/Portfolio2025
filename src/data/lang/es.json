@@ -18,6 +18,7 @@
   },
 
   "presentation": {
+    "greeting": "Hola, soy",
     "description": "Me especializo en construir experiencias web rápidas, accesibles y con diseño cuidado. Trabajo con React, Vite y APIs modernas. Me interesa el rendimiento y la UX pixel-perfect.",
     "role": ["Desarrollador Full Stack"],
     "cvButton": "Descargar CV"

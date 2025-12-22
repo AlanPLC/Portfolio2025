@@ -6,7 +6,7 @@ import useLanguage from "../../contexts/useLanguage.js";
 import "./projects.scss"
 
 export default function Projects() {
-  const { translation } = useLanguage();
+  const { translation, lang } = useLanguage();
   const translatedProjects = translation.projects;
   const { sectionsRefs } = useActiveSection()
 
@@ -28,6 +28,7 @@ export default function Projects() {
                 desc={proj.description}
                 image={staticData.img}
                 techs={staticData.tech}
+                results={lang === "es" ? "Resultados Clave" : "Key Results"}
                 achievements={proj.achievements}
                 live={staticData.liveUrl}
                 code={staticData.codeUrl}

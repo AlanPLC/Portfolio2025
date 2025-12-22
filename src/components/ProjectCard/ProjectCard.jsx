@@ -9,6 +9,7 @@ export default function ProjectCard({
     techs = [], 
     live, 
     code,
+    results,
     achievements = []
 }) {
   return (
@@ -42,7 +43,7 @@ export default function ProjectCard({
 
             {/* LADO DERECHO: LOGROS Y METADATA */}
             <div className="project-card__right">
-                <h4 className="project-card__section-title">Resultados Clave</h4>
+                <h4 className="project-card__section-title">{results}</h4>
                 <ul className="project-card__achievements-list">
                     {achievements.map((item, index) => (
                         <li key={index}>

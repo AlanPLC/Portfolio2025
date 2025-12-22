@@ -120,7 +120,7 @@ function Nav() {
             ))}
           </ul>
           <span className="underline" style={underlineStyle}></span>
-        </div>
+        </div>  
         <div className="nav3">
           <a href={link} target="_blank" rel="noopener noreferrer">
             <img src="/project-icons/github-svgrepo-com.svg" alt="github" />
