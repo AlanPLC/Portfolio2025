@@ -29,7 +29,6 @@
   @include respond-down("desktop") {
     grid-template-columns: 280px 1fr;
     gap: 2rem;
-    max-width: 95%;
   }
 
   @include respond-down("laptop") {

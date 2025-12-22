@@ -19,12 +19,10 @@ function Nav() {
   setShowModal(true);
   setIsExiting(false);
 
-  // 1. Iniciamos la salida un poco antes de borrarlo
   setTimeout(() => {
     setIsExiting(true);
   }, 1000);
 
-  // 2. Finalmente lo borramos del DOM cuando termine la animación
   setTimeout(() => {
     setShowModal(false);
     setIsExiting(false);
@@ -33,8 +31,8 @@ function Nav() {
 
   const NAV_ITEMS = [
     { key: "home", section: "home" },
-    { key: "experience", section: "experience" },
     { key: "about", section: "about" },
+    { key: "experience", section: "experience" },
     { key: "projects", section: "projects" },
     { key: "tools", section: "tools" },
   ];

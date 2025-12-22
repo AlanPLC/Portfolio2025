@@ -1,5 +1,4 @@
 export const profile = {
-  greeting: "Hola, soy",
   name: "Nombre",
   avatar: "/assets/avatar.jpg",
   links: {

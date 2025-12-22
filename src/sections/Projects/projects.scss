@@ -1,11 +1,6 @@
 #projects {
     scroll-margin-top: 8rem;
-    width: 100vw;
     position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
 
     .projects {
         width: 100%;
@@ -14,7 +9,6 @@
         
         .projects-wrapper {
             width: 100%;
-            max-width: 1550px;
             display: flex;
             flex-direction: column;
             align-items: center;

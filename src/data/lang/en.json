@@ -5,8 +5,8 @@
 
   "sections":{
     "home": "Home",
-    "experience": "Experience",
     "about": "About me",
+    "experience": "Experience",
     "projects": "Projects",
     "tools": "Tools"
   },

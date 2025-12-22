@@ -2,8 +2,8 @@
   "nav": {
     "navItems": [
       "Inicio",
-      "Experiencia",
       "Sobre mí",
+      "Experiencia",
       "Proyectos",
       "Herramientas"
     ]
@@ -11,8 +11,8 @@
 
   "sections":{
     "home": "Inicio",
-    "experience": "Experiencia",
     "about": "Sobre mí",
+    "experience": "Experiencia",
     "projects": "Proyectos",
     "tools": "Herramientas"
   },
