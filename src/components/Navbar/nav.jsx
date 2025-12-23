@@ -15,6 +15,21 @@ function Nav() {
   const [isExiting, setIsExiting] = useState(false);
   const email = "tuemail@ejemplo.com";
 
+  const toggleMenu = () => {
+    if (!isOpen && window.scrollY > 10) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      const checkScroll = () => {
+        if (window.scrollY <= 10) {
+          setIsOpen(true);
+          window.removeEventListener("scroll", checkScroll);
+        }
+      };
+      window.addEventListener("scroll", checkScroll);
+    } else {
+      setIsOpen(!isOpen);
+    }
+  };
+
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
     setShowModal(true);
@@ -58,9 +73,13 @@ function Nav() {
   useEffect(() => {
     const handleScrollVisibility = () => {
       const currentScroll = window.scrollY;
+
+      if (isOpen && Math.abs(currentScroll - lastScroll) > 5) {
+        setIsOpen(false);
+      }
+
       if (currentScroll > lastScroll && currentScroll > 50) {
         setVisible(false);
-        setIsOpen(false); 
       } else {
         setVisible(true);
       }
@@ -69,14 +88,13 @@ function Nav() {
 
     window.addEventListener("scroll", handleScrollVisibility);
     return () => window.removeEventListener("scroll", handleScrollVisibility);
-  }, [lastScroll]);
+  }, [lastScroll, isOpen]);
 
   useEffect(() => {
     const activeItem = document.querySelector(`.nav2 ul li.active`);
     if (activeItem) {
       const rect = activeItem.getBoundingClientRect();
       const parentRect = activeItem.parentNode.getBoundingClientRect();
-
       setUnderlineStyle({
         width: rect.width,
         left: rect.left - parentRect.left,
@@ -84,20 +102,12 @@ function Nav() {
     }
   }, [active]);
 
-
   const handleScroll = (id) => {
+    setIsOpen(false);
     const section = sectionsRefs.current[id];
-    if (!section) return;
-
-    const closeNav = () => {
-      setVisible(true);
-      window.removeEventListener("scrollend", closeNav);
-    };
-
-    // Si el navegador soporta scrollend
-    window.addEventListener("scrollend", closeNav, { once: true });
-
-    section.scrollIntoView({ behavior: "smooth" });
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -110,8 +120,7 @@ function Nav() {
           </div>
           <p key={lang}>{lang === "es" ? "Español" : "English"}</p>
         </div>
-
-        <button className={`burger ${isOpen ? "active" : ""}`} onClick={() => setIsOpen(!isOpen)}>
+        <button className={`burger ${isOpen ? "active" : ""}`} onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>
