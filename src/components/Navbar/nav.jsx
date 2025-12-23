@@ -84,12 +84,20 @@ function Nav() {
     }
   }, [active]);
 
+
   const handleScroll = (id) => {
-    setIsOpen(false);
     const section = sectionsRefs.current[id];
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    if (!section) return;
+
+    const closeNav = () => {
+      setVisible(true);
+      window.removeEventListener("scrollend", closeNav);
+    };
+
+    // Si el navegador soporta scrollend
+    window.addEventListener("scrollend", closeNav, { once: true });
+
+    section.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

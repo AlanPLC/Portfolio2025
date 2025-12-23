@@ -7,7 +7,6 @@ body {
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   color: #ffffff;
   background: rgba(255, 255, 255, 0.04);
@@ -19,18 +18,20 @@ nav {
   border-radius: 12px;
   position: fixed;
   top: 1rem;
-  width: 80%;
+  width:75%;
   left: 50%;
   transform: translateX(-50%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease,
-    width 0.3s ease, border-radius 0.3s ease;
+  width 0.3s ease, border-radius 0.3s ease;
   z-index: 1000;
   user-select: none;
+  gap: 2rem;
 
   @include respond-down("tablet") {
     width: 90%;
     padding: 0.8rem 1.2rem;
     height: 2.5rem;
+    justify-content: space-between;
 
     &.menu-open {
       border-radius: 12px 12px 0 0;
@@ -45,6 +46,11 @@ nav {
     min-width: 8rem;
     cursor: pointer;
     z-index: 1002;
+
+    @include respond-down("tablet") {
+      min-width: auto; 
+      gap: 0;
+    }
 
     .icon-wrapper {
       position: relative;
@@ -91,8 +97,8 @@ nav {
       overflow: hidden;
       animation: typing 1.5s steps(12) forwards;
 
-      @include respond-down("mobile-lg") {
-        display: none;
+      @include respond-down("tablet") {
+        display: none !important;
       }
     }
   }
@@ -178,6 +184,7 @@ nav {
         transition: opacity 0.4s ease, transform 0.4s ease;
         transition-delay: 0s;
       }
+
   
       &.open ul li {
         font-size: 1.2rem;
@@ -209,6 +216,9 @@ nav {
         transition: all 0.3s ease;
         cursor: pointer;
         color: rgba(255, 255, 255, 0.6);
+         @include respond-down("laptop") {
+          font-size: 0.9rem;
+        }
   
         &:hover {
           color: #fff;
@@ -235,13 +245,15 @@ nav {
 
   .nav3 {
     display: flex;
-    align-items: center;
+    margin-left: auto;
     gap: 0.5rem;
+    align-items: center;
     z-index: 1002;
-    margin: auto;
+
 
     @include respond-down("tablet") {
       order:2;
+      margin-left: 0;
     }
 
     img {
@@ -262,25 +274,27 @@ nav {
 
   .copy-toast {
     position: absolute;
-    top: 4.5rem;
-    right: 0;
-    background: rgba(2, 6, 23, 0.9);
+    right: 1rem;
+    background: rgba(2, 6, 23);
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
+    border-radius: 5px;
     animation: slideIn 0.5s ease-out forwards;
+    z-index: 1003;
+    align-items: center;
+    p{
+      margin: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
     &.exit {
       animation: slideOut 0.5s ease-in forwards;
     }
     .progress-bar {
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      position: relative;
       height: 3px;
       background: #ff4d4f;
       width: 100%;
       animation: shrink 1.5s linear forwards;
+      border-radius: 0 0 5px 5px;
     }
   }
 }
