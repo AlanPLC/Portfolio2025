@@ -87,9 +87,21 @@
       "title": "My experience",
       "description": "I have worked on various fullstack projects..."
     },
-    "about3":{
-      "title": "My approach",
-      "description": "I like to create functional and modern interfaces..."
+    "about3": {
+      "title": "Education",
+      "isList": true,
+      "items": [
+        {
+          "title": "Systems Engineering",
+          "institution": "Technological University",
+          "year": "2020 - 2024"
+        },
+        {
+          "title": "Fullstack Web Development",
+          "institution": "CoderHouse",
+          "year": "2019"
+        }
+      ]
     }
   },
 

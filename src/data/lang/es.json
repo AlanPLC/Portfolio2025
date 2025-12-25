@@ -83,20 +83,31 @@
   },
 
   "about": {
-    "about1":{
-    "title": "Quién soy",
-    "description":
-      "Soy un desarrollador web con enfoque en frontend y mobile u perro amigo mira que yo nunca lloré por un tema igual no estoy llorando por el tema amigo osea me hizo re reflexionar una banda de cosas perro que yo capaz no me rescato este vago un fla amigo me hace pone pensar na amigo me hace poner pensar que ahora capaz cuando vuelva a mi casa yo voy a poder decir que tengo una isla del encanto con coscu amigo ue en frontend y mobile u perro amigo mira que yo nunca lloré por un tema igual no estoy llorando por el tema amigo osea me hizo re reflexionar una banda de cosas perro que yo capaz no me rescato este vago un fla amigo me hace pone pensar na amigo me hace poner pensar que ahora capaz cuando vuelva a mi casa yo voy a poder decir que tengo una isla del encanto con coscu amigo "
+    "about1": {
+      "title": "Quién soy",
+      "description": "Soy un desarrollador web con enfoque en frontend..."
     },
-    "about2":{
+    "about2": {
       "title": "Mi experiencia",
       "description": "He trabajado en diversos proyectos fullstack..."
     },
-    "about3":{
-      "title": "Mi enfoque",
-      "description": "Me gusta crear interfaces funcionales y modernas..."
+    "about3": {
+      "title": "Educación",
+      "isList": true,
+      "items": [
+        {
+          "title": "Ingeniería en Sistemas",
+          "institution": "Universidad Tecnológica",
+          "year": "2020 - 2024"
+        },
+        {
+          "title": "Fullstack Web Development",
+          "institution": "CoderHouse",
+          "year": "2019"
+        }
+      ]
     }
-  },
+},
 
   "projects": {
     "project1": {

@@ -47,6 +47,8 @@ export const projectsData = {
     img: "./projects-imgs/vector.png",
     tech: ["React", "Node", "MongoDB", "sql", "Docker"],
     impactLevel: 5,
+    liveUrl:"lol",
+    codeUrl:"lol",
   },
   project2: {
     img: "./projects-imgs/ecommerce.png",

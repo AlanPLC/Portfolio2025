@@ -33,11 +33,25 @@ export default function About() {
                 <div
                   className="accordion-content"
                   style={{
-                    maxHeight: active === index ? "180px" : "0px",
+                    maxHeight: active === index ? "400px" : "0px",
                     opacity: active === index ? 1 : 0,
                   }}
                 >
-                  <p>{item.description}</p>
+                  {item.isList ? (
+                    <div className="education-list">
+                      {item.items.map((edu, i) => (
+                        <div key={i} className="education-item">
+                          <div className="edu-header">
+                            <span className="edu-title">{edu.title}</span>
+                            <span className="edu-year">{edu.year}</span>
+                          </div>
+                          <p className="edu-institution">{edu.institution}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="description-text">{item.description}</p>
+                  )}
                 </div>
               </div>
             ))}
