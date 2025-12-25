@@ -43,14 +43,18 @@ body {
 
   @include respond-down("tablet") {
     padding: 1rem 2rem;
+    overflow-y: hidden;
   }
 
   @include respond-down("mobile-l") {
     padding: 1rem 1.5rem;
+    overflow-y: hidden;
   }
 
   @include respond-down("mobile-lg") {
     padding: 1rem 1rem;
+    overflow-y: hidden;
+
   }
 }
 

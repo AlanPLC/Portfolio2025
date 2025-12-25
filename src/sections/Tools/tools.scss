@@ -3,6 +3,9 @@
 
 #tools{
   scroll-margin-top: 8rem;
+  @include respond-down("tablet") {
+    scroll-margin-top: 22rem;
+    }
   .tools {
     padding: 6rem 0;
     display: flex;

@@ -1,9 +1,15 @@
+@use "../../styles/breakpoints" as *;
+
+
 :root{
   --accent: #ff4d4f;
 }
 
 #experience{
   scroll-margin-top: 8rem;
+  @include respond-down("tablet") {
+    scroll-margin-top: 22rem;
+    }
   .experience {
     padding: 2.25rem;
     background: transparent;
