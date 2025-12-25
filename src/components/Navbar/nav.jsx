@@ -90,17 +90,26 @@ function Nav() {
     return () => window.removeEventListener("scroll", handleScrollVisibility);
   }, [lastScroll, isOpen]);
 
-  useEffect(() => {
-    const activeItem = document.querySelector(`.nav2 ul li.active`);
-    if (activeItem) {
-      const rect = activeItem.getBoundingClientRect();
-      const parentRect = activeItem.parentNode.getBoundingClientRect();
-      setUnderlineStyle({
-        width: rect.width,
-        left: rect.left - parentRect.left,
-      });
-    }
-  }, [active]);
+useEffect(() => {
+    const updatePosition = () => {
+      const activeItem = document.querySelector(`.nav2 ul li.active`);
+      const navContainer = document.querySelector(".nav2");
+  
+      if (activeItem && navContainer) {
+        const rect = activeItem.getBoundingClientRect();
+        const parentRect = navContainer.getBoundingClientRect();
+        setUnderlineStyle({
+          width: rect.width,
+          left: rect.left - parentRect.left,
+        });
+      }
+    };
+
+    updatePosition();
+    window.addEventListener("resize", updatePosition); 
+
+    return () => window.removeEventListener("resize", updatePosition);
+}, [active, translation]); 
 
     const handleScroll = (id) => {
     const section = sectionsRefs.current[id];
@@ -120,7 +129,6 @@ function Nav() {
   return (
     <>
       <nav className={`${visible ? "nav show" : "nav hide"} ${isOpen ? "menu-open" : ""}`}>
-        <div className="left-nav">
           <div className="nav1" onClick={() => toogleLang()}>
             <div className="icon-wrapper">
               <img src="/project-icons/naver-dictionary-svgrepo-com.svg" className="icon icon-front" alt="lang" />
@@ -148,8 +156,6 @@ function Nav() {
             </ul>
             <span className="underline" style={underlineStyle}></span>
           </div>
-        </div>
-        <div className="right-nav">
           <div className="nav3">
             <a href={link} target="_blank" rel="noopener noreferrer">
               <img src="/project-icons/github-svgrepo-com.svg" alt="github" />
@@ -160,7 +166,6 @@ function Nav() {
             <a href={link} target="_blank" rel="noopener noreferrer">
               <img src="/project-icons/linkedin-svgrepo-com.svg" alt="linkedin" />
             </a>
-          </div>
 
           {showModal && (
             <div className={`copy-toast ${isExiting ? 'exit' : ''}`}>

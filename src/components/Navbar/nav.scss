@@ -8,58 +8,53 @@ nav {
   align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
   color: #ffffff;
-  height: 2.5rem;
   position: fixed;
+  padding: 0.2 0.5rem;
   top: 1rem;
-  width:80%;
   left: 50%;
   transform: translateX(-50%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease,
   width 0.3s ease, border-radius 0.3s ease;
   z-index: 1000;
   user-select: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
   
 
   @include respond-down("tablet") {
-    width: 90%;
-    padding: 0.8rem 1.2rem;
-    height: 2.5rem;
+    width: 100%;
+    padding: 0.4rem 2rem;
+    height: 2.5rem;;
     justify-content: space-between;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
 
     &.menu-open {
       border-radius: 12px 12px 0 0;
     }
   }
 
-  .left-nav{
-    display: flex;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    margin-top: auto;
-    justify-content: flex-start;
-    gap: 2rem;
 
     .nav1 {
+      padding: 0.5rem;
       display: flex;
-      gap: 0.5rem;
+      gap: 0.2rem;
       font-size: 1rem;
       align-items: center;
-      min-width: 8rem;
       cursor: pointer;
       z-index: 1002;
+      min-width: 7rem;
+
+      justify-content: center;
   
       @include respond-down("tablet") {
         min-width: auto; 
         gap: 0;
+        margin-left: 2rem;
       }
   
       .icon-wrapper {
@@ -100,12 +95,14 @@ nav {
       }
   
       p {
+  
         width: 0ch;
         margin: 0;
         letter-spacing: 0.1rem;
         white-space: nowrap;
         overflow: hidden;
-        animation: typing 1.5s steps(12) forwards;
+        animation: typing 1.5s steps(12) forwards;  
+        text-align: center;
   
         @include respond-down("tablet") {
           display: none !important;
@@ -114,16 +111,17 @@ nav {
     }
   
     .burger {
+      margin-right: 2rem;
       order:3;
       display: none;
       flex-direction: column;
       justify-content: space-around;
-      width: 1.8rem;
-      height: 1.2rem;
+      width: 40px;
+      height: 40px;
       background: transparent;
       border: none;
       cursor: pointer;
-      padding: 0;
+      padding: 0.5rem;
       z-index: 1002;
       span {
         width: 100%;
@@ -139,14 +137,15 @@ nav {
   
       &.active {
         span:nth-child(1) {
-          transform: translateY(6px) rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
+          
         }
         span:nth-child(2) {
           opacity: 0;
-          transform: translateX(-10px);
+          transform: translateX(8px);
         }
         span:nth-child(3) {
-          transform: translateY(-7px) rotate(-45deg);
+          transform: translateY(-8px) rotate(-45deg);
         }
       }
     }
@@ -154,18 +153,25 @@ nav {
   .nav2 {
       position: relative;
       display: flex;
+      display: flex;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      margin: auto;
+      width: 30rem;
       
+      @include respond-down("laptop") {
+        width: 22rem;
+        padding: 1rem 1rem;
+      }
       @include respond-down("tablet") {
         position: absolute;
-        top: 4.5rem; 
+        top: 3rem; 
         left: 0;
         width: 100%;
         flex-direction: column;
         align-items: center;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
         border-top: none;
         border-radius: 0 0 20px 20px;
         padding: 0;
@@ -182,10 +188,11 @@ nav {
         visibility 0.5s;
     
         &.open {
+          background: none;
           max-height: 500px;
           opacity: 1;
           visibility: visible;
-          padding: 2.5rem 0;
+          padding: 2rem 0;
           transform: scaleY(1) translateY(0);
         }
   
@@ -201,11 +208,15 @@ nav {
           font-size: 1.2rem;
           opacity: 1;
           transform: translateY(0);
+          text-align: center;
           @for $i from 1 through 6 {
             &:nth-child(#{$i}) {
               transition-delay: 0.1s + ($i * 0.05s);
             }
           }
+        }
+        &.open ul li:first-child {
+          display: none;
         }
   
       }
@@ -229,7 +240,7 @@ nav {
           text-wrap: nowrap;
           color: rgba(255, 255, 255, 0.6);
            @include respond-down("laptop") {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
           }
     
           &:hover {
@@ -244,11 +255,15 @@ nav {
   
       .underline {
         position: absolute;
-        bottom: -5px;
+        bottom: 10px;
         height: 2px;
         background: #ff4d4f;
         transition: all 0.3s ease;
         box-shadow: 0 0 10px rgba(255, 77, 79, 0.4);
+        @include respond-down("laptop") {
+          height: 1.5px;
+          bottom: 13px;
+        }
         @include respond-down("tablet") {
           display: none;
         }
@@ -256,36 +271,26 @@ nav {
     }
   }
 
-  .right-nav{
+    
+  .nav3 {
     display: flex;
-    background: none;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 1rem 2rem;
-    width: 100%;
-    height: 100%;
     align-items: center;
-    margin-top: auto;
-    justify-content: flex-start;
-    gap: 1rem;
+    z-index: 1002;
+    height: 100%;
+    background: none;
+    padding: 1rem 2rem;
+    height: 100%;
     
     @include respond-down("tablet") {
       order:2;
       margin-left: 0;
     }
-    .nav3 {
-      display: flex;
-      margin-left: auto;
-      gap: 0.5rem;
-      align-items: center;
-      z-index: 1002;
-      height: 100%;
-  
   
       img {
         transition: transform 0.3s ease;
         width: 1.5rem;
         cursor: pointer;
+        margin: auto;
         &:hover {
           transform: scale(1.2) rotate(5deg);
         }
@@ -323,8 +328,6 @@ nav {
         border-radius: 0 0 5px 5px;
       }
     }
-  }
-}
 
 nav.hide {
   transform: translate(-50%, -180%);

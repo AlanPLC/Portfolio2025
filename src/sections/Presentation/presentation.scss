@@ -17,6 +17,9 @@
   justify-content: center;
   background: transparent;
   margin-top: 4rem;
+  @include respond-down("tablet") {
+    margin-top: 0rem;
+  }
   &__card {
     width: min(var(--max-width), 96%);
     display: grid;
