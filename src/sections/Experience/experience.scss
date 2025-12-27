@@ -7,8 +7,8 @@
 
 #experience{
   scroll-margin-top: 8rem;
-  @include respond-down("tablet") {
-    scroll-margin-top: 22rem;
+ @include respond-down("tablet") {
+    scroll-margin-top: 26rem;
     }
   .experience {
     padding: 2.25rem;
