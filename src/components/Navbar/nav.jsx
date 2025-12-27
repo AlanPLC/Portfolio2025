@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./nav.scss";
 import useActiveSection from "../../contexts/useActiveSection.js";
 import useLanguage from "../../contexts/useLanguage.js";
+import { profile } from "../../data/staticData.js";
 
 function Nav() {
   const [visible, setVisible] = useState(true);
@@ -10,10 +11,8 @@ function Nav() {
   const { active, sectionsRefs } = useActiveSection();
   const [underlineStyle, setUnderlineStyle] = useState({});
   const { toogleLang, lang, translation } = useLanguage();
-  const link = "https://www.youtube.com/watch?v=QxqiI50WPoM";
   const [showModal, setShowModal] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
-  const email = "tuemail@ejemplo.com";
 
   const toggleMenu = () => {
     if (!isOpen && window.scrollY > 10) {
@@ -31,7 +30,7 @@ function Nav() {
   };
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(email);
+    navigator.clipboard.writeText(profile.links.contact);
     setShowModal(true);
     setIsExiting(false);
     setTimeout(() => setIsExiting(true), 1000);
@@ -157,13 +156,13 @@ useEffect(() => {
             <span className="underline" style={underlineStyle}></span>
           </div>
           <div className="nav3">
-            <a href={link} target="_blank" rel="noopener noreferrer">
+            <a href={profile.links.github} target="_blank" rel="noopener noreferrer">
               <img src="/project-icons/github-svgrepo-com.svg" alt="github" />
             </a>
             <button onClick={handleCopy}>
               <img src="/project-icons/fairemail-svgrepo-com.svg" alt="email" />
             </button>
-            <a href={link} target="_blank" rel="noopener noreferrer">
+            <a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">
               <img src="/project-icons/linkedin-svgrepo-com.svg" alt="linkedin" />
             </a>
 

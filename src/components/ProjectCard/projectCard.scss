@@ -175,6 +175,10 @@
     line-height: 1.6;
   }
 
+  .project-card__section-title{
+    font-size: var(--font-size-subtitulo);
+    font-weight: 600;
+  }
   &__achievements-list {
     list-style: none;
     padding: 0;
@@ -182,7 +186,7 @@
   
     li {
       position: relative;
-      font-size: 0.9rem;
+      font-size: var(--font-size-parrafo);
       color: #d0d0d0;
       margin-bottom: 0.6rem;
       line-height: 1.4;
