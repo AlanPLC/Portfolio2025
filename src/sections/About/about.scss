@@ -156,13 +156,13 @@
           background: none;
           border: none;
           cursor: pointer;
-          color: rgba(255, 255, 255, 0.4);
-          font-size: 1.25rem;
-          font-weight: 600;
+          color: rgba(255, 255, 255, 0.4);        
           display: flex;
           align-items: center;
           gap: 1.2rem;
           transition: all 0.3s ease;
+          font-size: var(--font-size-titulo);
+          font-weight: 600;
 
           @include respond-down("mobile-lg") {
             font-size: 1.1rem;
@@ -226,11 +226,11 @@
                 .edu-title {
                   font-weight: 600;
                   color: rgba(255, 255, 255, 0.9);
-                  font-size: 0.95rem;
+                  font-size: var(--font-size-subtitulo);
                 }
 
                 .edu-year {
-                  font-size: 0.75rem;
+                  font-size: var(--font-size-subtitulo);
                   color: var(--accent);
                   font-weight: 500;
                   letter-spacing: 0.5px;
@@ -238,7 +238,7 @@
               }
 
               .edu-institution {
-                font-size: 0.85rem;
+                font-size: var(--font-size-parrafo);
                 color: rgba(255, 255, 255, 0.4);
                 margin: 0;
               }

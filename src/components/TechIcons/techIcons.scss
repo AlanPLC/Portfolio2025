@@ -1,3 +1,5 @@
+@use "../../styles/breakpoints" as *;
+
 .tech-icons {
   display: flex;
   gap: 0.6rem;
@@ -9,23 +11,11 @@
   place-items: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 .tech-icons__pill {
   background: rgba(255, 255, 255, 0.03);
   padding: 0.25rem 0.5rem;
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: var(--font-size-parrafo);
   color: rgba(255, 255, 255, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.02); 
   

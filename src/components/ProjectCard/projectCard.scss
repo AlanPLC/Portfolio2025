@@ -164,14 +164,14 @@
 
   &__title {
     margin: 0 0 0.5rem;
-    font-size: 1.7rem;
+    font-size: var(--font-size-titulo);
     color: var(--accent);
   }
 
   &__desc {
     margin-bottom: 1.5rem;
     color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
+    font-size: var(--font-size-parrafo);
     line-height: 1.6;
   }
 
@@ -179,6 +179,7 @@
     font-size: var(--font-size-subtitulo);
     font-weight: 600;
   }
+  
   &__achievements-list {
     list-style: none;
     padding: 0;
