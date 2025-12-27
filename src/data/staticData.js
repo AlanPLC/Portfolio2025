@@ -7,6 +7,11 @@ export const profile = {
     github: "https://github.com/tu-usuario",
     linkedin: "https://www.linkedin.com/in/tu-usuario",
   },
+  stats: {
+    experience: "4+",
+    skills: "7+",
+    projects: "10+"
+  }
 };
 
 export const experienceData = {

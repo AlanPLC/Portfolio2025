@@ -19,6 +19,12 @@
     "cvButton": "Download CV"
   },
 
+  "stats": {
+    "experience": "Years of experience",
+    "skills": "Skills",
+    "projects": "Finished projects"
+  },
+
   "experience": {
     "experience1":{
       "role": "Full Stack Developer",
