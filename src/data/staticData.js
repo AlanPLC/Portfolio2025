@@ -3,7 +3,7 @@ export const profile = {
   avatar: "/assets/avatar.jpg",
   links: {
     cv: "/assets/CV-Simon.pdf",
-    contact: "mailto:simon@example.com",
+    contact: "simon@example.com",
     github: "https://github.com/tu-usuario",
     linkedin: "https://www.linkedin.com/in/tu-usuario",
   },
