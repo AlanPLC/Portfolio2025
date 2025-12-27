@@ -285,8 +285,8 @@ nav {
     height: 100%;
     background: none;
     padding: 1rem 2rem;
-    height: 100%;
-    
+    height: 80%;
+
     @include respond-down("tablet") {
       order:2;
       margin-left: 0;
@@ -303,6 +303,7 @@ nav {
       }
   
       button {
+        margin: auto;
         background: none;
         border: none;
         cursor: pointer;
@@ -310,28 +311,45 @@ nav {
     }
   
     .copy-toast {
+      display: flex;
       position: absolute;
-      right: 1rem;
-      background: rgba(2, 6, 23);
+      right: -10rem;
+      background: #ff4d4f;
       color: white;
       border-radius: 5px;
       animation: slideIn 0.5s ease-out forwards;
       z-index: 1003;
       align-items: center;
+      height: 3rem;
+      margin: auto;
+      @include respond-down("desktop-md") {
+        right: 0;
+
+       }
+       @include respond-down("tablet") {
+        right: 0;
+        left: 0;
+        margin: auto;
+        width: fit-content;
+       }
+
       p{
         margin: 0.5rem 1rem;
         font-size: 0.9rem;
+        text-align: center;
       }
       &.exit {
         animation: slideOut 0.5s ease-in forwards;
       }
       .progress-bar {
-        position: relative;
+        margin-top: 1rem;
+        position: absolute;
         height: 3px;
-        background: #ff4d4f;
+        background: white;
         width: 100%;
         animation: shrink 1.5s linear forwards;
         border-radius: 0 0 5px 5px;
+        align-self: flex-end;
       }
     }
 
@@ -355,21 +373,17 @@ nav.show {
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 @keyframes slideOut {
   from {
     opacity: 1;
-    transform: translateY(0);
   }
   to {
     opacity: 0;
-    transform: translateY(-10px);
   }
 }
 @keyframes shrink {

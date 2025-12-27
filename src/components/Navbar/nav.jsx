@@ -169,7 +169,7 @@ useEffect(() => {
 
           {showModal && (
             <div className={`copy-toast ${isExiting ? 'exit' : ''}`}>
-              <p>¡Correo copiado!</p>
+              <p>Correo Copiado</p>
               <div className="progress-bar"></div>
             </div>
           )}
