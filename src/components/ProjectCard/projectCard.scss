@@ -164,17 +164,19 @@
 
   &__title {
     margin: 0 0 0.5rem;
-    font-size: 1.7rem;
+    font-size: var(--font-size-titulo);
     color: var(--accent);
   }
 
   &__desc {
     margin-bottom: 1.5rem;
     color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
+    font-size: var(--font-size-parrafo);
     line-height: 1.6;
   }
-
+  h4{
+    font-size: var(--font-size-subtitulo);
+  }
   &__achievements-list {
     list-style: none;
     padding: 0;
@@ -182,7 +184,7 @@
   
     li {
       position: relative;
-      font-size: 0.9rem;
+      font-size: var(--font-size-parrafo);
       color: #d0d0d0;
       margin-bottom: 0.6rem;
       line-height: 1.4;
