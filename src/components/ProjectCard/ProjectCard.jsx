@@ -53,7 +53,7 @@ export default function ProjectCard({
                 <ul className="project-card__achievements-list">
                     {achievements.map((item, index) => (
                         <li key={index}>
-                            <span className="achievement-icon">⚡</span> {item}
+                            <span className="achievement-icon"></span> {item}
                         </li>
                     ))}
                 </ul>

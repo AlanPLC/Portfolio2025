@@ -67,7 +67,6 @@ export default function Tools() {
             {Object.entries(grouped).map(([category, items], index) => (
               <div key={index} className="tools-category">
                 <h3>{category}</h3>
-                <hr />
 
                 {items.map((tool) => {
                   const id = `${category}-${tool.id}`;
@@ -88,6 +87,7 @@ export default function Tools() {
                     </div>
                   );
                 })}
+                
               </div>
             ))}
           </div>

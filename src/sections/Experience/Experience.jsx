@@ -32,7 +32,7 @@ export default function Experience() {
                   {exp.achievements && exp.achievements.length > 0 && (
                     <ul className="achievements-list">
                       {exp.achievements.map((achievement, idx) => (
-                        <li key={idx}>⚡ {achievement}</li>
+                        <li key={idx}>{achievement}</li>
                       ))}
                     </ul>
                   )}

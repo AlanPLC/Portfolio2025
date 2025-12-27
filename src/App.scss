@@ -13,11 +13,10 @@
 
 body::selection {
   background: var(--accent-600);
-  
   color: #000000;
 }
 
-html{
+html {
   margin: 0;
   height: 100%;
   max-width: 100%;
@@ -32,6 +31,37 @@ body {
   color: #fff;
   overflow-x: hidden;
   max-width: 100%;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity:0.5;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: overlay;
+  }
+
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9998;
+    box-shadow: inset 0 0 0px rgba(255, 77, 79, 0);
+    background: radial-gradient(circle, transparent 60%, rgba(15, 23, 36, 0.3) 100%);
+    transition: box-shadow 0.3s ease;
+  }
+
+  &:active {
+    &::after {
+      box-shadow: inset 0 0 50px rgba(255, 77, 79, 0.15);
+    }
+  }
 
   @include respond-down("desktop-md") {
     padding: 1rem 5rem;
@@ -54,11 +84,10 @@ body {
   @include respond-down("mobile-lg") {
     padding: 1rem 1rem;
     overflow-y: hidden;
-
   }
 }
 
-hr{
+hr {
   margin: 2rem auto;
   width: 90%;
   background-color: #ffff;

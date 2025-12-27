@@ -178,20 +178,32 @@
   &__achievements-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0.5rem 0 0 0;
+  
     li {
+      position: relative;
+      font-size: 0.9rem;
+      color: #d0d0d0;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+      padding-left: 1.5rem;
       display: flex;
       align-items: flex-start;
-      gap: 0.6rem;
-      margin-bottom: 0.8rem;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7);
-      text-align: left;
-
-      .achievement-icon {
-        color: var(--accent);
-        font-size: 0.8rem;
-        margin-top: 2px;
+  
+      &::before {
+        content: "";
+        position: absolute;
+        margin-left: 0.5rem;
+        left: 0;
+        top: 0.4rem; 
+        width: 4px;
+        height: 4px;
+        background-color: var(--accent);
+        border-radius: 50%;
+        box-shadow: 
+          0 0 8px var(--accent), 
+          0 0 15px rgba(255, 77, 79, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
     }
   }

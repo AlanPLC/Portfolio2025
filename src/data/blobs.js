@@ -45,9 +45,9 @@ const BLOBS = [
     },
     {
       id: "b-5",
-      top: "80%",
-      left: "50%",
-      width: "90vmin",
+      top: "90%",
+      left: "10%",
+      width: "100vmin",
       height: "90vmin",
       speed: "-0.10",
       opacity: 0.88,
