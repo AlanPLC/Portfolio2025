@@ -9,7 +9,7 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 
   h3 {
-    font-size: 1.5rem;
+    font-size: var(--font-size-titulo);
     margin: 0;
     display: flex;
     align-items: baseline;
@@ -24,7 +24,7 @@ footer {
   }
 
   p {
-    font-size: 1rem;
+    font-size: var(--font-size-parrafo);
     margin: 0;
     color: var(--muted);
     white-space: nowrap;
