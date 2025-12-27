@@ -5,94 +5,96 @@ import useActiveSection from "../../contexts/useActiveSection.js"
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import TechIconsTools from "../../components/TechIcons/techIconsTools.jsx";
 import useLanguage from "../../contexts/useLanguage.js";
+import Reveal from "../../components/Reveal/Reveal.jsx";
 
 export default function Tools() {
   const progressRefs = useRef([]);
-  const { sectionsRefs } = useActiveSection()
+  const { setRef } = useActiveSection()
   const { translation } = useLanguage();
   const translatedTools = translation.tools;
 
-  // Agrupar herramientas por categoría
- const grouped = Object.entries(toolsData).reduce((acc, [toolId, staticInfo]) => {
-  const toolTranslation = translatedTools[toolId] || {};
+  const grouped = Object.entries(toolsData).reduce((acc, [toolId, staticInfo]) => {
+    const toolTranslation = translatedTools[toolId] || {};
+    const fullTool = {
+      id: toolId,
+      ...staticInfo,    
+      category: toolTranslation.category || "Otros"
+    };
+    const category = fullTool.category;
+    if (!acc[category]) acc[category] = [];
+    acc[category].push(fullTool);
+    return acc;
+  }, {});
 
-  const fullTool = {
-    id: toolId,
-    ...staticInfo,    
-    category: toolTranslation.category || "Otros"
-  };
-
-  const category = fullTool.category;
-  
-  if (!acc[category]) {
-    acc[category] = [];
-  }
-  
-  acc[category].push(fullTool);
-  
-  return acc;
-}, {});
-
-
-  //Observer para cada barra cambiando su tamaño según porcentaje cuando entra al vp
   useEffect(() => {
-  const allRefs = Object.values(progressRefs.current);
-  if (!allRefs.length) return;
+    const allRefs = Object.values(progressRefs.current);
+    if (!allRefs.length) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const percent = entry.target.style.getPropertyValue("--percent");
-          entry.target.style.width = percent;
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const percent = entry.target.style.getPropertyValue("--percent");
+            entry.target.style.width = percent;
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
 
-  allRefs.forEach((ref) => ref && observer.observe(ref));
-
-  return () => observer.disconnect();
-}, [grouped]);
+    allRefs.forEach((ref) => ref && observer.observe(ref));
+    return () => observer.disconnect();
+  }, [grouped]);
 
   return (
-    <>
-      <section ref={el => sectionsRefs.current["tools"] = el} id="tools">
+    <section ref={setRef("tools")} id="tools">
+      <Reveal sectionId="tools">
         <SectionTitle id="tools" title={translation.sections.tools} />
-        <section className="tools">
+      </Reveal>
+
+      <section className="tools">
+        {/* Envolvemos el contenedor principal para que aparezca suavemente */}
+        <Reveal sectionId="tools" delay={0.2}>
           <div className="progressbar-container">
-          
-            {Object.entries(grouped).map(([category, items], index) => (
-              <div key={index} className="tools-category">
-                <h3>{category}</h3>
+            {Object.entries(grouped).map(([category, items], catIndex) => (
+              <div key={catIndex} className="tools-category">
+                
+                {/* Reveal para el título de la categoría */}
+                <Reveal sectionId="tools" delay={0.3 + (catIndex * 0.1)}>
+                  <h3>{category}</h3>
+                </Reveal>
 
-                {items.map((tool) => {
+                {items.map((tool, toolIndex) => {
                   const id = `${category}-${tool.id}`;
-
                   return (
-                    <div className="tool-container" key={id}>
-                      <div className="tecnology-table">
-                        <TechIconsTools techs={tool.techs} className="techicons" />
-                      </div>
+                    /* Reveal para cada barra individual con delay acumulativo */
+                    <Reveal 
+                      key={id} 
+                      sectionId="tools" 
+                      delay={0.4 + (catIndex * 0.1) + (toolIndex * 0.05)}
+                    >
+                      <div className="tool-container">
+                        <div className="tecnology-table">
+                          <TechIconsTools techs={tool.techs} className="techicons" />
+                        </div>
 
-                      <div className="progressbar">
-                        <div
-                          className="inner-progressbar"
-                          style={{ "--percent": `${tool.percentage}%` }}
-                          ref={(el) => (progressRefs.current[id] = el)}
-                        ></div>
+                        <div className="progressbar">
+                          <div
+                            className="inner-progressbar"
+                            style={{ "--percent": `${tool.percentage}%` }}
+                            ref={(el) => (progressRefs.current[id] = el)}
+                          ></div>
+                        </div>
                       </div>
-                    </div>
+                    </Reveal>
                   );
                 })}
-                
               </div>
             ))}
           </div>
-        </section>
+        </Reveal>
       </section>
-    </>
+    </section>
   );
 }

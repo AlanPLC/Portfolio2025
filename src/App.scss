@@ -119,3 +119,26 @@ body::-webkit-scrollbar-thumb {
 html.no-scroll {
   overflow: hidden !important;
 }
+
+.reveal-wrapper {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  filter: blur(5px);
+  transition: 
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.8s ease;
+  will-change: transform, opacity;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+
+  &.stagger > * {
+    &:nth-child(1) { transition-delay: 0.1s; }
+    &:nth-child(2) { transition-delay: 0.2s; }
+    &:nth-child(3) { transition-delay: 0.3s; }
+  }
+}

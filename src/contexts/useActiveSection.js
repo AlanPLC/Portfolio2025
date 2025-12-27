@@ -1,6 +1,14 @@
-import { useContext } from "react"
-import ActiveSectionContext from "./activeSectionContext.jsx"
+import { useContext } from "react";
+import ActiveSectionContext from "./ActiveSectionContext";
 
-export default function useActiveSection(){
- return useContext(ActiveSectionContext)
-}
+const useActiveSection = () => {
+  const context = useContext(ActiveSectionContext);
+  
+  if (!context) {
+    throw new Error("useActiveSection debe usarse dentro de un ActiveSectionProvider");
+  }
+  
+  return context;
+};
+
+export default useActiveSection;
