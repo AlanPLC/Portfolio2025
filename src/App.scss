@@ -9,9 +9,9 @@
   --noise-opacity: 0.03;
   --blur-amount: 10px;
   --scroll: 0px;
-  --font-size-titulo: 1.6rem;
-  --font-size-subtitulo: 1.2rem;
-  --font-size-parrafo: 1rem;
+  --font-size-titulo: clamp(1.3rem, 3vw, 1.6rem);
+  --font-size-subtitulo: clamp(1.1rem, 2vw, 1.2rem);
+  --font-size-parrafo: clamp(0.95rem, 1vw, 1rem);
 }
 
 body::selection {
@@ -43,7 +43,7 @@ body {
     width: 100%;
     height: 100%;
     background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-    opacity:0.5;
+    opacity: 0.5;
     pointer-events: none;
     z-index: 9999;
     mix-blend-mode: overlay;
@@ -56,7 +56,11 @@ body {
     pointer-events: none;
     z-index: 9998;
     box-shadow: inset 0 0 0px rgba(255, 77, 79, 0);
-    background: radial-gradient(circle, transparent 60%, rgba(15, 23, 36, 0.3) 100%);
+    background: radial-gradient(
+      circle,
+      transparent 60%,
+      rgba(15, 23, 36, 0.3) 100%
+    );
     transition: box-shadow 0.3s ease;
   }
 
@@ -100,20 +104,20 @@ hr {
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-  width: 8px; 
+  width: 8px;
   background-color: transparent;
 }
 
 html::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb {
-  background-color: #ff4d4f; 
+  background-color: #ff4d4f;
   border-radius: 10px;
-  border: 2px solid transparent; 
-  background-clip: content-box; 
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 
 .no-scroll {
-  overflow: hidden !important; 
+  overflow: hidden !important;
 }
 
 html.no-scroll {
@@ -124,10 +128,8 @@ html.no-scroll {
   opacity: 0;
   transform: translateY(30px) scale(0.98);
   filter: blur(5px);
-  transition: 
-    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-    filter 0.8s ease;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
   will-change: transform, opacity;
 
   &.is-visible {
@@ -137,8 +139,14 @@ html.no-scroll {
   }
 
   &.stagger > * {
-    &:nth-child(1) { transition-delay: 0.1s; }
-    &:nth-child(2) { transition-delay: 0.2s; }
-    &:nth-child(3) { transition-delay: 0.3s; }
+    &:nth-child(1) {
+      transition-delay: 0.1s;
+    }
+    &:nth-child(2) {
+      transition-delay: 0.2s;
+    }
+    &:nth-child(3) {
+      transition-delay: 0.3s;
+    }
   }
 }
