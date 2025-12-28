@@ -29,6 +29,7 @@
     "experience1":{
       "role": "Full Stack Developer",
       "company": "Freelance Project",
+      "date": "Jan. 2022 - Present",
       "description":
         "Web application development using React, Node.js, and SQL/NoSQL databases. Performance improvement and UX optimization. Performance improvement and UX optimization.",
       "achievements": [
@@ -40,8 +41,9 @@
     "experience2":{
       "role": "E-commerce Platform Backend",
       "company": "Freelance Project",
+      "date": "Jan. 2022 - Present",
       "description":
-        "Full backend development for a scalable e-commerce platform, handling inventory, purchase orders, and payment gateways. Implementation of microservices to decouple business logic.",
+        "Complete backend development for a scalable e-commerce platform, handling inventory, purchase orders, and payment gateways. Implementation of microservices to decouple business logic.",
       "achievements": [
         "I designed and implemented a RESTful API for product and user management.",
         "Successful integration with Stripe for payment processing.",
@@ -51,6 +53,7 @@
     "experience3":{
       "role": "SaaS Analytics Dashboard (Frontend Focus)",
       "company": "Innovative Startup",
+      "date": "Jan. 2022 - Present",
       "description":
         "Creation of an advanced user interface for a data analytics SaaS product. Development of interactive real-time data visualizations and highly configurable table components.",
       "achievements": [
@@ -62,6 +65,7 @@
     "experience4":{
       "role": "Custom CMS Development",
       "company": "Agencia Digital",
+      "date": "Jan. 2022 - Present",
       "description":
         "Development of a custom Content Management System (CMS) for clients. The system allows dynamic content creation and publishing, with a powerful rich text editor.",
       "achievements": [
@@ -73,6 +77,7 @@
     "experience5": {
       "role": "Mobile Game API & Database",
       "company": "Indie Studio Collab",
+      "date": "Jan. 2022 - Present",
       "description":
         "Development of a backend API and database schema for a mobile multiplayer game. The system handles player data, game state, and real-time interactions.",
       "achievements": [

@@ -24,15 +24,15 @@ export default function Presentation() {
               <span className="presentation__role" aria-hidden="true">
                 {translation.presentation.role[0]}
               </span>
+              <a
+                className="btn btn--primary"
+                href={links.cv}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {translation.presentation.cvButton}
+              </a>
             </div>
-            <a
-              className="btn btn--primary"
-              href={links.cv}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {translation.presentation.cvButton}
-            </a>
           </div>
         </div>
 

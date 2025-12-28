@@ -31,7 +31,7 @@ export default function Experience() {
                     <div className="experience-details">
                       <h3>{exp.role}</h3>
                       <h4>{exp.company}</h4>
-                      <span className="experience-date">{staticExperience.date}</span>
+                      <span className="experience-date">{exp.date}</span>
                       <p>{exp.description}</p>
                       
                       {exp.achievements && exp.achievements.length > 0 && (
