@@ -16,31 +16,31 @@ export const profile = {
 
 export const experienceData = {
   experience1: {
-    // date: "Ene. 2022 - Presente",
+    date: "Ene. 2022 - Presente",
     img: "./projects-imgs/vector.png",
     tech: ["React", "Node", "MongoDB", "SQL", "Docker"],
     impactLevel: 5,
   },
   experience2:{
-    // date: "Jul. 2019 - Dic. 2021",
+    date: "Jul. 2019 - Dic. 2021",
     img: "./projects-imgs/ecommerce.png",
     tech: ["Express.js", "PostgreSQL", "Prisma", "AWS S3", "Redis"],
     impactLevel: 4,
   },
   experience3: {
-    // date: "Feb. 2018 - Jun. 2019",
+    date: "Feb. 2018 - Jun. 2019",
     img: "./projects-imgs/saas.png",
     tech: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Jest"],
     impactLevel: 3
   },
   experience4: {
-    // date: "Sep. 2017 - Ene. 2018",
+    date: "Sep. 2017 - Ene. 2018",
     img: "./projects-imgs/cms.png",
     tech: ["Next.js", "Strapi (Headless CMS)", "SQL", "Vercel", "Chakra UI"],
     impactLevel: 4,
   },
   experience5: {
-    // date: "Abr. 2017 - Ago. 2017",
+    date: "Abr. 2017 - Ago. 2017",
     img: "./projects-imgs/game.png",
     tech: ["Node.js", "AWS Lambda", "DynamoDB", "Serverless Framework", "Jest"],
     impactLevel: 2,
