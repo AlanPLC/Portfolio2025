@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Ignorar archivos de idioma específicos
+src/data/lang/en.json
+src/data/lang/es.json
+
+# Ignorar el archivo de datos estáticos
+src/data/staticData.js
