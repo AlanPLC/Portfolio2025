@@ -1,6 +1,6 @@
 import "./experience.scss";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
-import { experienceData } from "../../data/staticData.js"; 
+import { experienceData } from "../../data/dataSource.js";
 import useActiveSection from "../../contexts/useActiveSection.js"
 import useLanguage from "../../contexts/useLanguage.js";
 import Reveal from "../../components/Reveal/Reveal.jsx";

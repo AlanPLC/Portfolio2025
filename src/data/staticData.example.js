@@ -1,6 +1,6 @@
 export const profile = {
   name: "Alan",
-  avatar: "/projects-imgs/avatar.jpg",
+  avatar: "./projects-imgs/placeholder.png", 
   links: {
     cv: "/assets/CV-Simon.pdf",
     contact: "alancarrizo1017@gmail.com",
@@ -15,27 +15,25 @@ export const profile = {
 };
 
 export const experienceData = {
-  experience1:{
-    img: "./projects-imgs/vector.png",
-    tech: ["TypeScript", "Node.js", "Make ", "Webhooks", "WhatsApp Business API", "Docker"],
+  experience1: {
+    img: "./projects-imgs/placeholder.png", 
+    tech: ["TypeScript", "Node.js", "Make", "Webhooks", "WhatsApp Business API", "Docker"],
   },
 };
 
 export const projectsData = {
   project1: {
-    img: "./projects-imgs/minimarket.png",
+    img: "./projects-imgs/placeholder.png", 
     tech: ["React", "Node.js", "Vite", "MySQL", "Express.js"],
-    // liveUrl:"lol",
-    codeUrl:"https://github.com/AlanPLC/TP-Final-Lab.-IV",
+    codeUrl: "https://github.com/AlanPLC/TP-Final-Lab.-IV",
   },
   project2: {
-    img: "./projects-imgs/poke.png",
+    img: "./projects-imgs/placeholder.png", 
     tech: ["ReactNative", "Expo"],
-    codeUrl:"https://github.com/AlanPLC/Pokedex",
+    codeUrl: "https://github.com/AlanPLC/Pokedex",
   },
 };
 
-// "React", "Node.js", "Express", "Mysql", "ReactNative"
 export const toolsData = {
   react: {
     name: "React",

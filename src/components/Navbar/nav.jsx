@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./nav.scss";
 import useActiveSection from "../../contexts/useActiveSection.js";
 import useLanguage from "../../contexts/useLanguage.js";
-import { profile } from "../../data/staticData.js";
+import { profile } from "../../data/dataSource.js";
 
 function Nav() {
   const [visible, setVisible] = useState(true);

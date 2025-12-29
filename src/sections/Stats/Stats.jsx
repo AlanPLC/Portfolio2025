@@ -1,6 +1,6 @@
 import React from 'react';
 import useLanguage from "../../contexts/useLanguage.js";
-import { profile } from "../../data/staticData.js";
+import { profile } from "../../data/dataSource.js";
 import './stats.scss';
 
 const Stats = () => {

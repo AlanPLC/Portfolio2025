@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "navItems": ["Inicio", "Sobre mí", "Experiencia", "Proyectos", "Herramientas"]
+  },
+  "sections": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "tools": "Herramientas"
+  },
+  "presentation": {
+    "greeting": "Hola, soy",
+    "description": "Me especializo en construir experiencias web rápidas, accesibles y cuidadosamente diseñadas. Trabajo con React, Vite y APIs modernas. Me interesa el rendimiento y la escalabilidad en los proyectos.",
+    "role": ["Desarrollador Full Stack"],
+    "cvButton": "Descargar CV"
+  },
+  "stats": {
+    "experience": "Años de experiencia",
+    "skills": "Habilidades",
+    "projects": "Proyectos finalizados"
+  },
+  "experience": {
+    "experience1": {
+      "role": "Desarrollador de Chatbot",
+      "company": "Proyecto Freelance",
+      "date": "Jun. 2025 - Jul. 2025",
+      "description": "Desarrollo de un sistema automatizado de reservas y pagos vía WhatsApp para la barbería “El Bigote Siberiano”, almacenando datos en servicios de Google como Sheets y Calendar.",
+      "achievements": [
+        "Diseñé y desarrollé un ecosistema de reservas de punta a punta integrando WhatsApp Business API, Make y Google Workspace.",
+        "Implementé un motor de procesamiento de lenguaje natural en TypeScript para normalizar fechas y horas al formato ISO 8601.",
+        "Mejoré la tasa de éxito de las reservas migrando a un sistema de flujo lógico determinista, asegurando una captura de datos precisa."
+      ]
+    }
+  },
+  "about": {
+    "about1": {
+      "title": "Quién soy",
+      "description": "Soy un desarrollador web apasionado por crear aplicaciones intuitivas y de alto rendimiento. Disfruto resolviendo problemas complejos y aprendiendo constantemente nuevas tecnologías para mejorar mi flujo de trabajo."
+    },
+    "about2": {
+      "title": "Mi experiencia",
+      "description": "He trabajado en diversos proyectos fullstack, desde sistemas de gestión para negocios locales hasta aplicaciones móviles conectadas a APIs REST."
+    },
+    "about3": {
+      "title": "Educación",
+      "isList": true,
+      "items": [
+        {
+          "title": "Ingeniería en Sistemas",
+          "institution": "Universidad Tecnológica",
+          "year": "2020 - 2024"
+        },
+        {
+          "title": "Desarrollo Web Fullstack",
+          "institution": "CoderHouse",
+          "year": "2019"
+        }
+      ]
+    }
+  },
+  "projects": {
+    "project1": {
+      "role": "Desarrollador Full Stack - Sistema de Gestión",
+      "description": "Aplicación web integral para la gestión de minimercados, con seguimiento de inventario y sistema de punto de venta.",
+      "achievements": [
+        "Implementación de sistema RBAC seguro para permisos de usuario.",
+        "Backend robusto desarrollado en Node.js y MySQL.",
+        "Frontend moderno e intuitivo integrado con React."
+      ]
+    },
+    "project2": {
+      "role": "Desarrollador Mobile - Pokedex App",
+      "description": "Aplicación móvil conectada a PokeApi para explorar características detalladas de Pokémon.",
+      "achievements": [
+        "Arquitectura de integración con el servicio RESTful PokeApi.",
+        "Diseño de interfaz móvil optimizada para una UX de alta calidad.",
+        "Lógica de filtrado de datos en tiempo real."
+      ]
+    }
+  },
+  "tools": {
+    "react": { "category": "Librerías / Frameworks" },
+    "reactNative": { "category": "Librerías / Frameworks" },
+    "javascript": { "category": "Lenguajes" },
+    "mysql": { "category": "Bases de Datos" },
+    "nodejs": { "category": "Librerías / Frameworks" },
+    "git": { "category": "Control de Versiones" },
+    "python": { "category": "Lenguajes" }
+  },
+  "footer": {
+    "copyright": "Copyright © Todos los derechos reservados."
+  }
+}
