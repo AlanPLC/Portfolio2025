@@ -3,6 +3,7 @@
     "navItems": ["Home", "About me", "Experience", "Projects", "Tools"]
   },
   "sections": {
+
     "home": "Home",
     "about": "About me",
     "experience": "Experience",
@@ -10,85 +11,79 @@
     "tools": "Tools"
   },
   "presentation": {
-    "greeting": "Hello, I'm",
-    "description": "I specialise in building fast, accessible, and carefully designed web experiences. I work with React, Vite, and modern APIs. I am interested in performance and scalability in projects.",
-    "role": ["Full Stack Developer"],
-    "cvButton": "Download CV"
+    "greeting": "Hi, I am",
+    "description": "This is an example profile description. Replace this content by creating your own en.json file in the data folder.",
+    "role": ["Developer Placeholder"],
+    "cvButton": "View CV"
   },
+
   "stats": {
     "experience": "Years of experience",
     "skills": "Skills",
     "projects": "Finished projects"
   },
+  
   "experience": {
     "experience1": {
-      "role": "Chatbot developer",
-      "company": "Freelance Project",
-      "date": "Jun. 2025 - Jul. 2025",
-      "description": "Development of an automated booking and payment system via WhatsApp for the barbershop “El Bigote Siberiano”, storing data in Google services such as Sheets and Calendar.",
+      "role": "Example Role",
+      "company": "Example Inc.",
+      "date": "2024 - Present",
+      "description": "Example description of responsibilities and tasks performed in this position.",
       "achievements": [
-        "Designed and developed an end-to-end booking ecosystem integrating WhatsApp Business API, Make, and Google Workspace.",
-        "Implemented a natural language processing engine in TypeScript to normalise dates and times to ISO 8601 format.",
-        "Improved reservation success rate by migrating to a deterministic logical flow system, ensuring accurate data capture."
+        "First major achievement example",
+        "Second technical milestone example"
       ]
     }
   },
   "about": {
     "about1": {
       "title": "Who I am",
-      "description": "I am a dedicated web developer with a strong focus on creating intuitive and high-performance applications. I enjoy solving complex problems and constantly learning new technologies to improve my workflow."
+      "description": "This is a placeholder for your personal story. Tell the world who you are and what drives you."
     },
     "about2": {
       "title": "My experience",
-      "description": "I have worked on various fullstack projects, from management systems for local businesses to mobile applications powered by REST APIs."
+      "description": "Describe what you like about development and your professional interests."
     },
     "about3": {
       "title": "Education",
       "isList": true,
       "items": [
         {
-          "title": "Systems Engineering",
-          "institution": "Technological University",
-          "year": "2020 - 2024"
-        },
-        {
-          "title": "Fullstack Web Development",
-          "institution": "CoderHouse",
-          "year": "2019"
+          "title": "Example Degree",
+          "institution": "University Example",
+          "year": "2020"
         }
       ]
     }
   },
   "projects": {
     "project1": {
-      "role": "Full Stack Developer - Management System",
-      "description": "Comprehensive web application for grocery store management, featuring inventory tracking and a point-of-sale system.",
+      "role": "Project Alpha",
+      "description": "A placeholder project to show how your portfolio will look once you add real data.",
       "achievements": [
-        "Implemented secure RBAC for user permissions.",
-        "Engineered a robust Node.js and MySQL backend.",
-        "Integrated a modern and intuitive React frontend."
+        "Feature X implemented",
+        "Performance optimized by 20%"
       ]
     },
     "project2": {
-      "role": "Mobile Developer - Pokedex App",
-      "description": "Mobile application powered by PokeApi for exploring Pokémon characteristics.",
+      "role": "Project Beta",
+      "description": "Another example project demonstrating layout and structure.",
       "achievements": [
-        "Architected RESTful integration with PokeApi.",
-        "Designed optimized mobile interface for high-quality UX.",
-        "Implemented real-time data filtering logic."
+        "Integrated external API",
+        "Responsive design applied"
       ]
     }
   },
   "tools": {
-    "react": { "category": "Libraries / Frameworks" },
-    "reactNative": { "category": "Libraries / Frameworks" },
+    "react": { "category": "Frontend" },
+    "reactNative": { "category": "Mobile" },
     "javascript": { "category": "Languages" },
-    "mysql": { "category": "Databases" },
-    "nodejs": { "category": "Libraries / Frameworks" },
-    "git": { "category": "Version Control" },
+    "mysql": { "category": "Backend" },
+    "nodejs": { "category": "Backend" },
+    "git": { "category": "Tools" },
     "python": { "category": "Languages" }
   },
   "footer": {
-    "copyright": "Copyright © All rights reserved."
+    "copyright": "Copyright © 2025 Example User."
   }
 }

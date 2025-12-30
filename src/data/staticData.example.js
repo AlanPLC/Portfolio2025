@@ -1,80 +1,80 @@
 export const profile = {
-  name: "Alan",
+  name: "Example User",
   avatar: "./projects-imgs/placeholder.png", 
   links: {
-    cv: "/assets/CV-Simon.pdf",
-    contact: "alancarrizo1017@gmail.com",
-    github: "https://github.com/AlanPLC",
-    linkedin: "https://www.linkedin.com/in/alan-pablo-lautaro-carrizo-795968246/",
+    cv: "#",
+    contact: "example@mail.com",
+    github: "https://github.com/",
+    linkedin: "https://linkedin.com/",
   },
   stats: {
-    experience: "2+",
-    skills: "7+",
-    projects: "3+"
+    experience: "0",
+    skills: "0",
+    projects: "0"
   }
 };
 
 export const experienceData = {
   experience1: {
     img: "./projects-imgs/placeholder.png", 
-    tech: ["TypeScript", "Node.js", "Make", "Webhooks", "WhatsApp Business API", "Docker"],
+    tech: ["Tech A", "Tech B", "Tech C"],
   },
 };
 
 export const projectsData = {
   project1: {
     img: "./projects-imgs/placeholder.png", 
-    tech: ["React", "Node.js", "Vite", "MySQL", "Express.js"],
-    codeUrl: "https://github.com/AlanPLC/TP-Final-Lab.-IV",
+    tech: ["React", "Vite"],
+    codeUrl: "#",
   },
   project2: {
     img: "./projects-imgs/placeholder.png", 
-    tech: ["ReactNative", "Expo"],
-    codeUrl: "https://github.com/AlanPLC/Pokedex",
+    tech: ["JavaScript"],
+    codeUrl: "#",
   },
 };
 
 export const toolsData = {
   react: {
     name: "React",
-    complement: "Vite",
-    techs: ["React", "Vite"],
-    percentage: 90,
+    complement: "Framework",
+    techs: ["React"],
+    percentage: 50,
   },
   reactNative: {
-    name: "React Native",
-    complement: "Expo",
-    techs: ["R Native", "Expo"],
-    percentage: 60,
+    name: "Native",
+    complement: "Mobile",
+    techs: ["ReactNative"],
+    percentage: 40,
   },
   javascript: {
-    name: "Javascript",
-    complement: "",
+    name: "JS",
+    complement: "ES6",
     techs: ["Javascript"],
-    percentage: 80,
+    percentage: 70,
   },
   mysql: {
-    name: "MySQL",
-    complement: "",
+    name: "SQL",
+    complement: "Database",
     techs: ["MySQL"],
-    percentage: 60,
+    percentage: 30,
   },
   nodejs: {
-    name: "NodeJS",
-    complement: "Express",
-    techs: ["NodeJS", "Express"],
-    percentage: 65,
+    name: "Node",
+    complement: "Backend",
+    techs: ["NodeJS"],
+    percentage: 45,
   },
   git: {
-    name: "GIT",
-    complement: "Github",
-    techs: ["GIT", "Github"],
-    percentage: 100,
+    name: "Git",
+    complement: "VCS",
+    techs: ["GIT"],
+    percentage: 80,
   },
   python: {
     name: "Python",
-    complement: "PyQT",
-    techs: ["Python", "PyQT"],
-    percentage: 40,
+    complement: "Scripting",
+    techs: ["Python"],
+    percentage: 20,
   }
 };

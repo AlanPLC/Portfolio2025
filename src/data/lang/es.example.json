@@ -3,6 +3,7 @@
     "navItems": ["Inicio", "Sobre mí", "Experiencia", "Proyectos", "Herramientas"]
   },
   "sections": {
+
     "home": "Inicio",
     "about": "Sobre mí",
     "experience": "Experiencia",
@@ -11,84 +12,78 @@
   },
   "presentation": {
     "greeting": "Hola, soy",
-    "description": "Me especializo en construir experiencias web rápidas, accesibles y cuidadosamente diseñadas. Trabajo con React, Vite y APIs modernas. Me interesa el rendimiento y la escalabilidad en los proyectos.",
-    "role": ["Desarrollador Full Stack"],
-    "cvButton": "Descargar CV"
+    "description": "Esta es una descripción de perfil de ejemplo. Reemplaza este contenido creando tu propio archivo es.json en la carpeta data.",
+    "role": ["Programador de Ejemplo"],
+    "cvButton": "Ver CV"
   },
+  
   "stats": {
     "experience": "Años de experiencia",
-    "skills": "Habilidades",
-    "projects": "Proyectos finalizados"
+    "skills": "Skills",
+    "projects": "Proyectos terminados"
   },
+
   "experience": {
     "experience1": {
-      "role": "Desarrollador de Chatbot",
-      "company": "Proyecto Freelance",
-      "date": "Jun. 2025 - Jul. 2025",
-      "description": "Desarrollo de un sistema automatizado de reservas y pagos vía WhatsApp para la barbería “El Bigote Siberiano”, almacenando datos en servicios de Google como Sheets y Calendar.",
+      "role": "Rol de Ejemplo",
+      "company": "Empresa S.A.",
+      "date": "2024 - Actualidad",
+      "description": "Descripción de ejemplo sobre las responsabilidades y tareas realizadas en este puesto.",
       "achievements": [
-        "Diseñé y desarrollé un ecosistema de reservas de punta a punta integrando WhatsApp Business API, Make y Google Workspace.",
-        "Implementé un motor de procesamiento de lenguaje natural en TypeScript para normalizar fechas y horas al formato ISO 8601.",
-        "Mejoré la tasa de éxito de las reservas migrando a un sistema de flujo lógico determinista, asegurando una captura de datos precisa."
+        "Ejemplo de primer logro importante",
+        "Ejemplo de hito técnico alcanzado"
       ]
     }
   },
   "about": {
     "about1": {
       "title": "Quién soy",
-      "description": "Soy un desarrollador web apasionado por crear aplicaciones intuitivas y de alto rendimiento. Disfruto resolviendo problemas complejos y aprendiendo constantemente nuevas tecnologías para mejorar mi flujo de trabajo."
+      "description": "Este es un espacio para tu historia personal. Cuéntale al mundo quién eres y qué te motiva."
     },
     "about2": {
       "title": "Mi experiencia",
-      "description": "He trabajado en diversos proyectos fullstack, desde sistemas de gestión para negocios locales hasta aplicaciones móviles conectadas a APIs REST."
+      "description": "Describe qué es lo que más te gusta del desarrollo y tus intereses profesionales."
     },
     "about3": {
       "title": "Educación",
       "isList": true,
       "items": [
         {
-          "title": "Ingeniería en Sistemas",
-          "institution": "Universidad Tecnológica",
-          "year": "2020 - 2024"
-        },
-        {
-          "title": "Desarrollo Web Fullstack",
-          "institution": "CoderHouse",
-          "year": "2019"
+          "title": "Título de Ejemplo",
+          "institution": "Universidad Ejemplo",
+          "year": "2020"
         }
       ]
     }
   },
   "projects": {
     "project1": {
-      "role": "Desarrollador Full Stack - Sistema de Gestión",
-      "description": "Aplicación web integral para la gestión de minimercados, con seguimiento de inventario y sistema de punto de venta.",
+      "role": "Proyecto Alfa",
+      "description": "Un proyecto de ejemplo para mostrar cómo se verá tu portafolio cuando añadas datos reales.",
       "achievements": [
-        "Implementación de sistema RBAC seguro para permisos de usuario.",
-        "Backend robusto desarrollado en Node.js y MySQL.",
-        "Frontend moderno e intuitivo integrado con React."
+        "Funcionalidad X implementada",
+        "Rendimiento optimizado en un 20%"
       ]
     },
     "project2": {
-      "role": "Desarrollador Mobile - Pokedex App",
-      "description": "Aplicación móvil conectada a PokeApi para explorar características detalladas de Pokémon.",
+      "role": "Proyecto Beta",
+      "description": "Otro proyecto de ejemplo que demuestra la estructura y el diseño.",
       "achievements": [
-        "Arquitectura de integración con el servicio RESTful PokeApi.",
-        "Diseño de interfaz móvil optimizada para una UX de alta calidad.",
-        "Lógica de filtrado de datos en tiempo real."
+        "Integración de API externa",
+        "Diseño responsive aplicado"
       ]
     }
   },
   "tools": {
-    "react": { "category": "Librerías / Frameworks" },
-    "reactNative": { "category": "Librerías / Frameworks" },
+    "react": { "category": "Frontend" },
+    "reactNative": { "category": "Mobile" },
     "javascript": { "category": "Lenguajes" },
-    "mysql": { "category": "Bases de Datos" },
-    "nodejs": { "category": "Librerías / Frameworks" },
-    "git": { "category": "Control de Versiones" },
+    "mysql": { "category": "Backend" },
+    "nodejs": { "category": "Backend" },
+    "git": { "category": "Herramientas" },
     "python": { "category": "Lenguajes" }
   },
   "footer": {
-    "copyright": "Copyright © Todos los derechos reservados."
+    "copyright": "Copyright © 2025 Usuario Ejemplo."
   }
 }
