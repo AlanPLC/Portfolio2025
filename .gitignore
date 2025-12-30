@@ -29,3 +29,6 @@ src/data/lang/es.json
 
 # Ignorar el archivo de datos estáticos
 src/data/staticData.js
+
+# Ignorar imagenes personales
+public/projects-imgs
