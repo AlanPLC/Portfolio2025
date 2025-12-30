@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "navItems": [
+      "Inicio",
+      "Sobre mí",
+      "Experiencia",
+      "Proyectos",
+      "Herramientas"
+    ]
+  },
+
+  "sections":{
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "tools": "Herramientas"
+  },
+
+  "presentation": {
+    "greeting": "Hola, soy",
+    "description": "Me especializo en construir experiencias web rápidas, accesibles y con diseño cuidado. Trabajo con React, Vite y APIs modernas. Me interesa el rendimiento y la escalabilidad en proyectos.",
+    "role": ["Desarrollador Full Stack"],
+    "cvButton": "Descargar CV"
+  },
+
+  "stats": {
+    "experience": "Años de experiencia",
+    "skills": "Skills",
+    "projects": "Proyectos terminados"
+  },
+
+  "experience": {
+    "experience1":{
+      "role": "Desarrollador de Chatbot",
+      "company": "Proyecto Freelance",
+      "date": "Jun. 2025 - Jul. 2025",
+      "description":
+        "Desarrollo de un sistema automatizado de reservas y cobros por WhatsApp para la barbería “El Bigote Siberiano“, almacenando datos en servicios de Google como Sheets y Calendar. Proyecto pausado en etapa implementación de Mercado Pago API por pedido del cliente.",
+      "achievements": [
+        "Diseñé y desarrollé un ecosistema de reservas end-to-end integrando la API de WhatsApp Business, Make y Google Workspace, automatizando el flujo de agenda y reduciendo la carga administrativa de la barbería.",
+        "Implementé un motor de procesamiento de lenguaje natural en TypeScript para normalizar fechas y horarios al formato ISO 8601 (DD/MM/YYYY HH:mm:ss)",
+        "Mejoré la tasa de éxito de las reservas migrando de un modelo de IA generativa inestable a un sistema de flujo lógico determinista, eliminando errores de interpretación y asegurando una captura de datos precisa."
+      ]
+    }
+  },
+
+  "about": {
+    "about1": {
+      "title": "Quién soy",
+      "description": "Procedente de La Rioja, Argentina; Aficionado a la tecnología desde niño, incursionando en la informática y posteriormente en la programación con el sueño de algún día poder crear Videojuegos."
+    },
+    "about2": {
+      "title": "Mi experiencia",
+      "description": "Desarrollador Full Stack con enfoque en la automatización de procesos y optimización de la experiencia de usuario. He liderado el diseño y ejecución de soluciones personalizadas para clientes reales, destacando el desarrollo de sistemas de agendamiento inteligente mediante la integración de APIs y lógica en TypeScript. Me apasiona transformar necesidades de negocio en herramientas tecnológicas escalables y estoy listo para aportar mi capacidad técnica en un entorno profesional a tiempo completo."
+    },
+    "about3": {
+      "title": "Educación",
+      "isList": true,
+      "items": [
+        {
+          "title": "Técnico en reparaciones de equipos e instalaciones electromecánicas",
+          "institution": "E.P.E.T. Nº2",
+          "year": "2014 - 2019"
+        },
+        {
+          "title": "Técnico en reparación de celulares",
+          "institution": "Instituto educativo Charles Babbage",
+          "year": "2019"
+        },
+        {
+          "title": "Técnico universitario en programación",
+          "institution": "Universidad Tecnológica Nacional",
+          "year": "2022 - 2024"
+        }
+      ]
+    }
+},
+
+  "projects": {
+    "project1": {
+      "role": "Desarrollador Full Stack en Sistema de gestión de minimarket",
+      "description": "Desarrollo de mi proyecto final universitario, una aplicación web para la gestión integral de un minimarket, permitiendo gestionar inventario, proveedores y generar la venta con su respectivo ticket.",
+      "achievements": [
+        "Implementé sistema login con distintos roles y acciones según el mismo",
+        "Diseñé un backend eficiente con Node.js y MySQL, junto con un front-end atractivo utilizando React",
+        "Enfaticé en seguridad y manejo de datos sensibles"
+      ]
+    },
+    "project2": {
+      "role": "Desarrollador Mobile en Pokedex",
+      "description": "Desarrollo de aplicación móvil de Pokedex utilizando PokeApi, permitiendo la búsqueda y visualización de las características de cada Pokemon.",
+      "achievements": [
+        "Desarrollé la arquitectura de integración con la RESTful API (PokeApi), gestionando estados de carga y errores",
+        "Diseñé una interfaz movil limpia y optimizada para una mejor experiencia de usuario",
+        "Implementé una lógica de filtrado y normalización de datos en tiempo real"
+      ]
+    }
+  },
+
+  "tools": {
+  "react": { "category": "Librerías / Frameworks" },
+  "reactNative": { "category": "Librerías / Frameworks" },
+  "javascript": { "category": "Lenguajes" },
+  "mysql": { "category": "Bases de Datos" },
+  "nodejs": { "category": "Librerías / Frameworks" },
+  "git": { "category": "Control de Versiones" },
+  "python": { "category": "Lenguajes" }
+},
+
+  "footer": {
+    "copyright": "Copyright © Todos los derechos reservados."
+  }
+}
