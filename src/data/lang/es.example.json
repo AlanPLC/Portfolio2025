@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "navItems": ["Inicio", "Sobre mí", "Experiencia", "Proyectos", "Herramientas"]
+  },
+  "sections": {
+
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "tools": "Herramientas"
+  },
+  "presentation": {
+    "greeting": "Hola, soy",
+    "description": "Esta es una descripción de perfil de ejemplo. Reemplaza este contenido creando tu propio archivo es.json en la carpeta data.",
+    "role": ["Programador de Ejemplo"],
+    "cvButton": "Ver CV"
+  },
+  
+  "stats": {
+    "experience": "Años de experiencia",
+    "skills": "Skills",
+    "projects": "Proyectos terminados"
+  },
+
+  "experience": {
+    "experience1": {
+      "role": "Rol de Ejemplo",
+      "company": "Empresa S.A.",
+      "date": "2024 - Actualidad",
+      "description": "Descripción de ejemplo sobre las responsabilidades y tareas realizadas en este puesto.",
+      "achievements": [
+        "Ejemplo de primer logro importante",
+        "Ejemplo de hito técnico alcanzado"
+      ]
+    }
+  },
+  "about": {
+    "about1": {
+      "title": "Quién soy",
+      "description": "Este es un espacio para tu historia personal. Cuéntale al mundo quién eres y qué te motiva."
+    },
+    "about2": {
+      "title": "Mi experiencia",
+      "description": "Describe qué es lo que más te gusta del desarrollo y tus intereses profesionales."
+    },
+    "about3": {
+      "title": "Educación",
+      "isList": true,
+      "items": [
+        {
+          "title": "Título de Ejemplo",
+          "institution": "Universidad Ejemplo",
+          "year": "2020"
+        }
+      ]
+    }
+  },
+  "projects": {
+    "project1": {
+      "role": "Proyecto Alfa",
+      "description": "Un proyecto de ejemplo para mostrar cómo se verá tu portafolio cuando añadas datos reales.",
+      "achievements": [
+        "Funcionalidad X implementada",
+        "Rendimiento optimizado en un 20%"
+      ]
+    },
+    "project2": {
+      "role": "Proyecto Beta",
+      "description": "Otro proyecto de ejemplo que demuestra la estructura y el diseño.",
+      "achievements": [
+        "Integración de API externa",
+        "Diseño responsive aplicado"
+      ]
+    }
+  },
+  "tools": {
+    "react": { "category": "Frontend" },
+    "reactNative": { "category": "Mobile" },
+    "javascript": { "category": "Lenguajes" },
+    "mysql": { "category": "Backend" },
+    "nodejs": { "category": "Backend" },
+    "git": { "category": "Herramientas" },
+    "python": { "category": "Lenguajes" }
+  },
+  "footer": {
+    "copyright": "Copyright © 2025 Usuario Ejemplo."
+  }
+}

@@ -2,7 +2,7 @@ import React from "react";
 import useActiveSection from "../../contexts/useActiveSection.js"
 import useLanguage from "../../contexts/useLanguage.js";
 import "./presentation.scss";
-import { profile } from "../../data/staticData.js";
+import { profile } from "../../data/dataSource.js";
 
 export default function Presentation() {
   const { name, avatar, links } = profile;

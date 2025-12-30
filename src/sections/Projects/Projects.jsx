@@ -1,4 +1,4 @@
-import { projectsData } from "../../data/staticData.js";
+import { projectsData } from "../../data/dataSource.js";
 import useActiveSection from "../../contexts/useActiveSection.js";
 import ProjectCard from "../../components/ProjectCard/ProjectCard.jsx";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";

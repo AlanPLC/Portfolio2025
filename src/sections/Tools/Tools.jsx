@@ -1,6 +1,6 @@
 import "./tools.scss";
 import { useEffect, useRef } from "react";
-import { toolsData } from "../../data/staticData.js";
+import { toolsData } from "../../data/dataSource.js";
 import useActiveSection from "../../contexts/useActiveSection.js"
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
 import TechIconsTools from "../../components/TechIcons/techIconsTools.jsx";
