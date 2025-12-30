@@ -11,12 +11,12 @@ const ICON_MAP = {
 };
 
 /**
- * Componente modular para el título de la sección.
- * Se centra y aplica un estilo de tarjeta de vidrio esmerilado.
- * * @param {string} title - El texto del título (e.g., "Proyectos").
- * @param {string} [iconPath] - Ruta opcional al archivo de ícono SVG o PNG. 
- * Si se proporciona, anula la selección automática.
- * @param {string} [iconAlt] - Texto alternativo para el ícono.
+ * Componente modular para el título de la sección
+ * Se centra y aplica un estilo de tarjeta de vidrio esmerilado
+ * * @param {string} title - El texto del título (e.g., "Proyectos")
+ * @param {string} [iconPath] - Ruta opcional al archivo de ícono SVG o PNG.
+ * Si se proporciona, anula la selección automática
+ * @param {string} [iconAlt] - Texto alternativo para el ícono
  */
 const SectionTitle = ({ id, title, iconPath, iconAlt = "Section Icon" }) => {
 
