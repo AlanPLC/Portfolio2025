@@ -2,7 +2,7 @@ export const profile = {
   name: "Alan",
   avatar: "/projects-imgs/avatar.jpg",
   links: {
-    cv: "/assets/CV-Simon.pdf",
+    cv: "CV.pdf",
     contact: "alancarrizo1017@gmail.com",
     github: "https://github.com/AlanPLC",
     linkedin: "https://www.linkedin.com/in/alan-pablo-lautaro-carrizo-795968246/",
