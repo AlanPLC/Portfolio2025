@@ -125,7 +125,7 @@
     line-height: 1.6;
     max-width: 60ch;
     opacity: 0.95;
-
+    white-space: pre-line;
     @include respond-down("tablet-l") {
       max-width: 90ch;
       margin-inline: auto;

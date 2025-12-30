@@ -124,12 +124,13 @@
             margin-top: 1rem;
   
             .tech-tag {
-              background-color: rgba(255, 98, 0, 0.15); // Fondo semitransparente naranja
-              color: #ff6200; // Texto naranja
+              background-color: rgba(255, 98, 0, 0.15);
+              color: #ff6200;
               padding: 0.3em 0.7em;
               border-radius: 4px;
               font-size: 0.8rem;
-              white-space: nowrap; // Evita que el texto se rompa
+              white-space: nowrap;
+              user-select: none;
             }
           }
         }

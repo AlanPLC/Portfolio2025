@@ -30,6 +30,7 @@ export default function Projects() {
               >
                 <ProjectCard
                   title={proj.role}
+                  company={proj.company}
                   desc={proj.description}
                   image={staticData.img}
                   techs={staticData.tech}

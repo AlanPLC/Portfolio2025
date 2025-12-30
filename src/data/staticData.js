@@ -1,23 +1,22 @@
 export const profile = {
-  name: "Nombre",
-  avatar: "/assets/avatar.jpg",
+  name: "Simón",
+  avatar: "/avatar.jpg",
   links: {
     cv: "/assets/CV-Simon.pdf",
-    contact: "simon@example.com",
-    github: "https://github.com/tu-usuario",
+    contact: "simisantarelli@gmail.com",
+    github: "https://github.com/saiisanta",
     linkedin: "https://www.linkedin.com/in/tu-usuario",
   },
   stats: {
-    experience: "4+",
+    experience: "2+",
     skills: "7+",
-    projects: "10+"
+    projects: "4+"
   }
 };
 
 export const experienceData = {
-  experience1:{
-    img: "./projects-imgs/vector.png",
-    tech: ["React", "Node", "MongoDB", "SQL", "Docker"],
+  experience1: {
+    tech: ["React Vite", ".NET", "ASP.NET", "SQL Server", "UML"],
     impactLevel: 5,
   },
   experience2:{
@@ -25,96 +24,108 @@ export const experienceData = {
     tech: ["Express.js", "PostgreSQL", "Prisma", "AWS S3", "Redis"],
     impactLevel: 4,
   },
-  experience3: {
-    img: "./projects-imgs/saas.png",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Jest"],
-    impactLevel: 3
-  },
-  experience4: {
-    img: "./projects-imgs/cms.png",
-    tech: ["Next.js", "Strapi (Headless CMS)", "SQL", "Vercel", "Chakra UI"],
-    impactLevel: 4,
-  },
-  experience5: {
-    img: "./projects-imgs/game.png",
-    tech: ["Node.js", "AWS Lambda", "DynamoDB", "Serverless Framework", "Jest"],
-    impactLevel: 2,
-  },
 };
 
 export const projectsData = {
   project1: {
-    img: "./projects-imgs/vector.png",
-    tech: ["React", "Node", "MongoDB", "sql", "Docker"],
+    img: "./projects-imgs/highfit.svg",
+    tech: ["React Vite", ".NET", "ASP.NET", "SQL Server", "UML"],
     impactLevel: 5,
-    liveUrl:"lol",
-    codeUrl:"lol",
+    liveUrl: "https://gym-management-frontend-ten.vercel.app",
+    "codeUrl": {
+      "front": "https://github.com/saiisanta/gym-management-front",
+      "back": "https://github.com/saiisanta/gym-management-backend"
+    },  
   },
   project2: {
     img: "./projects-imgs/ecommerce.png",
     tech: ["Express.js", "PostgreSQL", "Prisma", "AWS S3", "Redis"],
     impactLevel: 4,
   },
-  project3: {
-    img: "./projects-imgs/saas.png",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Jest"],
-    impactLevel: 3,
-  },
 };
-// "React", "Node.js", "Express", "Mysql", "ReactNative"
 export const toolsData = {
+  javascript: {
+    name: "JavaScript",
+    complement: "ES6+",
+    techs: ["JavaScript"],
+    percentage: 80,
+  },
   react: {
     name: "React",
-    complement: "Vite",
+    complement: "Frontend",
     techs: ["React", "Vite"],
-    percentage: 70,
+    percentage: 90,
   },
-  reactNative: {
-    name: "React Native",
-    complement: "Expo",
-    techs: ["R Native", "Expo"],
-    percentage: 70,
+  csharp: {
+    name: "C#",
+    complement: "Backend",
+    techs: ["C#", ".NET Core"],
+    percentage: 75,
   },
-  javascript: {
-    name: "Javascript",
-    complement: "",
-    techs: ["Javascript"],
-    percentage: 100,
-  },
-  mysql: {
-    name: "MySQL",
-    complement: "",
-    techs: ["MySQL"],
-    percentage: 30,
+  sql: {
+    name: "Bases de Datos",
+    complement: "Relacional",
+    techs: ["SQL", "MySQL"],
+    percentage: 80,
   },
   nodejs: {
-    name: "NodeJS",
-    complement: "Express",
-    techs: ["NodeJS", "Express"],
+    name: "Node.js",
+    complement: "Runtime",
+    techs: ["Node.js", "Express"],
     percentage: 70,
   },
+  mongoDB: {
+    name: "MongoDB",
+    complement: "NoSQL",
+    techs: ["MongoDB", "Mongoose"],
+    percentage: 60,
+  },
+  postgresql: {
+    name: "PostgreSQL",
+    complement: "Relacional",
+    techs: ["Postgre", "DBeaver"],
+    percentage: 55,
+  },
   git: {
-    name: "GIT",
-    complement: "Github",
-    techs: ["GIT", "Github"],
+    name: "Version Control",
+    complement: "DevOps",
+    techs: ["Git", "GitHub"],
     percentage: 100,
+  },
+  c: {
+    name: "C",
+    complement: "Low Level",
+    techs: ["C"],
+    percentage: 55,
+  },
+  cpp: {
+    name: "C++",
+    complement: "Low Level",
+    techs: ["C++"],
+    percentage: 75,
+  },
+  py: {
+    name: "Py",
+    complement: "Low Level",
+    techs: ["Python"],
+    percentage: 55,
   },
   python: {
     name: "Python",
-    complement: "PyQT",
-    techs: ["Python", "PyQT"],
-    percentage: 40,
+    complement: "Data Science",
+    techs: ["Python", "Pandas"],
+    percentage: 65,
+  },
+  styling: {
+    name: "Maquetación",
+    complement: "Diseño",
+    techs: ["Sass", "Flex"],
+    percentage: 100,
+  },
+  logic: {
+    name: "Arquitectura",
+    complement: "Análisis",
+    techs: ["UML", "Doc"],
+    percentage: 80,
   }
 };
-
-export const aboutImgs = [
-  {
-    img: "./projects-imgs/vector.png"
-  },
-  {
-    img: "./projects-imgs/buenos dias.jpg"
-  },
-  {
-    img: "./projects-imgs/gusano.jpg"
-  },
-];

@@ -54,13 +54,11 @@ export default function Tools() {
       </Reveal>
 
       <section className="tools">
-        {/* Envolvemos el contenedor principal para que aparezca suavemente */}
         <Reveal sectionId="tools" delay={0.2}>
           <div className="progressbar-container">
             {Object.entries(grouped).map(([category, items], catIndex) => (
               <div key={catIndex} className="tools-category">
                 
-                {/* Reveal para el título de la categoría */}
                 <Reveal sectionId="tools" delay={0.3 + (catIndex * 0.1)}>
                   <h3>{category}</h3>
                 </Reveal>
@@ -68,7 +66,6 @@ export default function Tools() {
                 {items.map((tool, toolIndex) => {
                   const id = `${category}-${tool.id}`;
                   return (
-                    /* Reveal para cada barra individual con delay acumulativo */
                     <Reveal 
                       key={id} 
                       sectionId="tools" 

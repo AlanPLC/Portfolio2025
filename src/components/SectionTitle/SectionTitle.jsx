@@ -3,11 +3,11 @@ import "./sectionTitle.css";
 
 // Definición de las rutas de iconos por defecto, mapeadas por el título.
 const ICON_MAP = {
-  "experience": "/assets/icons/titleIcons/briefcase-svgrepo-com.svg",
-  "projects": "/assets/icons/titleIcons/boost-for-reddit-svgrepo-com.svg",
-  "tools": "/assets/icons/titleIcons/code-editor-svgrepo-com.svg",
-  "about": "/assets/icons/titleIcons/eventim-svgrepo-com.svg",
-  "contact": "/assets/icons/titleIcons/envelope-svgrepo-com.svg",
+  "experience": "/titleIcons/briefcase-svgrepo-com.svg",
+  "projects": "/titleIcons/boost-for-reddit-svgrepo-com.svg",
+  "tools": "/titleIcons/code-editor-svgrepo-com.svg",
+  "about": "/titleIcons/eventim-svgrepo-com.svg",
+  "contact": "/titleIcons/envelope-svgrepo-com.svg",
 };
 
 /**
