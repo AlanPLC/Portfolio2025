@@ -11,7 +11,7 @@ import Tools from "./sections/Tools/Tools.jsx"
 import Experience from "./sections/Experience/Experience.jsx";
 import Footer from "./components/Footer/Footer.jsx"
 import { LanguageProvider } from "./contexts/languageContext.jsx";
-import { ActiveSectionProvider } from "./contexts/activeSectionContext.jsx";
+import { ActiveSectionProvider } from "./contexts/ActiveSectionContext.jsx";
 
 function App() {
   return (
