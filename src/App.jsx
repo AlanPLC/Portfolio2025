@@ -2,7 +2,7 @@ import React from "react";
 import "./App.scss";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 import BlobsBackground from "./components/Background/BlobsBackground";
-import Nav from "./components/Navbar/Nav.jsx";
+import Nav from "./components/Navbar/nav.jsx";
 import Presentation from "./sections/Presentation/Presentation";
 import Stats from "./sections/Stats/Stats";
 import About from "./sections/About/About";
@@ -11,7 +11,7 @@ import Tools from "./sections/Tools/Tools.jsx"
 import Experience from "./sections/Experience/Experience.jsx";
 import Footer from "./components/Footer/Footer.jsx"
 import { LanguageProvider } from "./contexts/languageContext.jsx";
-import { ActiveSectionProvider } from "./contexts/activeSectionContext.jsx";
+import { ActiveSectionProvider } from "./contexts/ActiveSectionContext.jsx";
 
 function App() {
   return (
