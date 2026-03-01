@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useMemo } from "react";
 import BLOBS from "../../data/blobs";
-import "./BlobsBackground.scss";
+import "./blobsBackground.scss";
 
 /**
  * Props:
