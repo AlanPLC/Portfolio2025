@@ -1,0 +1,162 @@
+{
+    "nav": {
+      "navItems": ["Home", "About me", "Experience", "Projects", "Tools"]
+    },
+  
+    "sections": {
+      "home": "Home",
+      "about": "About me",
+      "experience": "Experience",
+      "projects": "Projects",
+      "tools": "Tools"
+    },
+  
+    "presentation": {
+      "greeting": "Hello, I'm",
+      "description": "I believe a website should be as fast as it is beautiful. \nMy approach focuses on blending technical performance with pixel-perfect UX, always putting the user first.",
+      "role": ["Full Stack Developer"],
+      "cvButton": "Download CV"
+    },
+  
+    "stats": {
+      "experience": "Years of experience",
+      "skills": "Skills",
+      "projects": "Finished projects"
+    },
+  
+    "experience": {
+      "experience1": {
+        "role": "Full Stack Developer",
+        "company": "Highfit (UTN Final Project)",
+        "date": "Mar. 2025 - Dec. 2025",
+        "description": "Led the end-to-end development of a management platform for gym chains.\nI designed the entire architecture starting from technical documentation, UML diagrams, and feasibility analysis, integrating a fast frontend with a robust .NET backend.",
+        "achievements": [
+          "Developed an advanced CRUD system for branch management, room scheduling, and staff assignment.",
+          "Implemented an automated membership module for clients to manage plans, locations, and bookings.",
+          "Ensured a professional user journey from initial registration to class history generation."
+        ]
+      },
+      "experience2": {
+        "role": "E-commerce Platform Backend",
+        "company": "Freelance Project",
+        "date": "Jan. 2022 - Present",
+        "description": "Complete backend development for a scalable e-commerce platform, handling inventory, purchase orders, and payment gateways. Implementation of microservices to decouple business logic.",
+        "achievements": [
+          "I designed and implemented a RESTful API for product and user management.",
+          "Successful integration with Stripe for payment processing.",
+          "I ensured data consistency through database transactions."
+        ]
+      },
+      "experience3": {
+        "role": "Software Architect & Full Stack Developer",
+        "company": "Redsync System",
+        "date": "Feb. 2026 - Present",
+        "description": "Designed and developed Redsync, a cross-platform desktop ERP system for comprehensive business management.\nLed the complete architecture using Electron + React + PostgreSQL, implementing a hybrid solution that operates locally without hosting costs, with seamless cloud migration capability.",
+        "achievements": [
+          "Architected a scalable system with 85+ REST endpoints, covering sales, inventory, CRM, cash register, and real-time statistics.",
+          "Implemented hybrid local/cloud architecture with portable PostgreSQL, enabling migration without code rewrites.",
+          "Developed complete internationalization system (ES/EN) and adaptive themes with preference persistence.",
+          "Created professional installer with Electron Builder, packaging frontend, backend, and database into native application."
+        ]
+      }
+    },
+  
+    "about": {
+      "about1": {
+        "title": "Who I am",
+        "description": "My relationship with technology began in childhood and evolved into my profession.\nI enjoy building digital solutions from scratch, meticulously choosing color palettes and writing clean code to create modern interfaces that don't just solve problems—they captivate users.\nBeyond coding, I find inspiration in music, gaming, and continuous learning."
+      },
+      "about2": {
+        "title": "Experience",
+        "isList": true,
+        "items": [
+          {
+            "title": "Frontend Contributor",
+            "institution": "Brokian.com \nDeveloped and structured reusable components using Bootstrap",
+            "year": "Collaboration"
+          },
+          {
+            "title": "Technical Internship",
+            "institution": "TDC \n Comprehensive audiovisual editing and live content management in high-pressure environments.",
+            "year": "Internship"
+          }
+        ]
+      },
+      "about3": {
+        "title": "Education",
+        "isList": true,
+        "items": [
+          {
+            "title": "Associate Degree in Programming",
+            "institution": "National Technological University (UTN)",
+            "year": "Graduated"
+          },
+          {
+            "title": "Associate Degree in Artificial Intelligence",
+            "institution": "National University of Rosario (UNR)",
+            "year": "Enrolled"
+          },
+          {
+            "title": "Computer Technician",
+            "institution": "EETP N° 281 \"Gral. Manuel Savio\"",
+            "year": "2023"
+          }
+        ]
+      }
+    },
+  
+    "projects": {
+      "project1": {
+        "role": "Full Stack Developer",
+        "company": "Highfit",
+        "description": "Comprehensive platform for gym chain management.\nAllows users to manage memberships and bookings, while providing administration with full control over branches, classes, and technical staff.",
+        "achievements": [
+          "Real-time booking system and automated membership management for clients.",
+          "Robust administrative dashboard for managing branches, rooms, and teacher assignments.",
+          "Scalable architecture connecting a React Vite frontend with a solid .NET backend."
+        ]
+      },
+      "project2": {
+        "role": "E-commerce Platform Backend",
+        "company": "Freelance Project",
+        "description": "Full backend development for a scalable e-commerce platform, handling inventory, purchase orders, and payment gateways. Implementation of microservices to decouple business logic.",
+        "achievements": [
+          "I designed and implemented a RESTful API for product and user management.",
+          "Successful integration with Stripe for payment processing.",
+          "I ensured data consistency through database transactions."
+        ]
+      },
+      "project3": {
+        "role": "Full Stack Developer",
+        "company": "Redsync System",
+        "description": "Comprehensive business management system developed as a cross-platform desktop application with Electron.\nEnables complete management of sales, inventory, client CRM, cash register, and real-time statistics. Designed to operate locally with cloud-ready architecture requiring no code modifications for migration.",
+        "achievements": [
+          "Hybrid local/cloud architecture with portable PostgreSQL, enabling scalability without code rewrites.",
+          "Multi-language system (ES/EN) and dark/light themes with user preference persistence.",
+          "Interactive dashboard with real-time charts, debtor tracking, and automatic stock alerts.",
+          "Native desktop application with custom title bar, rounded borders, and modern user experience."
+        ]
+      }
+    },
+  
+    "tools": {
+      "javascript": { "category": "Languages" },
+      "react": { "category": "Frontend" },
+      "csharp": { "category": "Backend" },
+      "sql": { "category": "Databases" },
+      "mongoDB": { "category": "Databases" },
+      "postgresql": { "category": "Databases" },
+      "nodejs": { "category": "Backend" },
+      "git": { "category": "Workflow" },
+      "cpp": { "category": "Languages" },
+      "c": { "category": "Languages" },
+      "py": { "category": "Languages" },
+      "python": { "category": "Data Analysis" },
+      "styling": { "category": "Styling" },
+      "logic": { "category": "Software Design" }
+    },
+  
+    "footer": {
+      "copyright": "Copyright © All rights reserved."
+    }
+  }

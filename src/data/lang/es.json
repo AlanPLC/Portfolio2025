@@ -1,0 +1,168 @@
+{
+  "nav": {
+    "navItems": [
+      "Inicio",
+      "Sobre mí",
+      "Experiencia",
+      "Proyectos",
+      "Herramientas"
+    ]
+  },
+
+  "sections": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "tools": "Herramientas"
+  },
+
+  "presentation": {
+    "greeting": "Hola, soy",
+    "description": "Creo que una web debe ser tan rápida como estética. \nMi enfoque se basa en unir el rendimiento técnico con una UX pixel-perfect para que el usuario sea siempre lo primero.",
+    "role": ["Desarrollador Full Stack"],
+    "cvButton": "Descargar CV"
+  },
+
+  "stats": {
+    "experience": "Años de experiencia",
+    "skills": "Skills",
+    "projects": "Proyectos terminados"
+  },
+
+  "experience": {
+    "experience1": {
+      "role": "Desarrollador Full Stack",
+      "company": "Highfit (Proyecto Final UTN)",
+      "date": "Mar. 2025 - Dic. 2025",
+      "description": "Lideré el desarrollo integral de una plataforma de gestión para cadenas de gimnasios.\nDiseñé la arquitectura completa desde la documentación técnica, diagramas UML y análisis de viabilidad, integrando un frontend ágil con un backend robusto en .NET.",
+      "achievements": [
+        "Desarrollé un sistema CRUD avanzado para la gestión de sucursales, salas y asignación de profesores.",
+        "Implementé un módulo de membresías automatizado donde el cliente gestiona planes, sedes y reservas.",
+        "Garanticé un flujo profesional desde el registro del usuario hasta la generación de su historial de clases."
+      ]
+    },
+    "experience2": {
+      "role": "E-commerce Platform Backend",
+      "company": "Freelance Project",
+      "date": "Ene. 2022 - Presente",
+      "description": "Desarrollo completo del backend para una plataforma de e-commerce escalable, manejando inventario, órdenes de compra y pasarelas de pago. Implementación de microservicios para desacoplar la lógica de negocio.",
+      "achievements": [
+        "Diseñé e implementé una API RESTful para la gestión de productos y usuarios.",
+        "Integración exitosa con Stripe para el procesamiento de pagos.",
+        "Aseguré la consistencia de datos mediante transacciones en la base de datos."
+      ]
+    },
+    "experience3": {
+      "role": "Arquitecto de Software & Desarrollador Full Stack",
+      "company": "Redsync System",
+      "date": "Feb. 2026 - Presente",
+      "description": "Diseñé y desarrollé Redsync, un sistema ERP de escritorio multiplataforma para gestión empresarial integral.\nLideré la arquitectura completa utilizando Electron + React + PostgreSQL, implementando una solución híbrida que opera localmente sin costos de hosting, con capacidad de migración transparente a cloud.",
+      "achievements": [
+        "Arquitecté un sistema escalable con 85+ endpoints REST, cubriendo ventas, inventario, CRM, caja y estadísticas en tiempo real.",
+        "Implementé arquitectura híbrida local/cloud con PostgreSQL portable, permitiendo migración sin reescribir código.",
+        "Desarrollé sistema de internacionalización completo (ES/EN) y temas adaptativos con persistencia de preferencias.",
+        "Creé instalador profesional con Electron Builder, empaquetando frontend, backend y base de datos en aplicación nativa."
+      ]
+    }
+  },
+
+  "about": {
+    "about1": {
+      "title": "Quién soy",
+      "description": "Mi relación con la tecnología comenzó en la infancia y se transformó en mi profesión.\nDisfruto construyendo soluciones digitales desde cero, cuidando cada combinación de color y cada línea de código para crear interfaces modernas que no solo resuelven problemas, sino que cautivan al usuario.\nFuera del código, encuentro inspiración en la música, los videojuegos y el aprendizaje constante."
+    },
+    "about2": {
+      "title": "Mi experiencia",
+      "isList": true,
+      "items": [
+        {
+          "title": "Colaborador Frontend",
+          "institution": "Brokian.com \nDesarrollo y maquetación de componentes reutilizables utilizando Bootstrap",
+          "year": "Colaboración"
+        },
+        {
+          "title": "Pasantía Técnica",
+          "institution": "TDC \n Edición audiovisual y gestión de contenido en vivo bajo entornos de alta exigencia.",
+          "year": "Pasantía"
+        }
+      ]
+    },
+    "about3": {
+      "title": "Educación",
+      "isList": true,
+      "items": [
+        {
+          "title": "Tecnicatura Universitaria en Programación",
+          "institution": "Universidad Tecnológica Nacional (UTN)",
+          "year": "Graduado"
+        },
+        {
+          "title": "Tecnicatura en Inteligencia Artificial",
+          "institution": "Universidad Nacional de Rosario (UNR)",
+          "year": "2026"
+        },
+        {
+          "title": "Técnico en Informática",
+          "institution": "EETP N° 281 \"Gral. Manuel Savio\"",
+          "year": "2023"
+        }
+      ]
+    }
+  },
+
+  "projects": {
+    "project1": {
+      "role": "Desarrollador Full Stack",
+      "company": "Highfit",
+      "description": "Plataforma integral para la gestión de cadenas de gimnasios.\nPermite a los usuarios gestionar membresías y reservas, mientras que ofrece a la administración un control total sobre sucursales, clases y personal técnico.",
+      "achievements": [
+        "Sistema de reservas en tiempo real y gestión automatizada de membresías para clientes.",
+        "Panel administrativo robusto para la gestión de sucursales, salas y asignación de profesores.",
+        "Arquitectura escalable conectando un frontend en React Vite con un backend sólido en .NET."
+      ]
+    },
+    "project2": {
+      "role": "Backend para Plataforma de E-commerce",
+      "company": "Proyecto Freelance",
+      "description": "Desarrollo completo del backend para una plataforma de e-commerce escalable, manejando inventario, órdenes de compra y pasarelas de pago. Implementación de microservicios para desacoplar la lógica de negocio.",
+      "achievements": [
+        "Diseñé e implementé una API RESTful para la gestión de productos y usuarios.",
+        "Integración exitosa con Stripe para el procesamiento de pagos.",
+        "Aseguré la consistencia de datos mediante transacciones en la base de datos."
+      ]
+    },
+    "project3": {
+      "role": "Desarrollador Full Stack",
+      "company": "Redsync System",
+      "description": "Sistema integral de gestión empresarial desarrollado como aplicación de escritorio multiplataforma con Electron.\nPermite la gestión completa de ventas, inventario, CRM de clientes, caja y estadísticas en tiempo real. Diseñado para funcionar localmente con arquitectura preparada para migración a cloud sin modificaciones de código.",
+      "achievements": [
+        "Arquitectura híbrida local/cloud con PostgreSQL portable, permitiendo escalabilidad sin reescribir código.",
+        "Sistema multi-idioma (ES/EN) y temas dark/light con persistencia de preferencias del usuario.",
+        "Dashboard interactivo con gráficos en tiempo real, control de deudores y alertas de stock automáticas.",
+        "Aplicación de escritorio nativa con custom title bar, bordes redondeados y experiencia de usuario moderna."
+      ]
+    }
+  },
+
+  "tools": {
+    "javascript": { "category": "Lenguajes" },
+    "react": { "category": "Frontend" },
+    "csharp": { "category": "Backend" },
+    "sql": { "category": "Bases de Datos" },
+    "mongoDB": { "category": "Bases de Datos" },
+    "postgresql": { "category": "Bases de Datos" },
+    "nodejs": { "category": "Backend" },
+    "git": { "category": "Flujo de Trabajo" },
+    "cpp": { "category": "Lenguajes" },
+    "c": { "category": "Lenguajes" },
+    "py": { "category": "Lenguajes" },
+    "python": { "category": "Análisis de Datos" },
+    "styling": { "category": "Estilos" },
+    "logic": { "category": "Diseño de Software" }
+  },
+
+  "footer": {
+    "copyright": "Copyright © Todos los derechos reservados."
+  }
+}
