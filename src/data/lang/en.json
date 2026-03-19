@@ -14,28 +14,33 @@
   "presentation": 
   {
     "greeting": "Hello, I'm",
-    "description": "I specialise in building fast, accessible, and carefully designed web experiences. I work with React, Vite, and modern APIs. I am interested in performance and scalability in projects.",
-    "role": ["Full Stack Developer"],
+    "description": "I specialize in building fast, accessible and visually refined web experiences. I primarily work with React, Vite and modern REST APIs, adapting to whatever stack each project calls for.",
+    "role": ["Junior Full Stack Developer"],
     "cvButton": "Download CV"
   },
 
-  "stats": {
-    "experience": "Years of experience",
-    "skills": "Skills",
-    "projects": "Finished projects"
-  },
 
   "experience": {
-    "experience1":{
-      "role": "Chatbot developer",
+    "experience1": {
+      "role": "Chatbot Developer",
       "company": "Freelance Project",
       "date": "Jun. 2025 - Jul. 2025",
-      "description":
-        "Development of an automated booking and payment system via WhatsApp for the barbershop “El Bigote Siberiano”, storing data in Google services such as Sheets and Calendar. Project paused during implementation of Mercado Pago API at the client's request.",
+      "description": "Development of an automated booking and payment system via WhatsApp for the barbershop 'El Bigote Siberiano', storing data in Google services such as Sheets and Calendar. Project paused during the Mercado Pago API integration phase at the client's request.",
       "achievements": [
-        "I designed and developed an end-to-end booking ecosystem integrating the WhatsApp Business API, Make, and Google Workspace, automating the schedule flow and reducing the barbershop's administrative burden.",
-        "I implemented a natural language processing engine in TypeScript to normalise dates and times to the ISO 8601 format (DD/MM/YYYY HH:mm:ss).",
-        "I improved the success rate of reservations by migrating from an unstable generative AI model to a deterministic logical flow system, eliminating misinterpretations and ensuring accurate data capture."
+        "Designed and developed an end-to-end booking ecosystem integrating the WhatsApp Business API, Make and Google Workspace, automating the scheduling flow and reducing the administrative workload of the business",
+        "Built a natural language processing engine in TypeScript to normalize dates and times to ISO 8601 format",
+        "Improved booking success rate by migrating from an unstable generative AI model to a deterministic logic flow system, eliminating interpretation errors and ensuring accurate data capture"
+      ]
+    },
+    "experience2": {
+      "role": "Backend Developer",
+      "company": "Collaborative Freelance Project",
+      "date": "Jun. 2025 - Jul. 2025",
+      "description": "Development of an e-commerce platform with an internal management system and technical service quoting. Contributed primarily as Backend Developer, designing the REST API and relational database architecture.",
+      "achievements": [
+        "Designed and implemented a REST API using Node.js, Express and MySQL with Sequelize ORM, structuring models, relationships and validations for products, services, quotes and orders",
+        "Built a file upload and management system with Multer, including type and size validations, storing payment proofs and documents directly on the server",
+        "Integrated a notification system with transactional email delivery via Resend, covering quote and order lifecycle events for both clients and administrators"
       ]
     }
   },
@@ -43,26 +48,30 @@
   "about": {
     "about1":{
     "title": "Who I am",
-    "description":
-      "I am a web developer focused on frontend and mobile u dog friend look that I never cried over a topic like I'm not crying over the topic friend I mean it made me reflect a lot of things dog that I maybe don't rescue myself this guy a fla friend makes me think na friend makes me think that now maybe when I return to my house I will be able to say that I have an island of charm with coscu friend ue in frontend and mobile u dog friend look that I never cried over a topic like I'm not crying over the topic friend I mean it made me reflect a lot of things dog that I maybe don't rescue myself this guy a fla friend makes me think na friend makes me think that now maybe when I return to my house I will be able to say that I have an island of charm with coscu friend "
+    "description": "Originally from La Rioja, Argentina — a technology enthusiast since childhood, venturing into computing and later into programming with the dream of one day creating video games."
     },
     "about2":{
       "title": "My experience",
-      "description": "I have worked on various fullstack projects..."
+      "description": "Full Stack Developer focused on building REST APIs and functional, intuitive web experiences. I have contributed to real collaborative projects across different technical contexts — from relational database design to third-party service integration — always aiming for clean and scalable solutions."
     },
     "about3": {
       "title": "Education",
       "isList": true,
       "items": [
         {
-          "title": "Systems Engineering",
-          "institution": "Technological University",
-          "year": "2020 - 2024"
+          "title": "Technician in Electromechanical Equipment Repair and Installation",
+          "institution": "E.P.E.T. Nº2",
+          "year": "2014 - 2019"
         },
         {
-          "title": "Fullstack Web Development",
-          "institution": "CoderHouse",
+          "title": "Mobile Phone Repair Technician",
+          "institution": "Charles Babbage Educational Institute",
           "year": "2019"
+        },
+        {
+          "title": "University Technician in Programming",
+          "institution": "National Technological University",
+          "year": "2022 - 2024"
         }
       ]
     }
