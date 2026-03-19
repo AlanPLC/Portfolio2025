@@ -2,7 +2,7 @@
 
 Redline Portfolio es un sistema de portafolio web moderno, **modular y altamente escalable** desarrollado de forma colaborativa. El diseño sigue una estética de "Glassmorphism" con un enfoque centrado en la experiencia del usuario (UX) y el rendimiento. 
 
-Este proyecto fue concebido para que la actualización de contenido (proyectos, experiencias y habilidades) sea tan sencilla como modificar un archivo JSON, sin necesidad de reescribir componentes de React.
+Este proyecto fue concebido para que la actualización de contenido (proyectos, experiencias y habilidades) sea tan sencilla como modificar un archivo JSON, sin necesidad de reescribir componentes React.
 
 ---
 
@@ -37,7 +37,7 @@ El corazón de la escalabilidad reside en la carpeta `/src/data/`, donde se gest
  ├── contexts/      # Gestión de estado global mediante Context API (Idioma y navegación).
  │    ├── languageContext.jsx   # Lógica para el cambio dinámico entre Español/Inglés.
  │    └── ActiveSectionContext.jsx # Rastreo de la sección activa para el scroll.
- ├── data/          # El "cerebro" del portfolio. Contiene los JSON con toda la información.
+ ├── data/          # Toda la información presentada en el portfolio, archivos JSON facilmente editables.
  ├── sections/      # Componentes de alto nivel que representan cada bloque de la web.
  │    ├── About, Experience, Projects... # Módulos independientes y fáciles de mantener.
  ├── styles/        # Archivos de estilos globales y configuraciones de SCSS/CSS.
