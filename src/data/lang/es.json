@@ -19,7 +19,7 @@
 
   "presentation": {
     "greeting": "Hola, soy",
-    "description": "Me especializo en construir experiencias web rápidas, accesibles y con diseño cuidado. Principalmente trabajo con React, Vite y APIs modernas; aunque me adapto a la tecnología necesaria para resolver problemas.",
+    "description": "Me especializo en construir experiencias web rápidas, accesibles y visualmente cuidadas. Principalmente trabajo con React, Vite y APIs REST modernas, adaptándome al stack que cada proyecto requiera.",
     "role": ["Desarrollador Junior Full Stack"],
     "cvButton": "Descargar CV"
   },
