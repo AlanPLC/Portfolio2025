@@ -19,28 +19,31 @@
 
   "presentation": {
     "greeting": "Hola, soy",
-    "description": "Me especializo en construir experiencias web rápidas, accesibles y con diseño cuidado. Trabajo con React, Vite y APIs modernas. Me interesa el rendimiento y la escalabilidad en proyectos.",
-    "role": ["Desarrollador Full Stack"],
+    "description": "Me especializo en construir experiencias web rápidas, accesibles y con diseño cuidado. Principalmente trabajo con React, Vite y APIs modernas; aunque me adapto a la tecnología necesaria para resolver problemas.",
+    "role": ["Desarrollador Junior Full Stack"],
     "cvButton": "Descargar CV"
   },
 
-  "stats": {
-    "experience": "Años de experiencia",
-    "skills": "Skills",
-    "projects": "Proyectos terminados"
-  },
-
-  "experience": {
-    "experience1":{
+    "experience1": {
       "role": "Desarrollador de Chatbot",
       "company": "Proyecto Freelance",
       "date": "Jun. 2025 - Jul. 2025",
-      "description":
-        "Desarrollo de un sistema automatizado de reservas y cobros por WhatsApp para la barbería “El Bigote Siberiano“, almacenando datos en servicios de Google como Sheets y Calendar. Proyecto pausado en etapa implementación de Mercado Pago API por pedido del cliente.",
+      "description": "Desarrollo de un sistema automatizado de reservas y cobros por WhatsApp para la barbería 'El Bigote Siberiano', almacenando datos en servicios de Google como Sheets y Calendar. Proyecto pausado en etapa de implementación de Mercado Pago API por pedido del cliente.",
       "achievements": [
-        "Diseñé y desarrollé un ecosistema de reservas end-to-end integrando la API de WhatsApp Business, Make y Google Workspace, automatizando el flujo de agenda y reduciendo la carga administrativa de la barbería.",
-        "Implementé un motor de procesamiento de lenguaje natural en TypeScript para normalizar fechas y horarios al formato ISO 8601 (DD/MM/YYYY HH:mm:ss)",
-        "Mejoré la tasa de éxito de las reservas migrando de un modelo de IA generativa inestable a un sistema de flujo lógico determinista, eliminando errores de interpretación y asegurando una captura de datos precisa."
+        "Diseñé y desarrollé un ecosistema de reservas end-to-end integrando la API de WhatsApp Business, Make y Google Workspace, automatizando el flujo de agenda y reduciendo la carga administrativa del negocio",
+        "Implementé un motor de procesamiento de lenguaje natural en TypeScript para normalizar fechas y horarios al formato ISO 8601",
+        "Mejoré la tasa de éxito de las reservas migrando de un modelo de IA generativa inestable a un sistema de flujo lógico determinista, eliminando errores de interpretación y asegurando una captura de datos precisa"
+      ]
+    },
+    "experience2": {
+      "role": "Backend Developer",
+      "company": "Proyecto Freelance Colaborativo",
+      "date": "Ene. 2025 - En desarrollo avanzado",
+      "description": "Desarrollo de e-commerce con sistema de gestión interna y presupuestos de servicios técnicos. Participé principalmente como Backend Developer, diseñando la API REST y la base de datos relacional.",
+      "achievements": [
+        "Diseñé e implementé una API REST con Node.js, Express y MySQL utilizando Sequelize como ORM, estructurando modelos, relaciones y validaciones para productos, servicios, presupuestos y órdenes",
+        "Implementé sistema de subida y gestión de archivos con Multer, incluyendo validaciones de tipo y tamaño, almacenando comprobantes de pago y documentos en el servidor",
+        "Integré sistema de notificaciones en tiempo real con envío de emails transaccionales mediante Resend, cubriendo eventos del ciclo de vida de presupuestos y órdenes tanto para clientes y administradores"
       ]
     }
   },
@@ -52,7 +55,7 @@
     },
     "about2": {
       "title": "Mi experiencia",
-      "description": "Desarrollador Full Stack con enfoque en la automatización de procesos y optimización de la experiencia de usuario. He liderado el diseño y ejecución de soluciones personalizadas para clientes reales, destacando el desarrollo de sistemas de agendamiento inteligente mediante la integración de APIs y lógica en TypeScript. Me apasiona transformar necesidades de negocio en herramientas tecnológicas escalables y estoy listo para aportar mi capacidad técnica en un entorno profesional a tiempo completo."
+      "description": "Desarrollador Full Stack con experiencia en el desarrollo de APIs REST, automatización de procesos y experiencias web funcionales e intuitivas. He participado en proyectos reales que van desde sistemas de reservas automatizados por WhatsApp hasta plataformas e-commerce con gestión interna, enfrentando distintos contextos técnicos y adaptando soluciones limpias y escalables a cada uno."
     },
     "about3": {
       "title": "Educación",
@@ -99,14 +102,14 @@
   },
 
   "tools": {
-  "react": { "category": "Librerías / Frameworks" },
-  "reactNative": { "category": "Librerías / Frameworks" },
-  "javascript": { "category": "Lenguajes" },
-  "mysql": { "category": "Bases de Datos" },
-  "nodejs": { "category": "Librerías / Frameworks" },
-  "git": { "category": "Control de Versiones" },
-  "python": { "category": "Lenguajes" }
-},
+    "react": { "category": "Librerías / Frameworks" },
+    "reactNative": { "category": "Librerías / Frameworks" },
+    "javascript": { "category": "Lenguajes" },
+    "mysql": { "category": "Bases de Datos" },
+    "nodejs": { "category": "Librerías / Frameworks" },
+    "git": { "category": "Control de Versiones" },
+    "python": { "category": "Lenguajes" }
+  },
 
   "footer": {
     "copyright": "Copyright © Todos los derechos reservados."
