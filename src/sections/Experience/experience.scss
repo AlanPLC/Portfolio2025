@@ -116,20 +116,43 @@
               }
             }
           }
-  
-          .experience-techs {
+          
+          .experience-techs-container{
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            justify-content: space-between;
+            align-items: center;
             margin-top: 1rem;
-  
-            .tech-tag {
-              background-color: rgba(255, 98, 0, 0.15); // Fondo semitransparente naranja
-              color: #ff6200; // Texto naranja
-              padding: 0.3em 0.7em;
+            .github-url{
+              margin-left: auto;
+              border: 1px #ffffff solid;
               border-radius: 4px;
-              font-size: 0.8rem;
-              white-space: nowrap; // Evita que el texto se rompa
+              padding: 0.2rem 0.5rem;
+              width: 1.8rem;
+              transition: transform 0.25s ease;
+              
+            }
+            .github-url:hover{
+              transform: scale(1.2);
+            }
+
+            .experience-techs {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.5rem;
+  
+              align-items: center;
+  
+          
+    
+              .tech-tag {
+                height: 1rem;
+                background-color: rgba(255, 98, 0, 0.15); // Fondo semitransparente naranja
+                color: #ff6200; 
+                padding: 0.3em 0.7em;
+                border-radius: 4px;
+                font-size: 0.8rem;
+                white-space: nowrap; 
+              }
             }
           }
         }

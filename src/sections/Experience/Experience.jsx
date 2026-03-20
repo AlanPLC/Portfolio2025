@@ -41,14 +41,21 @@ export default function Experience() {
                           ))}
                         </ul>
                       )}
-                      
-                      {staticExperience.tech && staticExperience.tech.length > 0 && (
-                        <div className="experience-techs">
-                          {staticExperience.tech.map((techItem, idx) => (
-                            <span key={idx} className="tech-tag">{techItem}</span>
-                          ))}
-                        </div>
-                      )}
+                      <div className="experience-techs-container">
+                        {staticExperience.tech && staticExperience.tech.length > 0 && (
+                          <div className="experience-techs">
+                            {staticExperience.tech.map((techItem, idx) => (
+                              <span key={idx} className="tech-tag">{techItem}</span>
+                            ))}
+
+                          </div>
+                        )}
+                        {staticExperience.githubUrl && (
+                          <a href={staticExperience.githubUrl} target="_blank" rel="noopener noreferrer" className="github-link">
+                            <img src="/project-icons/code-editor-svgrepo-com.svg" alt="github-project" className="github-url"/>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </Reveal>

@@ -18,10 +18,12 @@ export const experienceData = {
   experience1:{
     img: "./projects-imgs/vector.png",
     tech: ["TypeScript", "Node.js", "Make ", "Webhooks", "WhatsApp Business API", "Docker"],
+    githubUrl: ""
   },
    experience2:{
     img: "./projects-imgs/vector.png",
     tech: ["Javascript", "Node.js", "Express", "MySQL", "Sequelize ORM", "Docker"],
+    githubUrl: "https://github.com/saiisanta/RIFLI-BACK"
   },
 };
 
