@@ -109,7 +109,8 @@
     "mysql": { "category": "Bases de Datos" },
     "nodejs": { "category": "Librerías / Frameworks" },
     "git": { "category": "Control de Versiones" },
-    "python": { "category": "Lenguajes" }
+    "python": { "category": "Lenguajes" },
+    "typescript": { "category": "Lenguajes" }
   },
 
   "footer": {

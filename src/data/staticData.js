@@ -57,19 +57,19 @@ export const toolsData = {
     name: "Javascript",
     complement: "",
     techs: ["Javascript"],
-    percentage: 80,
+    percentage: 90,
   },
   mysql: {
     name: "MySQL",
     complement: "",
     techs: ["MySQL"],
-    percentage: 60,
+    percentage: 90,
   },
   nodejs: {
     name: "NodeJS",
     complement: "Express",
     techs: ["NodeJS", "Express"],
-    percentage: 65,
+    percentage: 85,
   },
   git: {
     name: "GIT",
@@ -81,6 +81,12 @@ export const toolsData = {
     name: "Python",
     complement: "PyQT",
     techs: ["Python", "PyQT"],
+    percentage: 40,
+  },
+   typescript: {
+    name: "TypeScript",
+    complement: "",
+    techs: ["TypeScript"],
     percentage: 40,
   }
 };

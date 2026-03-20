@@ -105,7 +105,9 @@
   "mysql": { "category": "Databases" },
   "nodejs": { "category": "Libraries / Frameworks" },
   "git": { "category": "Version Control" },
-  "python": { "category": "Languages" }
+  "python": { "category": "Languages" },
+  "typescript": { "category": "Languages" }
+
 },
 
   "footer": {
