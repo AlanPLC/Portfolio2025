@@ -23,7 +23,7 @@
     "role": ["Desarrollador Junior Full Stack"],
     "cvButton": "Descargar CV"
   },
-
+  "experience": {
     "experience1": {
       "role": "Desarrollador de Chatbot",
       "company": "Proyecto Freelance",
@@ -46,7 +46,8 @@
         "Integré sistema de notificaciones en tiempo real con envío de emails transaccionales mediante Resend, cubriendo eventos del ciclo de vida de presupuestos y órdenes tanto para clientes y administradores"
       ]
     }
-  },
+    },
+    
 
   "about": {
     "about1": {

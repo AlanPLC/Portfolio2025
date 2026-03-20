@@ -19,6 +19,10 @@ export const experienceData = {
     img: "./projects-imgs/vector.png",
     tech: ["TypeScript", "Node.js", "Make ", "Webhooks", "WhatsApp Business API", "Docker"],
   },
+   experience2:{
+    img: "./projects-imgs/vector.png",
+    tech: ["Javascript", "Node.js", "Express", "MySQL", "Sequelize ORM", "Docker"],
+  },
 };
 
 export const projectsData = {
