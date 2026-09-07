@@ -2,9 +2,14 @@
 
 .tech-icons {
   display: flex;
-  gap: 0.6rem;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
 }
 .tech-icons__item {
   display: inline-grid;
@@ -12,77 +17,38 @@
 }
 
 .tech-icons__pill {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 0.25rem 0.5rem;
-  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  padding: 0.3rem 0.65rem;
   font-size: var(--font-size-parrafo);
   color: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.02); 
-  
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 
-  position: relative;
-  z-index: 1; 
-  cursor: pointer;
-  
-  transition: 
-    border-color 0.2s ease, 
-    color 0.2s ease,
-    box-shadow 0.2s ease;
-    
-  animation: none; 
+  cursor: default;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.tech-icons__icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+.tech-icons__label {
+  white-space: nowrap;
 }
 
 .tech-icons__pill:hover {
-  border-color: transparent; 
-  
-  color: #ff7b00; 
-  box-shadow: 0 0 10px rgba(255, 75, 0, 0.6); 
-  
-  animation: lavaGlowEffect 2.5s ease-in-out infinite; 
-}
-
-@keyframes lavaGlowEffect {
-  0% {
-    border-color: rgba(255, 75, 0, 0.1); 
-    box-shadow: 0 0 5px rgba(255, 75, 0, 0.2); 
-  }
-  25% {
-    border-color: #ff7b00;
-    box-shadow: 0 0 10px rgba(255, 75, 0, 0.6);
-  }
-  50% {
-    border-color: #ff6200;
-    box-shadow: 0 0 18px rgba(255, 0, 0, 0.9);
-  }
-  75% {
-    border-color: #ff7b00;
-    box-shadow: 0 0 10px rgba(255, 75, 0, 0.6);
-  }
-  100% {
-    border-color: rgba(255, 75, 0, 0.1); 
-    box-shadow: 0 0 5px rgba(255, 75, 0, 0.2); 
-  }
-}
-
-
-
-
-
-
-
-
-
-
-.tech-icons__pill--missing {
-  opacity: 0.7;
-  background: rgba(255, 77, 79, 0.06);
-  border: 1px dashed rgba(255, 255, 255, 0.04);
-}
-.tech-icon {
-  display: block;
-  object-fit: contain;
-  filter: brightness(0) invert(1) grayscale(1) opacity(0.85);
+  background: rgba(255, 98, 0, 0.12);
+  color: #ff8a3d;
 }
