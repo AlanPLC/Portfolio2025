@@ -1,6 +1,10 @@
 @use "../../styles/breakpoints" as *;
 
 #about {
+  --font-size-titulo: clamp(1.6rem, 3.6vw, 2rem);
+  --font-size-subtitulo: clamp(1.35rem, 2.4vw, 1.5rem);
+  --font-size-parrafo: clamp(1.15rem, 1.2vw, 1.25rem);
+
   scroll-margin-top: 8rem;
   position: relative;
   overflow: visible;
@@ -17,7 +21,7 @@
     padding: 2.5rem 3rem;
     box-shadow: 0 8px 30px rgba(2, 6, 23, 0.45);
     backdrop-filter: blur(10px);
-    max-width: 50rem;
+    max-width: 56rem;
     margin: 0 auto;
     min-height: 22rem;
     display: flex;
@@ -45,6 +49,7 @@
       height: 220px;
       border-radius: 50%;
       top: 50%;
+      transform: translateY(-50%);
       z-index: -1;
       pointer-events: none;
       border: 2px solid transparent;
@@ -72,19 +77,15 @@
     }
 
     &::before {
-      left: -330px;
+      left: -250px;
       animation: techRotate 4s linear infinite, pulseGlow 4s ease-in-out infinite;
-      @include respond-down("desktop") { left: -290px; }
-      @include respond-down("desktop-l") { left: -250px; }
-      @include respond-down("desktop-lg") { left: -220px; }
+      @include respond-down("desktop-lg") { left: -210px; }
     }
 
     &::after {
-      right: -330px;
+      right: -250px;
       animation: techRotate 4s linear infinite reverse, pulseGlow 4s ease-in-out infinite;
-      @include respond-down("desktop") { right: -290px; }
-      @include respond-down("desktop-l") { right: -250px; }
-      @include respond-down("desktop-lg") { right: -220px; }
+      @include respond-down("desktop-lg") { right: -210px; }
     }
 
     // --- ANILLOS HIJOS ---
@@ -96,6 +97,7 @@
       height: 140px;
       border-radius: 50%;
       top: 50%;
+      transform: translateY(-50%);
       z-index: -2;
       pointer-events: none;
       border: 2px solid transparent;
@@ -120,19 +122,15 @@
     }
 
     .about-accordion::before {
-      left: -290px;
+      left: -210px;
       animation: techRotate 5s linear infinite reverse, pulseGlow 4s ease-in-out infinite;
-      @include respond-down("desktop") { left: -250px; }
-      @include respond-down("desktop-l") { left: -210px; }
-      @include respond-down("desktop-lg") { left: -190px; }
+      @include respond-down("desktop-lg") { left: -180px; }
     }
 
     .about-accordion::after {
-      right: -290px;
+      right: -210px;
       animation: techRotate 5s linear infinite, pulseGlow 4s ease-in-out infinite;
-      @include respond-down("desktop") { right: -250px; }
-      @include respond-down("desktop-l") { right: -210px; }
-      @include respond-down("desktop-lg") { right: -190px; }
+      @include respond-down("desktop-lg") { right: -180px; }
     }
   }
 
@@ -198,7 +196,7 @@
           .description-text {
             color: rgba(255, 255, 255, 0.65);
             line-height: 1.6;
-            font-size: 0.9rem;
+            font-size: var(--font-size-parrafo);
             margin: 0.5rem 0 1rem 0;
           }
 
