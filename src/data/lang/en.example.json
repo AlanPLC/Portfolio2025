@@ -4,6 +4,10 @@
     "menuToggle": "Open navigation menu",
     "copyEmail": "Copy email address"
   },
+  "labels": {
+    "viewRepo": "Repository",
+    "keyResults": "Key Results"
+  },
   "sections": {
 
     "home": "Home",

@@ -11,6 +11,11 @@
     "copyEmail": "Copiar correo electrónico"
   },
 
+  "labels": {
+    "viewRepo": "Repositorio",
+    "keyResults": "Resultados Clave"
+  },
+
   "sections":{
     "home": "Inicio",
     "about": "Sobre mí",
@@ -26,6 +31,31 @@
     "cvButton": "Descargar CV"
   },
   "experience": {
+    "experienceBands": {
+      "role": "Frontend Developer",
+      "company": "BandS",
+      "date": "Ago. 2026 - Sep. 2026",
+      "description": "Desarrollo desde cero de una plataforma de reservas estilo Airbnb/Booking para un destino turístico de montaña en Argentina, en conjunto con el desarrollador backend. Partimos de una maqueta puramente visual (sin lógica ni funcionalidad real), que terminó reescrita casi por completo a medida que se fue definiendo el comportamiento real de la app. Además del trabajo de UI, participé activamente en pensar la lógica de negocio detrás de cada tipo de reserva.",
+      "achievements": [
+        "Diseñé la lógica de reserva para 4 tipos de comercio completamente distintos (alojamiento, restaurante, experiencia, evento), cada uno con su propio panel de administración adaptado a las reglas reales de ese rubro",
+        "Implementé el flujo de reservas por mesa de Restaurante: categorías de mesa con capacidad/cantidad, turnos por día y tipo de servicio, y cálculo en vivo de disponibilidad según qué reservas se superponen en cada franja horaria",
+        "Trabajé el modelo de disponibilidad de Alojamiento basado en noches (rangos de fecha, no horarios), con tarifas por período, calendario de fechas ocupadas y desglose de huéspedes (adultos/niños)",
+        "Definí junto al equipo qué acciones puede ver y ejecutar cada tipo de usuario (administrador de la plataforma, prestador de un comercio, turista), reflejando esa distinción tanto en la UI como en las llamadas a la API",
+        "Construí un lenguaje de panel de administración reutilizable (mismos patrones de edición, confirmación y despliegue) para que gestionar cualquiera de los 4 rubros se sienta consistente y simple de usar, sin duplicar lógica entre pantallas",
+        "Unifiqué el flujo de reserva de punta a punta (estados, tipografías, iconografía) y sumé microinteracciones (transiciones de altura/opacidad) para que los cambios de estado se sientan fluidos"
+      ]
+    },
+    "experience2": {
+      "role": "Backend Developer",
+      "company": "Proyecto Freelance Colaborativo",
+      "date": "Ene. 2026 - Mar. 2026",
+      "description": "Desarrollo de e-commerce con sistema de gestión interna y presupuestos de servicios técnicos. Participé principalmente como Backend Developer, diseñando la API REST y la base de datos relacional.",
+      "achievements": [
+        "Diseñé e implementé una API REST con Node.js, Express y MySQL utilizando Sequelize como ORM, estructurando modelos, relaciones y validaciones para productos, servicios, presupuestos y órdenes",
+        "Implementé sistema de subida y gestión de archivos con Multer, incluyendo validaciones de tipo y tamaño, almacenando comprobantes de pago y documentos en el servidor",
+        "Integré sistema de notificaciones en tiempo real con envío de emails transaccionales mediante Resend, cubriendo eventos del ciclo de vida de presupuestos y órdenes tanto para clientes y administradores"
+      ]
+    },
     "experience1": {
       "role": "Desarrollador de Chatbot",
       "company": "Proyecto Freelance",
@@ -35,17 +65,6 @@
         "Diseñé y desarrollé un ecosistema de reservas end-to-end integrando la API de WhatsApp Business, Make y Google Workspace, automatizando el flujo de agenda y reduciendo la carga administrativa del negocio",
         "Implementé un motor de procesamiento de lenguaje natural en TypeScript para normalizar fechas y horarios al formato ISO 8601",
         "Mejoré la tasa de éxito de las reservas migrando de un modelo de IA generativa inestable a un sistema de flujo lógico determinista, eliminando errores de interpretación y asegurando una captura de datos precisa"
-      ]
-    },
-    "experience2": {
-      "role": "Backend Developer",
-      "company": "Proyecto Freelance Colaborativo",
-      "date": "Ene. 2025 - En desarrollo avanzado",
-      "description": "Desarrollo de e-commerce con sistema de gestión interna y presupuestos de servicios técnicos. Participé principalmente como Backend Developer, diseñando la API REST y la base de datos relacional.",
-      "achievements": [
-        "Diseñé e implementé una API REST con Node.js, Express y MySQL utilizando Sequelize como ORM, estructurando modelos, relaciones y validaciones para productos, servicios, presupuestos y órdenes",
-        "Implementé sistema de subida y gestión de archivos con Multer, incluyendo validaciones de tipo y tamaño, almacenando comprobantes de pago y documentos en el servidor",
-        "Integré sistema de notificaciones en tiempo real con envío de emails transaccionales mediante Resend, cubriendo eventos del ciclo de vida de presupuestos y órdenes tanto para clientes y administradores"
       ]
     }
     },

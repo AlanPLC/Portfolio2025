@@ -15,9 +15,14 @@ export const profile = {
 };
 
 export const experienceData = {
+  experienceBands: {
+    img: "./projects-imgs/vector.png",
+    tech: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Supabase"],
+    githubUrl: ""
+  },
   experience1:{
     img: "./projects-imgs/vector.png",
-    tech: ["TypeScript", "Node.js", "Make ", "Webhooks", "WhatsApp Business API", "Docker"],
+    tech: ["TypeScript", "Node.js", "Make", "Webhooks", "WhatsApp Business API", "Docker"],
     githubUrl: ""
   },
    experience2:{

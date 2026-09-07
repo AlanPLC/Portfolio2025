@@ -5,6 +5,11 @@
     "copyEmail": "Copy email address"
   },
 
+  "labels": {
+    "viewRepo": "Repository",
+    "keyResults": "Key Results"
+  },
+
   "sections":{
     "home": "Home",
     "about": "About me",
@@ -23,6 +28,31 @@
 
 
   "experience": {
+    "experienceBands": {
+      "role": "Frontend Developer",
+      "company": "BandS",
+      "date": "Aug. 2026 - Sep. 2026",
+      "description": "Ground-up development of an Airbnb/Booking-style reservation platform for a mountain tourist destination in Argentina, alongside the backend developer. We started from a purely visual mockup (no real logic or functionality), which ended up almost entirely rewritten as the app's real behavior got defined. Beyond UI work, I actively contributed to shaping the business logic behind each type of booking.",
+      "achievements": [
+        "Designed the booking logic for 4 completely distinct business types (accommodation, restaurant, experience, event), each with its own admin panel tailored to that industry's real-world rules",
+        "Implemented Restaurant's table-based reservation flow: table categories with capacity/count, shift scheduling by day and service type, and live availability calculation based on which reservations overlap in a given time slot",
+        "Worked on Accommodation's night-based availability model (date ranges, not time-based), including per-period rates, an occupied-dates calendar, and guest breakdown (adults/children)",
+        "Defined, together with the team, which actions each user type can see and perform (platform admin, business provider, tourist), reflecting that distinction in both the UI and the API calls",
+        "Built a reusable admin-panel design language (consistent editing, confirmation, and expand/collapse patterns) so managing any of the 4 business types feels consistent and simple, without duplicating logic across screens",
+        "Unified the booking flow end to end (states, typography, iconography) and added micro-interactions (height/opacity transitions) so state changes feel fluid"
+      ]
+    },
+    "experience2": {
+      "role": "Backend Developer",
+      "company": "Collaborative Freelance Project",
+      "date": "Jan. 2026 - Mar. 2026",
+      "description": "Development of an e-commerce platform with an internal management system and technical service quoting. Contributed primarily as Backend Developer, designing the REST API and relational database architecture.",
+      "achievements": [
+        "Designed and implemented a REST API using Node.js, Express and MySQL with Sequelize ORM, structuring models, relationships and validations for products, services, quotes and orders",
+        "Built a file upload and management system with Multer, including type and size validations, storing payment proofs and documents directly on the server",
+        "Integrated a notification system with transactional email delivery via Resend, covering quote and order lifecycle events for both clients and administrators"
+      ]
+    },
     "experience1": {
       "role": "Chatbot Developer",
       "company": "Freelance Project",
@@ -32,17 +62,6 @@
         "Designed and developed an end-to-end booking ecosystem integrating the WhatsApp Business API, Make and Google Workspace, automating the scheduling flow and reducing the administrative workload of the business",
         "Built a natural language processing engine in TypeScript to normalize dates and times to ISO 8601 format",
         "Improved booking success rate by migrating from an unstable generative AI model to a deterministic logic flow system, eliminating interpretation errors and ensuring accurate data capture"
-      ]
-    },
-    "experience2": {
-      "role": "Backend Developer",
-      "company": "Collaborative Freelance Project",
-      "date": "Jun. 2025 - Jul. 2025",
-      "description": "Development of an e-commerce platform with an internal management system and technical service quoting. Contributed primarily as Backend Developer, designing the REST API and relational database architecture.",
-      "achievements": [
-        "Designed and implemented a REST API using Node.js, Express and MySQL with Sequelize ORM, structuring models, relationships and validations for products, services, quotes and orders",
-        "Built a file upload and management system with Multer, including type and size validations, storing payment proofs and documents directly on the server",
-        "Integrated a notification system with transactional email delivery via Resend, covering quote and order lifecycle events for both clients and administrators"
       ]
     }
   },

@@ -4,6 +4,10 @@
     "menuToggle": "Abrir menú de navegación",
     "copyEmail": "Copiar correo electrónico"
   },
+  "labels": {
+    "viewRepo": "Repositorio",
+    "keyResults": "Resultados Clave"
+  },
   "sections": {
 
     "home": "Inicio",
