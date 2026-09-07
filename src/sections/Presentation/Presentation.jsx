@@ -21,11 +21,11 @@ export default function Presentation() {
           <p className="presentation__desc">{translation.presentation.description}</p>
           <div className="p__actions">
             <div className="presentation__meta">
-              <span className="presentation__role" aria-hidden="true">
+              <span className="presentation__meta-item presentation__role" aria-hidden="true">
                 {translation.presentation.role[0]}
               </span>
               <a
-                className="btn btn--primary"
+                className="presentation__meta-item presentation__cv-btn"
                 href={links.cv}
                 target="_blank"
                 rel="noopener noreferrer"

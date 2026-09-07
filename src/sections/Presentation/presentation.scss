@@ -82,29 +82,56 @@
   }
 
   &__meta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    display: inline-flex;
+    align-items: stretch;
+    width: fit-content;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 
     @include respond-down("tablet-l") {
-      flex-direction: column; // Apila rol y acciones
-      align-items: center;
+      margin-inline: auto;
+    }
+  }
+
+  &__meta-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 0.9rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    white-space: nowrap;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+    &:last-child {
+      border-right: none;
     }
   }
 
   &__role {
-    display: inline-block;
-    background: linear-gradient(90deg, rgba(255, 77, 79, 0.14), rgba(255, 77, 79, 0.08));
     color: var(--accent);
-    border: 1px solid rgba(255, 77, 79, 0.15);
-    padding: 0.45rem 0.65rem;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    box-shadow: 0 6px 18px rgba(224, 67, 69, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.02);
-    margin-top: 1rem;
     user-select: none;
+  }
+
+  &__cv-btn {
+    color: white;
+    background: linear-gradient(180deg, var(--accent), var(--accent-600));
+    transition: background 140ms ease, transform 140ms ease;
+
+    &:hover {
+      background: linear-gradient(180deg, var(--accent-600), var(--accent));
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(255, 77, 79, 0.18);
+      outline-offset: 2px;
+    }
   }
 
   &__actions {
@@ -125,6 +152,7 @@
     line-height: 1.6;
     max-width: 60ch;
     opacity: 0.95;
+    text-indent: 2rem;
 
     @include respond-down("tablet-l") {
       max-width: 90ch;
@@ -195,52 +223,9 @@
   }
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.55rem 0.9rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: transform 140ms ease, box-shadow 140ms ease;
-  border: none;
-  cursor: pointer;
-  max-height: 1.5rem;
-  margin-top: 1rem;
-  margin-left: 0.5rem;
-
-  &:focus {
-    outline: 2px solid rgba(255, 77, 79, 0.18);
-    outline-offset: 2px;
-  }
-
-  &--primary {
-    background: linear-gradient(180deg, var(--accent), var(--accent-600));
-    color: white;
-    box-shadow: 0 8px 26px rgba(224, 67, 69, 0.18);
-
-    &:hover {
-      transform: translateY(-2px);
-    }
-  }
-
-  &--ghost {
-    background: transparent;
-    color: var(--text-soft);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-
-    &:hover {
-      transform: translateY(-2px);
-    }
-  }
-}
-
 // Implementación de Reduced Motion
 @include reduced-motion {
-  .presentation__avatar,
-  .btn {
+  .presentation__avatar {
     transition: none !important;
     transform: none !important;
   }
