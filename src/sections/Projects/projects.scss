@@ -2,6 +2,10 @@
 
 
 #projects {
+    --font-size-titulo: clamp(1.45rem, 3.3vw, 1.8rem);
+    --font-size-subtitulo: clamp(1.22rem, 2.2vw, 1.35rem);
+    --font-size-parrafo: clamp(1.05rem, 1.1vw, 1.1rem);
+
     scroll-margin-top: 8rem;
     position: relative;
     @include respond-down("tablet") {

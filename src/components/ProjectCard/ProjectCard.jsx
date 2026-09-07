@@ -36,29 +36,20 @@ export default function ProjectCard({
       </div>
 
       <div className="project-card__meta">
-        <div className="project-card__content-split">
-            <div className="project-card__left">
-                <h3 className="project-card__title">{title}</h3>
-                <p className="project-card__desc">{desc}</p>
-
-                <div className="project-card__bottom">
-                    <TechIcons techs={techs} />
-                </div>
-            </div>
-
-            <div className="project-card__separator"></div>
-
-            <div className="project-card__right">
-                <h4 className="project-card__section-title">{results}</h4>
-                <ul className="project-card__achievements-list">
-                    {achievements.map((item, index) => (
-                        <li key={index}>
-                            <span className="achievement-icon"></span> {item}
-                        </li>
-                    ))}
-                </ul>
-            </div>
+        <div className="project-card__header-row">
+            <h3 className="project-card__title">{title}</h3>
+            <TechIcons techs={techs} />
         </div>
+        <p className="project-card__desc">{desc}</p>
+
+        <h4 className="project-card__section-title">{results}</h4>
+        <ul className="project-card__achievements-list">
+            {achievements.map((item, index) => (
+                <li key={index}>
+                    <span className="achievement-icon"></span> {item}
+                </li>
+            ))}
+        </ul>
       </div>
     </article>
   );
