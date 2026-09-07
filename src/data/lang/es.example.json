@@ -1,6 +1,8 @@
 {
   "nav": {
-    "navItems": ["Inicio", "Sobre mí", "Experiencia", "Proyectos", "Herramientas"]
+    "navItems": ["Inicio", "Sobre mí", "Experiencia", "Proyectos", "Herramientas"],
+    "menuToggle": "Abrir menú de navegación",
+    "copyEmail": "Copiar correo electrónico"
   },
   "sections": {
 

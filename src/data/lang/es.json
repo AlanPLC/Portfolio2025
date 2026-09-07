@@ -6,7 +6,9 @@
       "Experiencia",
       "Proyectos",
       "Herramientas"
-    ]
+    ],
+    "menuToggle": "Abrir menú de navegación",
+    "copyEmail": "Copiar correo electrónico"
   },
 
   "sections":{

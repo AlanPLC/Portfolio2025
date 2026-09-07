@@ -135,7 +135,12 @@ useEffect(() => {
             </div>
             <p key={lang}>{lang === "es" ? "Español" : "English"}</p>
           </div>
-          <button className={`burger ${isOpen ? "active" : ""}`} onClick={toggleMenu}>
+          <button
+            className={`burger ${isOpen ? "active" : ""}`}
+            onClick={toggleMenu}
+            aria-label={translation.nav.menuToggle}
+            aria-expanded={isOpen}
+          >
             <span></span>
             <span></span>
             <span></span>
@@ -159,7 +164,7 @@ useEffect(() => {
             <a href={profile.links.github} target="_blank" rel="noopener noreferrer">
               <img src="/project-icons/github-svgrepo-com.svg" alt="github" />
             </a>
-            <button onClick={handleCopy}>
+            <button onClick={handleCopy} aria-label={translation.nav.copyEmail}>
               <img src="/project-icons/fairemail-svgrepo-com.svg" alt="email" />
             </button>
             <a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">

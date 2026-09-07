@@ -6,11 +6,11 @@ import { profile } from "../../data/dataSource.js";
 
 export default function Presentation() {
   const { name, avatar, links } = profile;
-  const { sectionsRefs } = useActiveSection()
+  const { setRef } = useActiveSection()
   const { translation } = useLanguage();
 
   return (
-    <section className="presentation" aria-labelledby="presentation-heading" id="home" ref={el => sectionsRefs.current["home"] = el}>
+    <section className="presentation" aria-labelledby="presentation-heading" id="home" ref={setRef("home")}>
       <div className="presentation__card">
         <div className="presentation__left">
           <p className="presentation__greeting">{translation.presentation.greeting}</p>
