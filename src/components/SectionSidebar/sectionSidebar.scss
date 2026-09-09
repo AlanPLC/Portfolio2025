@@ -1,0 +1,251 @@
+@use "../../styles/breakpoints" as *;
+
+.section-sidebar {
+  position: fixed;
+  right: clamp(0.75rem, 2vw, 2rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.1rem;
+
+  // Mobile/tablet: en vez de una barra vertical pegada al costado (que
+  // obligaba a reservar un margen lateral extra en TODOS los contenedores),
+  // pasa a vivir centrada abajo, horizontal -- asi el padding lateral de
+  // cada contenedor puede ser simetrico y minimo en los dos lados (ver
+  // $mobile-container-pad en breakpoints.scss).
+  @include respond-down("tablet-l") {
+    right: auto;
+    top: auto;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+
+    // Fondo tipo vidrio que ocupa todo el ancho de la pantalla, para
+    // diferenciar la barra del contenido en vez de dejar los botones
+    // "flotando" sueltos sobre lo que sea que haya scrolleado detras.
+    // 100vw + translateX(-50vw) en vez de simplemente "left/right: 0",
+    // porque el padre tiene su propio transform (la linea de arriba) y eso
+    // lo convierte en el "containing block" de un hijo position:fixed --
+    // un position:absolute posicionado desde su propio centro (50%) y
+    // corrido medio viewport para cada lado evita ese problema.
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -0.85rem;
+      bottom: -1rem;
+      width: 100vw;
+      transform: translateX(-50vw);
+      background: rgba(15, 23, 36, 0.55);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: -1;
+      pointer-events: none;
+    }
+  }
+
+  &__item {
+    // Pastilla que arranca como un circulo (solo el icono) y se "alarga"
+    // hacia la izquierda al pasar el mouse, revelando el texto desde el
+    // propio boton en vez de un tooltip flotante aparte.
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 2.6rem;
+    max-width: 2.6rem;
+    overflow: hidden;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: rgba(15, 23, 36, 0.35);
+    backdrop-filter: blur(8px) saturate(120%);
+    color: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+    transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+      color 0.2s ease;
+
+    // Solo por encima del breakpoint mobile/tablet: si esta regla tambien
+    // valiera en mobile, un ":hover" que algunos navegadores dejan "pegado"
+    // tras un tap (sin mouse real de por medio) ganaria por sobre la regla
+    // de abajo (misma especificidad, pero esta es la unica que sigue
+    // activa una vez que "is-tapped" ya expiro por el timeout del JS) y el
+    // label reaparecia corrido, con el transform pensado para el otro
+    // layout (translateX(0) en vez de translateX(-50%)).
+    @include respond-up("tablet-l") {
+      &:hover,
+      &:focus-visible,
+      &.is-tapped {
+        // 9rem alcanza de sobra: el label mas largo ("Herramientas") mide
+        // ~141px de contenido real, nunca necesito los ~13rem que tenia
+        // antes -- ese excedente solo arriesgaba superponerse con el
+        // contenido en pantallas de escritorio angostas sin ganar nada a
+        // cambio.
+        max-width: 9rem;
+        color: rgba(255, 255, 255, 0.95);
+        background: rgba(15, 23, 36, 0.6);
+
+        .section-sidebar__label {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(255, 77, 79, 0.4);
+      outline-offset: 3px;
+    }
+
+    &.is-active {
+      color: #ffffff;
+      border-color: rgba(255, 77, 79, 0.45);
+      box-shadow: 0 0 14px rgba(255, 77, 79, 0.3);
+    }
+
+    @include respond-down("tablet-l") {
+      // En la fila de abajo el circulo ya no puede "alargarse" horizontal
+      // (empujaria a los botones vecinos en la misma fila): tamaño fijo, y
+      // el label pasa a ser una burbuja flotante arriba del icono (position
+      // absolute, no afecta el ancho/layout de los demas botones).
+      width: 2.75rem;
+      height: 2.75rem;
+      max-width: none;
+      overflow: visible;
+
+      // Solo is-tapped (no :hover/:focus-visible): en touch no hay hover
+      // real, y un tap deja el boton enfocado en algunos navegadores -- si
+      // el label se revelara tambien por foco, se quedaria pegado en
+      // pantalla para siempre en vez de ocultarse solo a los 1400ms que
+      // maneja el propio JS (ver TAP_FLASH_MS en SectionSidebar.jsx).
+      &.is-tapped {
+        max-width: none;
+        background: rgba(15, 23, 36, 0.6);
+
+        .section-sidebar__label {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+      }
+    }
+  }
+
+  &__label {
+    padding-left: 1rem;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    @include respond-down("tablet-l") {
+      // Burbuja flotante arriba del icono en vez de texto revelado al
+      // costado: crece hacia arriba, lejos del borde inferior de pantalla
+      // donde vive ahora esta barra.
+      position: absolute;
+      left: 50%;
+      bottom: 100%;
+      padding: 0.35rem 0.7rem;
+      margin-bottom: 0.5rem;
+      background: rgba(15, 23, 36, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: rgba(255, 255, 255, 0.9);
+      pointer-events: none;
+      transform: translateX(-50%) translateY(4px);
+    }
+  }
+
+  &__icon {
+    position: relative;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+
+    svg,
+    img {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+
+    @include respond-down("tablet-l") {
+      width: 2.75rem;
+      height: 2.75rem;
+
+      svg,
+      img {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+    }
+  }
+
+  &__lang-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -0.65rem;
+    transition: opacity 0.3s ease, transform 0.4s ease;
+
+    &--front {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+    &--back {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+  }
+
+  // Mismo motivo que el hover/focus-visible de mas arriba: restringido a
+  // desktop para que un ":hover" pegado tras un tap en mobile no deje el
+  // icono cambiado de forma permanente.
+  @include respond-up("tablet-l") {
+    &__item--lang:hover,
+    &__item--lang:focus-visible,
+    &__item--lang.is-tapped {
+      .section-sidebar__lang-icon--front {
+        opacity: 0;
+        transform: rotate(90deg) scale(0.8);
+      }
+      .section-sidebar__lang-icon--back {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      }
+    }
+  }
+
+  @include respond-down("tablet-l") {
+    &__item--lang.is-tapped {
+      .section-sidebar__lang-icon--front {
+        opacity: 0;
+        transform: rotate(90deg) scale(0.8);
+      }
+      .section-sidebar__lang-icon--back {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      }
+    }
+  }
+
+  @include reduced-motion {
+    &__item,
+    &__label,
+    &__lang-icon {
+      transition: none;
+    }
+  }
+}

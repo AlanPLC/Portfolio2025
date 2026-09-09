@@ -5,7 +5,6 @@ footer {
   justify-content: space-between;
   align-items: baseline;
   padding: 2rem 1rem;
-  margin-top: 4rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 
   h3 {
@@ -32,6 +31,13 @@ footer {
 
   @include respond-down("tablet") {
     padding: 2rem 2rem;
+  }
+
+  @include respond-down("tablet-l") {
+    // La barra de navegacion fija (ver sectionSidebar.scss) tapa el final
+    // de la pagina; sin este respiro no habia forma de scrollear lo
+    // suficiente para dejar de verla encima del copyright.
+    margin-bottom: $mobile-sidebar-clearance-bottom;
   }
 
   @include respond-down("mobile-l") {

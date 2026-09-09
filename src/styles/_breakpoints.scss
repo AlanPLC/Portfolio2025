@@ -23,8 +23,45 @@ $breakpoints: (
   }
 }
 
+@mixin respond-up($size) {
+  @if map.has-key($breakpoints, $size) {
+    @media (min-width: map.get($breakpoints, $size) + 1px) {
+      @content;
+    }
+  } @else {
+    @warn "El valor '#{$size}' no está definido en el mapa $breakpoints.";
+  }
+}
+
 @mixin reduced-motion {
   @media (prefers-reduced-motion: reduce) {
     @content;
   }
 }
+
+// Padding lateral de cada contenedor en mobile/tablet (breakpoint
+// "tablet-l" y por debajo), donde los contenedores ocupan el 100% del ancho
+// y ya no hay margen de body que lo reemplace. Simetrico en los dos lados:
+// la sidebar ya no vive al costado del contenido en este rango (pasa a una
+// barra centrada abajo, ver sectionSidebar.scss), asi que no hace falta
+// reservar mas lugar de un lado que del otro -- es solo un respiro minimo.
+// $mobile-container-pad rige por encima de "mobile-l" (700px);
+// $mobile-container-pad-sm en "mobile-l" (700px) para abajo.
+$mobile-container-pad: 1.25rem;
+$mobile-container-pad-sm: 0.9375rem;
+
+// Espacio a reservar ABAJO en cada seccion en mobile/tablet, para que su
+// contenido centrado (min-height:100vh + box-sizing:border-box +
+// justify-content:center) nunca quede detras de la barra de navegacion fija
+// que ahora vive centrada en la parte inferior de la pantalla (ver
+// sectionSidebar.scss): altura del icono (2.75rem) + su offset desde el
+// borde (1rem) + un respiro chico.
+$mobile-sidebar-clearance-bottom: 5rem;
+
+// Piso del padding horizontal del body en DESKTOP (ver --body-pad-x en
+// App.scss): el ancho real de la sidebar en su estado normal/colapsado
+// (2.6rem, el circulo) mas su offset maximo desde el borde (2rem, ver
+// sectionSidebar.scss) mas 10px de respiro. A proposito NO contempla el
+// ancho expandido al hacer hover/tap (9rem) -- ese es un estado momentaneo
+// de interaccion, no el tamano "de la sidebar" en reposo.
+$sidebar-clearance-desktop: calc(2.6rem + 2rem + 10px);

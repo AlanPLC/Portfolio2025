@@ -28,7 +28,20 @@ html {
 
 body {
   margin: 0;
-  padding: 1rem 10rem;
+  // Sin padding vertical: cada seccion ocupa un multiplo exacto de 100vh, asi
+  // que el scroll a cualquiera de ellas queda siempre preciso, sin offsets.
+  //
+  // Simetrico en los dos lados a proposito, para que los contenedores queden
+  // centrados de verdad (no mas margen de un lado que del otro). Progresivo
+  // (clamp): se achica de forma fluida con la pantalla en vez de quedar
+  // pegado a un valor grande y fijo apenas se entra en desktop. El piso es
+  // el minimo que deja pasar la sidebar sin superponerse (ver
+  // $sidebar-clearance-desktop); el techo (10rem) es solo un tope de
+  // comodidad en pantallas muy anchas. --body-pad-x se expone como variable
+  // para que .tools (full bleed) pueda cancelarlo exactamente con un margen
+  // negativo, a cualquier ancho.
+  --body-pad-x: clamp(#{$sidebar-clearance-desktop}, 1.01rem + 7.49vw, 10rem);
+  padding: 0 var(--body-pad-x);
   background: #0f1724;
   font-family: "Roboto Condensed", sans-serif;
   color: #fff;
@@ -70,26 +83,14 @@ body {
     }
   }
 
-  @include respond-down("desktop-md") {
-    padding: 1rem 5rem;
-  }
-
-  @include respond-down("laptop") {
-    padding: 1rem 3rem;
-  }
-
-  @include respond-down("tablet") {
-    padding: 1rem 2rem;
-    overflow-y: hidden;
-  }
-
-  @include respond-down("mobile-l") {
-    padding: 1rem 1.5rem;
-    overflow-y: hidden;
-  }
-
-  @include respond-down("mobile-lg") {
-    padding: 1rem 1rem;
+  // Mobile/tablet: los contenedores pasan a ocupar el 100% del ancho (sin
+  // margen de body); la sidebar ya no vive al costado en este rango (pasa a
+  // una barra centrada abajo, ver sectionSidebar.scss), asi que cada
+  // contenedor solo necesita un respiro lateral minimo y simetrico (ver
+  // $mobile-container-pad en breakpoints).
+  @include respond-down("tablet-l") {
+    --body-pad-x: 0px;
+    padding: 0;
     overflow-y: hidden;
   }
 }
