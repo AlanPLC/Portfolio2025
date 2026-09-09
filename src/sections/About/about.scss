@@ -5,20 +5,28 @@
   --font-size-subtitulo: clamp(1.35rem, 2.4vw, 1.5rem);
   --font-size-parrafo: clamp(1.15rem, 1.2vw, 1.25rem);
 
-  scroll-margin-top: 8rem;
   position: relative;
   overflow: visible;
+  min-height: 100vh;
+  box-sizing: border-box;
   margin: 12rem 0;
- 
-  @include respond-down("tablet") {
-    scroll-margin-top: 26rem;
-    }
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include respond-down("tablet-l") {
+    // Deja lugar abajo para que el contenido centrado no quede detras de la
+    // barra de navegacion fija (ver $mobile-sidebar-clearance-bottom).
+    padding-bottom: $mobile-sidebar-clearance-bottom;
+  }
+
   .about-accordion-container {
     background: var(--card-bg);
     border: 1px solid rgba(255, 255, 255, 0.04);
     border-radius: var(--card-radius);
-    padding: 2.5rem 3rem;
+    // Fluido: se achica de forma progresiva en pantallas de escritorio mas
+    // chicas en vez de quedar fijo en 2.5rem 3rem siempre.
+    padding: clamp(1.75rem, 1vw + 1.5rem, 2.5rem) clamp(1.75rem, 2vw + 1.5rem, 3rem);
     box-shadow: 0 8px 30px rgba(2, 6, 23, 0.45);
     backdrop-filter: blur(10px);
     max-width: 56rem;
@@ -31,13 +39,24 @@
     position: relative;
     z-index: 1;
 
-    @include respond-down("mobile-lg") {
-      padding: 1.5rem;
-      min-height: auto;
+    @include respond-down("tablet-l") {
+      border-radius: 0;
+      padding-left: $mobile-container-pad;
+      padding-right: $mobile-container-pad;
     }
 
     @include respond-down("mobile-l") {
       max-width: 100%;
+      padding-left: $mobile-container-pad-sm;
+      padding-right: $mobile-container-pad-sm;
+    }
+
+    @include respond-down("mobile-lg") {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      padding-left: $mobile-container-pad-sm;
+      padding-right: $mobile-container-pad-sm;
+      min-height: auto;
     }
 
     // --- ANILLOS PADRES ---
@@ -168,7 +187,7 @@
           }
 
           .title-number {
-            font-size: 0.8rem;
+            font-size: 1.4rem;
             color: var(--accent);
             opacity: 0.3;
             font-family: "JetBrains Mono", monospace;
@@ -198,6 +217,24 @@
             line-height: 1.6;
             font-size: var(--font-size-parrafo);
             margin: 0.5rem 0 1rem 0;
+            text-indent: 2rem;
+          }
+
+          .about-bands-link {
+            text-decoration: none;
+
+            span {
+              // Mismo naranja que el acento del skill "Destino Turistico"
+              // (oklch(0.68 0.19 50)), igual que en Experiencia.
+              color: oklch(0.68 0.19 50);
+              font-weight: 700;
+              transition: color 0.2s ease;
+            }
+
+            &:hover span {
+              color: oklch(0.72 0.19 50);
+              text-decoration: underline;
+            }
           }
 
           .education-list {
@@ -219,6 +256,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                gap: 0.75rem;
                 margin-bottom: 0.1rem;
 
                 .edu-title {
@@ -232,6 +270,29 @@
                   color: var(--accent);
                   font-weight: 500;
                   letter-spacing: 0.5px;
+                  // Fijo: nunca se achica ni parte en dos lineas ("2014 -" /
+                  // "2019"), todo el achique de espacio lo absorbe el titulo
+                  // (que si puede partirse en varias lineas sin verse mal).
+                  flex-shrink: 0;
+                  white-space: nowrap;
+                }
+
+                @include respond-down("mobile-l") {
+                  .edu-title {
+                    font-size: 1.05rem;
+                  }
+                  .edu-year {
+                    font-size: 0.95rem;
+                  }
+                }
+
+                @include respond-down("mobile-lg") {
+                  .edu-title {
+                    font-size: 0.95rem;
+                  }
+                  .edu-year {
+                    font-size: 0.85rem;
+                  }
                 }
               }
 

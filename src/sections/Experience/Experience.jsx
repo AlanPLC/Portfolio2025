@@ -6,6 +6,7 @@ import useActiveSection from "../../contexts/useActiveSection.js"
 import useLanguage from "../../contexts/useLanguage.js";
 import Reveal from "../../components/Reveal/Reveal.jsx";
 import TechIcons from "../../components/TechIcons/TechIcons.jsx";
+import ScrambleText from "../../components/ScrambleText/ScrambleText.jsx";
 
 export default function Experience() {
   const { setRef } = useActiveSection();
@@ -47,12 +48,23 @@ export default function Experience() {
                 <Reveal sectionId="experience" delay={index * 0.2}>
                   <div className="experience-item">
                     <div className={`experience-details${hasAchievements && !isOpen ? " is-collapsed" : ""}`}>
-                      <h3>{exp.role}</h3>
+                      <ScrambleText as="h3" text={exp.role} />
 
                       <div className="experience-meta-row">
                         <div className="experience-company">
                           <img src="/titleIcons/briefcase-svgrepo-com.svg" alt="" className="experience-company__logo" />
-                          <h4>{exp.company}</h4>
+                          {staticExperience.companyUrl ? (
+                            <a
+                              href={staticExperience.companyUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="experience-company__link"
+                            >
+                              <ScrambleText as="h4" text={exp.company} />
+                            </a>
+                          ) : (
+                            <ScrambleText as="h4" text={exp.company} />
+                          )}
                         </div>
                         <div className="experience-date">
                           <svg viewBox="0 0 24 24" className="experience-date__icon" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -61,11 +73,11 @@ export default function Experience() {
                             <line x1="8" y1="2" x2="8" y2="6" />
                             <line x1="3" y1="10" x2="21" y2="10" />
                           </svg>
-                          <span>{exp.date}</span>
+                          <ScrambleText as="span" text={exp.date} />
                         </div>
                       </div>
 
-                      <p>{exp.description}</p>
+                      <ScrambleText as="p" text={exp.description} />
 
                       {(staticExperience.tech?.length > 0 || staticExperience.githubUrl) && (
                         <TechIcons
@@ -78,7 +90,7 @@ export default function Experience() {
                               className="tech-icons__pill repo-link"
                             >
                               <img src="/project-icons/code-editor-svgrepo-com.svg" alt="" className="tech-icons__icon" />
-                              <span className="tech-icons__label">{translation.labels.viewRepo}</span>
+                              <ScrambleText as="span" stableWidth className="tech-icons__label" text={translation.labels.viewRepo} />
                             </a>
                           )}
                         />
@@ -92,7 +104,7 @@ export default function Experience() {
                             onClick={() => toggleAchievements(experienceId)}
                             aria-expanded={isOpen}
                           >
-                            <span>{translation.labels.keyResults}</span>
+                            <ScrambleText as="span" stableWidth text={translation.labels.keyResults} />
                             <svg
                               className={`achievements-toggle__chevron ${isOpen ? "is-open" : ""}`}
                               viewBox="0 0 24 24"
@@ -110,7 +122,7 @@ export default function Experience() {
                           <div className={`achievements-collapse ${isOpen ? "is-open" : ""}`}>
                             <ul className="achievements-list">
                               {exp.achievements.map((achievement, idx) => (
-                                <li key={idx}>{achievement}</li>
+                                <li key={idx}><ScrambleText as="span" text={achievement} /></li>
                               ))}
                             </ul>
                           </div>

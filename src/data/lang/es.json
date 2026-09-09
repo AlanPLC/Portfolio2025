@@ -1,7 +1,7 @@
 {
   "nav": {
     "navItems": [
-      "Inicio",
+      "Introducción",
       "Sobre mí",
       "Experiencia",
       "Proyectos",
@@ -13,20 +13,21 @@
 
   "labels": {
     "viewRepo": "Repositorio",
-    "keyResults": "Resultados Clave"
+    "keyResults": "Resultados Clave",
+    "viewProject": "Ver proyecto"
   },
 
   "sections":{
-    "home": "Inicio",
+    "home": "Introducción",
     "about": "Sobre mí",
     "experience": "Experiencia",
-    "projects": "Proyectos",
+    "projects": "Proyectos Personales",
     "tools": "Herramientas"
   },
 
   "presentation": {
     "greeting": "Hola, soy",
-    "description": "Me especializo en construir experiencias web rápidas, accesibles y visualmente cuidadas. Principalmente trabajo con React, Vite y APIs REST modernas, adaptándome al stack que cada proyecto requiera.",
+    "description": "Me especializo en construir experiencias web rápidas, accesibles y visualmente cuidadas. Principalmente trabajo con React, Vite y APIs REST modernas, aunque constantemente me adapto al stack que cada desafío requiera.",
     "role": ["Desarrollador Junior Full Stack"],
     "cvButton": "Descargar CV"
   },
@@ -73,11 +74,11 @@
   "about": {
     "about1": {
       "title": "Quién soy",
-      "description": "Procedente de La Rioja, Argentina; Aficionado a la tecnología desde niño, incursionando en la informática y posteriormente en la programación con el sueño de algún día poder crear Videojuegos."
+      "description": "Procedente de La Rioja, Argentina; aficionado a la tecnología desde niño, incursionando en la informática y posteriormente en la programación; donde encontré mi pasión construyendo sistemas y resolviendo problemas en el camino trabajando como desarrollador. También con muchas ganas de incursionar en el desarrollo de videojuegos, estudiando de forma autodidacta este nuevo rubro, así poder algún día dedicarme a tiempo completo a ello."
     },
     "about2": {
       "title": "Mi experiencia",
-      "description": "Desarrollador Full Stack con experiencia en el desarrollo de APIs REST, automatización de procesos y experiencias web funcionales e intuitivas. He participado en proyectos reales que van desde sistemas de reservas automatizados por WhatsApp hasta plataformas e-commerce con gestión interna, enfrentando distintos contextos técnicos y adaptando soluciones limpias y escalables a cada uno."
+      "description": "Desarrollador Full-Stack, posteriormente de forma freelance y actualmente trabajando en la empresa BandS. Mi experiencia va desde sistemas ERP, de reservas y chatbots de automatización para comercios; utilizando distintas tecnologías y adaptándome al contexto para dar una solución al cliente."
     },
     "about3": {
       "title": "Educación",
@@ -104,7 +105,7 @@
 
   "projects": {
     "project1": {
-      "role": "Desarrollador Full Stack en Sistema de gestión de minimarket",
+      "role": "Sistema de Gestión Minimarket",
       "description": "Desarrollo de mi proyecto final universitario, una aplicación web para la gestión integral de un minimarket, permitiendo gestionar inventario, proveedores y generar la venta con su respectivo ticket.",
       "achievements": [
         "Implementé sistema login con distintos roles y acciones según el mismo",
@@ -113,7 +114,7 @@
       ]
     },
     "project2": {
-      "role": "Desarrollador Mobile en Pokedex",
+      "role": "Pokedex Mobile",
       "description": "Desarrollo de aplicación móvil de Pokedex utilizando PokeApi, permitiendo la búsqueda y visualización de las características de cada Pokemon.",
       "achievements": [
         "Desarrollé la arquitectura de integración con la RESTful API (PokeApi), gestionando estados de carga y errores",
@@ -125,6 +126,7 @@
 
   "tools": {
     "react": { "category": "Librerías / Frameworks" },
+    "nextjs": { "category": "Librerías / Frameworks" },
     "reactNative": { "category": "Librerías / Frameworks" },
     "javascript": { "category": "Lenguajes" },
     "mysql": { "category": "Bases de Datos" },

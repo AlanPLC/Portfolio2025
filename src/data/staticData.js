@@ -18,7 +18,8 @@ export const experienceData = {
   experienceBands: {
     img: "./projects-imgs/vector.png",
     tech: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Supabase"],
-    githubUrl: ""
+    githubUrl: "",
+    companyUrl: "https://www.bands.com.ar/"
   },
   experience1:{
     img: "./projects-imgs/vector.png",
@@ -54,6 +55,12 @@ export const toolsData = {
     techs: ["React", "Vite"],
     percentage: 90,
   },
+  nextjs: {
+    name: "Next.js",
+    complement: "",
+    techs: ["Next.js"],
+    percentage: 70,
+  },
   reactNative: {
     name: "React Native",
     complement: "Expo",
@@ -81,7 +88,7 @@ export const toolsData = {
   git: {
     name: "GIT",
     complement: "Github",
-    techs: ["GIT", "Github"],
+    techs: ["GIT", "Github", "GitLab"],
     percentage: 100,
   },
   python: {

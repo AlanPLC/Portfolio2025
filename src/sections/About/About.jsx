@@ -2,11 +2,46 @@ import { useState } from "react";
 import "./about.scss";
 import useActiveSection from "../../contexts/useActiveSection.js";
 import SectionTitle from "../../components/SectionTitle/SectionTitle.jsx";
+import { AboutIcon } from "../../components/icons/sectionIcons.jsx";
 import useLanguage from "../../contexts/useLanguage.js";
 import Reveal from "../../components/Reveal/Reveal.jsx";
+import ScrambleText from "../../components/ScrambleText/ScrambleText.jsx";
+import { experienceData } from "../../data/dataSource.js";
+
+const BANDS_URL = experienceData.experienceBands?.companyUrl;
+
+// El texto menciona "BandS" en algunos parrafos: si esta presente, lo separa
+// para que ese fragmento en particular sea un link (el resto sigue
+// decodificandose normal via ScrambleText).
+function AboutParagraph({ text }) {
+  if (!BANDS_URL || !text.includes("BandS")) {
+    return <ScrambleText as="p" className="description-text" text={text} />;
+  }
+
+  const parts = text.split(/(BandS)/);
+  return (
+    <p className="description-text">
+      {parts.map((part, i) =>
+        part === "BandS" ? (
+          <a
+            key={i}
+            href={BANDS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="about-bands-link"
+          >
+            <ScrambleText as="span" text={part} />
+          </a>
+        ) : (
+          <ScrambleText key={i} as="span" text={part} />
+        )
+      )}
+    </p>
+  );
+}
 
 export default function About() {
-  const [active, setActive] = useState(0); 
+  const [active, setActive] = useState(0);
   const { setRef } = useActiveSection();
   const { translation } = useLanguage();
   const translatedAbout = Object.values(translation.about);
@@ -14,7 +49,7 @@ export default function About() {
   return (
     <section ref={setRef("about")} id="about">
       <Reveal sectionId="about">
-        <SectionTitle id="experience" title={translation.sections.about} />
+        <SectionTitle id="about" title={translation.sections.about} icon={<AboutIcon />} />
       </Reveal>
       
       <Reveal sectionId="about" delay={0.2}>
@@ -29,7 +64,7 @@ export default function About() {
                       onClick={() => setActive(active === index ? -1 : index)}
                     >
                       <span className="title-number">0{index + 1}</span>
-                      {item.title}
+                      <ScrambleText as="span" text={item.title} />
                     </button>
 
                     <div
@@ -44,15 +79,15 @@ export default function About() {
                           {item.items.map((edu, i) => (
                             <div key={i} className="education-item">
                               <div className="edu-header">
-                                <span className="edu-title">{edu.title}</span>
-                                <span className="edu-year">{edu.year}</span>
+                                <ScrambleText as="span" className="edu-title" text={edu.title} />
+                                <ScrambleText as="span" className="edu-year" text={edu.year} />
                               </div>
-                              <p className="edu-institution">{edu.institution}</p>
+                              <ScrambleText as="p" className="edu-institution" text={edu.institution} />
                             </div>
                           ))}
                         </div>
                       ) : (
-                        <p className="description-text">{item.description}</p>
+                        <AboutParagraph text={item.description} />
                       )}
                     </div>
                   </div>

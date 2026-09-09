@@ -41,6 +41,12 @@ export const toolsData = {
     techs: ["React"],
     percentage: 50,
   },
+  nextjs: {
+    name: "Next.js",
+    complement: "Framework",
+    techs: ["Next.js"],
+    percentage: 50,
+  },
   reactNative: {
     name: "Native",
     complement: "Mobile",

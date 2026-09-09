@@ -11,13 +11,22 @@
   --font-size-subtitulo: clamp(1.35rem, 2.4vw, 1.5rem);
   --font-size-parrafo: clamp(1.15rem, 1.2vw, 1.25rem);
 
-  scroll-margin-top: 8rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
- @include respond-down("tablet") {
-    scroll-margin-top: 26rem;
-    }
+  @include respond-down("tablet-l") {
+    // Deja lugar abajo para que el contenido centrado no quede detras de la
+    // barra de navegacion fija (ver $mobile-sidebar-clearance-bottom).
+    padding-bottom: $mobile-sidebar-clearance-bottom;
+  }
+
   .experience {
-    padding: 2.25rem;
+    // Fluido: se achica de forma progresiva en pantallas de escritorio mas
+    // chicas en vez de quedar fijo en 2.25rem siempre.
+    padding: clamp(1.5rem, 1.5vw + 1rem, 2.25rem);
     background: transparent;
     background: linear-gradient(
       180deg,
@@ -29,6 +38,14 @@
     box-shadow: 0 10px 40px rgba(2, 6, 23, 0.55);
     backdrop-filter: blur(8px) saturate(120%);
     gap: 2rem;
+
+    @include respond-down("tablet-l") {
+      border-radius: 0;
+      padding: 2.25rem $mobile-container-pad;
+    }
+    @include respond-down("mobile-l") {
+      padding: 1.5rem $mobile-container-pad-sm;
+    }
 
 
     .experience-container {
@@ -72,6 +89,27 @@
             height: 1.4rem;
             flex-shrink: 0;
             opacity: 0.85;
+          }
+
+          // Selector explicito (no "&", que solo concatena) para que gane
+          // en especificidad contra la regla generica ".experience-details
+          // h4" mas abajo: ambas empatan en especificidad, y sin este extra
+          // nivel la generica ganaba por orden de aparicion en el archivo.
+          .experience-company__link {
+            text-decoration: none;
+
+            h4 {
+              // Mismo naranja que el acento del skill "Destino Turistico"
+              // (oklch(0.68 0.19 50)), para el link a la empresa.
+              color: oklch(0.68 0.19 50);
+              font-weight: 700;
+              transition: color 0.2s ease;
+            }
+
+            &:hover h4 {
+              color: oklch(0.72 0.19 50);
+              text-decoration: underline;
+            }
           }
         }
 
@@ -124,7 +162,6 @@
   
           .tech-icons {
             margin: 0.5rem -1.5rem 0 -1.5rem;
-            padding: 0 1.5rem;
             border: none;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 0;
@@ -160,10 +197,10 @@
             gap: 0.4rem;
             margin: -0.5rem -1.5rem 0 -1.5rem;
             padding: 1.1rem 1.5rem;
-            background: transparent;
+            background: rgba(255, 255, 255, 0.06);
             border: none;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            color: rgba(255, 255, 255, 0.75);
+            color: var(--accent);
             font-size: var(--font-size-parrafo);
             font-weight: 600;
             font-family: inherit;
@@ -172,8 +209,8 @@
             transition: color 0.2s ease, background 0.2s ease;
 
             &:hover {
-              color: var(--accent);
-              background: rgba(255, 255, 255, 0.08);
+              background: rgba(255, 98, 0, 0.12);
+              color: #ff8a3d;
             }
 
             &__chevron {
@@ -189,15 +226,17 @@
           }
 
           .achievements-collapse {
+            box-sizing: border-box;
             margin: -0.5rem -1.5rem 0 -1.5rem;
             padding: 0 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: none;
             max-height: 0;
             opacity: 0;
             overflow: hidden;
             transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
 
             &.is-open {
+              border-top: 1px solid rgba(255, 255, 255, 0.08);
               max-height: 900px;
               opacity: 1;
             }

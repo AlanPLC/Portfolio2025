@@ -1,16 +1,17 @@
 {
   "nav": {
-    "navItems": ["Home", "About me", "Experience", "Projects", "Tools"],
+    "navItems": ["Introduction", "About me", "Experience", "Projects", "Tools"],
     "menuToggle": "Open navigation menu",
     "copyEmail": "Copy email address"
   },
   "labels": {
     "viewRepo": "Repository",
-    "keyResults": "Key Results"
+    "keyResults": "Key Results",
+    "viewProject": "View project"
   },
   "sections": {
 
-    "home": "Home",
+    "home": "Introduction",
     "about": "About me",
     "experience": "Experience",
     "projects": "Projects",
@@ -82,6 +83,7 @@
   },
   "tools": {
     "react": { "category": "Frontend" },
+    "nextjs": { "category": "Frontend" },
     "reactNative": { "category": "Mobile" },
     "javascript": { "category": "Languages" },
     "mysql": { "category": "Backend" },
