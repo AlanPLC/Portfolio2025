@@ -1,6 +1,7 @@
 import "./footer.scss"
 import { profile } from "../../data/dataSource.js";
 import useLanguage from "../../contexts/useLanguage.js"
+import ScrambleText from "../ScrambleText/ScrambleText.jsx";
 export default function Footer() {
     const { name } = profile
     const { translation } = useLanguage();
@@ -8,7 +9,7 @@ export default function Footer() {
     return(
         <footer>
             <h3>{name}</h3>
-            <p>{translation.footer.copyright}</p>
+            <ScrambleText as="p" text={translation.footer.copyright} />
         </footer>
     )
 }
