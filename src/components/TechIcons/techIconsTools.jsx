@@ -1,24 +1,26 @@
 import "./techIconsTools.scss"
+import { getTechIcon } from "../../utils/simpleIconsMap.js";
 
 export default function TechIconsTools({ techs = [] }) {
   return (
     <div className="tech-icons-tools" aria-hidden="false">
-      {techs.map((tech, index) => (
-        <div key={index} className="tech-icons-tools__group">
-          <span className="tech-icons-tools__pill">{tech}</span>
+      {techs.map((tech) => {
+        const name = tech.trim();
+        const icon = getTechIcon(name);
+        if (!icon) return null;
 
-          {index < techs.length - 1 && (
-            // <img 
-            //   src="./code-editor-svgrepo-com.svg" 
-            //   alt="plus-icon" 
-            //   className="tech-plus"
-            // />
-            <div className="tech-plus">
-              +
-            </div>
-          )}
-        </div>
-      ))}
+        return (
+          <svg
+            key={name}
+            viewBox="0 0 24 24"
+            className="tech-icons-tools__icon"
+            role="img"
+            aria-label={name}
+          >
+            <path d={icon.path} fill="currentColor" />
+          </svg>
+        );
+      })}
     </div>
   );
 }

@@ -14,6 +14,11 @@ import {
   siSequelize,
   siVite,
   siExpo,
+  siGit,
+  siGithub,
+  siGitlab,
+  siPython,
+  siQt,
 } from "simple-icons";
 
 const ICON_MAP = {
@@ -21,9 +26,11 @@ const ICON_MAP = {
   "next.js": siNextdotjs,
   react: siReact,
   reactnative: siReact,
+  "r native": siReact,
   "tailwind css": siTailwindcss,
   supabase: siSupabase,
   "node.js": siNodedotjs,
+  nodejs: siNodedotjs,
   make: siMake,
   "whatsapp business api": siWhatsapp,
   docker: siDocker,
@@ -34,6 +41,11 @@ const ICON_MAP = {
   "sequelize orm": siSequelize,
   vite: siVite,
   expo: siExpo,
+  git: siGit,
+  github: siGithub,
+  gitlab: siGitlab,
+  python: siPython,
+  pyqt: siQt,
 };
 
 export function getTechIcon(name) {

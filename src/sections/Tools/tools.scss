@@ -1,184 +1,151 @@
 @use "../../styles/breakpoints" as *;
 
 #tools {
-  scroll-margin-top: 8rem;
-  @include respond-down("tablet") {
-    scroll-margin-top: 26rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include respond-down("tablet-l") {
+    // Deja lugar abajo para que el contenido centrado no quede detras de la
+    // barra de navegacion fija (ver $mobile-sidebar-clearance-bottom).
+    padding-bottom: $mobile-sidebar-clearance-bottom;
   }
+
   .tools {
-    padding: 6rem 0;
+    // Full-bleed solo para que el fondo de rayos llegue de borde a borde: el
+    // negativo cancela el padding del body y el padding de aca abajo lo
+    // vuelve a poner IGUAL en los dos lados (mismo --body-pad-x que usa el
+    // resto de las secciones), asi el contenido queda centrado igual que en
+    // cualquier otro contenedor -- nada especial de mas para esta seccion,
+    // solo el truco para que el fondo se extienda mas alla del contenido.
+    // Evita 100vw, que en Windows incluye el ancho de la scrollbar y
+    // descentra el resultado.
+    position: relative;
+    overflow: hidden;
+    margin-left: calc(-1 * var(--body-pad-x));
+    margin-right: calc(-1 * var(--body-pad-x));
+
     display: flex;
     flex-direction: column;
-    background: transparent;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.03),
-      rgba(255, 255, 255, 0.02)
-    );
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: var(--radius);
-    padding: 2.25rem;
-    box-shadow: 0 10px 40px rgba(2, 6, 23, 0.55);
-    backdrop-filter: blur(8px) saturate(120%);
-    gap: 2rem;
+    gap: 2.5rem;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    padding-left: var(--body-pad-x);
+    padding-right: var(--body-pad-x);
 
-    .progressbar-container {
+    @include respond-down("tablet-l") {
+      // Mobile/tablet: el body ya no aporta padding (--body-pad-x: 0), asi
+      // que el margen negativo de arriba no hace nada; pasa a un respiro
+      // lateral minimo y simetrico, igual que el resto de los contenedores
+      // (la sidebar ya no vive al costado en este rango, ver
+      // sectionSidebar.scss).
+      padding-left: $mobile-container-pad;
+      padding-right: $mobile-container-pad;
+    }
+    @include respond-down("mobile-l") {
+      padding-left: $mobile-container-pad-sm;
+      padding-right: $mobile-container-pad-sm;
+    }
+
+    // El titulo de la seccion vive ahora ADENTRO de .tools (antes era
+    // hermano externo, fuera de este padding) para que se centre en la
+    // misma caja que el contenido: al ser asimetrico el padding (mas grande
+    // a la derecha, por la sidebar), un titulo centrado afuera de esta caja
+    // no coincidia horizontalmente con el contenido centrado adentro.
+    > .reveal-wrapper:first-child {
+      // Sin position+z-index se pintaria debajo de .tools__rays (mismo
+      // motivo por el que .tools-grid mas abajo tambien lo necesita).
+      position: relative;
+      z-index: 1;
+
+      .section-title-wrapper {
+        // El padding-top de .tools y el gap de este flex ya dan el espacio
+        // vertical; sin este reset se sumaria el margen propio del
+        // componente y quedaria aire doble arriba/abajo del titulo.
+        margin: 0;
+      }
+    }
+
+    &__rays {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      // Zonas de fundido mas anchas (35% en vez de 20%) para que el
+      // difuminado se sienta gradual sin llegar a desaparecer.
+      mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 35%,
+        black 65%,
+        transparent 100%
+      );
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 35%,
+        black 65%,
+        transparent 100%
+      );
+
+      @include reduced-motion {
+        display: none;
+      }
+    }
+
+    .tools-grid {
+      position: relative;
+      z-index: 1;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 2.5rem;
 
       .tools-category {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+
         h3 {
-          width: 100%;
-          box-sizing: border-box;
-          text-align: center;
-          position: relative;
+          margin: 0;
           font-size: var(--font-size-titulo);
           font-weight: 600;
-          margin: 0;
-          padding: 0.8rem 1rem 0.8rem 1rem;
-          color: #ffffff;
-          overflow: hidden;
-          background: rgba(15, 23, 42, 0.4); 
-          backdrop-filter: blur(16px) saturate(180%);
-          -webkit-backdrop-filter: blur(16px) saturate(180%);
-          border-radius: 0.5rem;
-          box-shadow: 
-            0 3px 9px 0 rgba(0, 0, 0, 0.37); 
-        
-          &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            opacity: 0.02;
-            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-            pointer-events: none;
-            z-index: 1;
-          }
-        
-          &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-              165deg, 
-              rgba(255, 255, 255, 0.1) 0%, 
-              rgba(255, 255, 255, 0.02) 20%, 
-              transparent 40%
-            );
-            pointer-events: none;
-            z-index: 2;
-          }
-          
-        
-          span, i, b {
-            position: relative;
-            z-index: 3;
-          }
-
-          @include respond-down("mobile-l") {
-            text-align: center;
-          }
-        }
-        hr {
-          margin-top: 1rem;
-          width: 100%;
+          color: var(--accent);
+          text-align: center;
         }
 
-        .tool-container {
+        &__icons {
           display: flex;
-          align-items: center;
-          gap: 1rem;
-          margin: 0.8rem 0;
           flex-wrap: wrap;
-
-          .tecnology-table {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex: 0 0 16rem;
-            margin-top: 1rem;
-
-            @include respond-down("mobile-l") {
-              flex: 0 0 100%;
-              justify-content: center;
-              margin-bottom: 0.5rem;
-            }
-
-            .techicons {
-              display: flex;
-              gap: 0.5rem;
-            }
-
-            .tecnology,
-            .complement {
-              min-width: 4rem;
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-            }
-
-            img {
-              width: 2rem;
-            }
-          }
-
-          .progressbar {
-            display: flex;
-            flex: 1;
-            margin-top: 1rem;
-            width: 100%;
-            min-width: 200px;
-            background: linear-gradient(
-              90deg,
-              rgba(255, 77, 79, 0.14),
-              rgba(255, 77, 79, 0.08)
-            );
-            border-radius: 10px;
-            border: 2px solid rgba(255, 77, 79, 0.15);
-            padding: 0.75rem;
-            height: 0.5rem;
-
-            @include respond-down("mobile-l") {
-              margin-top: 0rem;
-            }
-
-            .inner-progressbar {
-              width: 0;
-              height: 100%;
-              max-width: 100%;
-              border-radius: 10px;
-
-              // Lava glow
-              background: linear-gradient(90deg, #ff4d4f, #fa8c16, #ff4d4f);
-              background-size: 200% 100%;
-              animation: lavaGlow 2.5s ease-in-out infinite;
-
-              transition: width 2s ease;
-
-              box-shadow: 0 0 12px rgba(255, 77, 79, 0.6),
-                0 0 24px rgba(255, 77, 79, 0.4);
-            }
-          }
+          justify-content: center;
+          gap: 2.5rem;
         }
       }
     }
 
-    // Animación lava glow
-    @keyframes lavaGlow {
-      0% {
-        background-position: 0% 0%;
+    .tool-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+
+        .tech-icons-tools__icon {
+          color: var(--accent);
+        }
       }
-      50% {
-        background-position: 100% 0%;
-      }
-      100% {
-        background-position: 0% 0%;
+
+      @include reduced-motion {
+        transition: none;
+        &:hover {
+          transform: none;
+        }
       }
     }
   }
