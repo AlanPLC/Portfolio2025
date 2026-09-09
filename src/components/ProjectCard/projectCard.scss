@@ -3,153 +3,61 @@
 :root {
   --accent: #ff4d4f;
   --accent-600: #e04345;
-  --glass-bg: rgba(255, 255, 255, 0.04);
   --card-radius: 14px;
-  --card-bg: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.01)
-  );
 }
 
-.project-card {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 2.5rem;
-  padding: 2rem;
-  width: 100%;
-  max-width: 1600px;
-  margin-inline: auto;
+.project-slide {
+  display: flex;
+  align-items: stretch;
   box-sizing: border-box;
+  width: 100%;
   border-radius: var(--card-radius);
-  background: var(--card-bg);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
-  transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.25, 1), box-shadow 0.28s;
-
-  @include respond-down("desktop") {
-    grid-template-columns: 280px 1fr;
-    gap: 2rem;
-  }
+  animation: projectSlideIn 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 
   @include respond-down("laptop") {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    flex-direction: column;
   }
 
-  @include respond-down("tablet") {
+  @include reduced-motion {
+    animation: none;
+  }
+
+  &__content {
+    flex: 1 1 0%;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem;
-  }
-
-  &__thumb {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 250px;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #06111a;
-
-    @include respond-down("laptop") {
-      height: 300px;
-    }
-    @include respond-down("tablet") {
-      height: 220px;
-    }
-
-    img {
-      width: 100%;
-      // height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    &:hover {
-      img {
-        transform: scale(1.08);
-      }
-      .project-card__actions {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  }
-
-  &__actions {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    display: flex;
-    gap: 0.6rem;
-    z-index: 10;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-
-    @include respond-down("tablet") {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .action-btn {
-    display: flex;
-    align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-decoration: none;
-    color: white;
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    padding: 1.75rem 1.75rem 0 1.75rem;
 
-    svg {
-      transition: transform 0.3s ease;
-    }
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-3px);
-      svg {
-        transform: rotate(5deg) scale(1.1);
-      }
-    }
-
-    &--primary {
-      background: rgba(255, 77, 79, 0.8);
-      border-color: rgba(255, 255, 255, 0.2);
-      &:hover {
-        background: var(--accent);
-        box-shadow: 0 0 20px rgba(255, 77, 79, 0.4);
-      }
-    }
-
-    span {
-      @include respond-down("mobile-lg") {
-        display: none;
-      }
+    @include respond-down("tablet") {
+      padding: 1.25rem 1.25rem 0 1.25rem;
     }
   }
 
   &__header-row {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  &__icon-frame {
+    width: 2.75rem;
+    height: 2.75rem;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: linear-gradient(160deg, rgba(255, 77, 79, 0.16), rgba(255, 77, 79, 0.04));
+    border: 1px solid rgba(255, 77, 79, 0.2);
+    color: var(--accent);
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
   }
 
   &__title {
@@ -161,71 +69,146 @@
   }
 
   &__desc {
-    margin-bottom: 1.5rem;
+    margin: 0.5rem 0;
     color: rgba(255, 255, 255, 0.8);
     font-size: var(--font-size-parrafo);
     line-height: 1.6;
+    text-indent: 2rem;
   }
 
-  .project-card__section-title{
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-    position: relative;
-    font-size: var(--font-size-subtitulo);
-    font-weight: 600;
-    margin: 0;
-    padding: 0.8rem 0 ;
-    color: #ffffff;
-    overflow: hidden;
-    background: rgba(15, 23, 42, 0.4);
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border-radius: 0.5rem;
-    box-shadow:
-      0 3px 9px 0 rgba(0, 0, 0, 0.37);
-
-      &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-              165deg,
-              rgba(255, 255, 255, 0.1) 0%,
-              rgba(255, 255, 255, 0.02) 50%,
-              transparent 100%
-            );
-            pointer-events: none;
-            z-index: 2;
-          }
-  }
-
-  &__achievements-list {
-    list-style: none;
+  &__image-wrap {
+    flex: 0 1 auto;
+    max-width: 50%;
+    min-width: 30%;
+    display: block;
     padding: 0;
-    margin: 1.5rem 0 0 0;
+    border: none;
+    appearance: none;
+    cursor: zoom-in;
+    overflow: hidden;
+    background:
+      linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01)),
+      #06111a;
+    backdrop-filter: blur(8px) saturate(120%);
+
+    @include respond-down("laptop") {
+      max-width: 100%;
+      width: 100%;
+      // Solo un piso chico (evita un salto brusco a 0 antes de que la
+      // imagen cargue) -- el alto real lo termina dando la imagen segun su
+      // propio aspect ratio (ver "img" mas abajo), no un valor fijo que la
+      // estire mas de lo necesario.
+      min-height: 80px;
+      // El componente calcula "flexBasis" en linea en JS como alto-de-fila
+      // x aspect-ratio, pensado SOLO para el layout de escritorio (fila),
+      // donde flex-basis controla el ANCHO. Aca (columna) flex-basis
+      // controla el ALTO -- sin este !important, ese calculo pensado para
+      // otro eje terminaba estirando la caja mucho mas alta de lo que la
+      // imagen necesita.
+      flex-basis: auto !important;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      @include respond-down("laptop") {
+        // En mobile/tablet el contenedor ya no fuerza una altura fija: el
+        // alto lo da la imagen segun su propio aspect ratio para el 100%
+        // de ancho disponible, en vez de estirarse/recortarse con
+        // object-fit dentro de una caja de altura arbitraria.
+        height: auto;
+      }
+    }
+  }
+
+  .tech-icons {
+    margin-left: -1.75rem;
+    margin-right: -1.75rem;
+    margin-top: auto;
+    margin-bottom: 0;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0;
+
+    @include respond-down("tablet") {
+      margin-left: -1.25rem;
+      margin-right: -1.25rem;
+    }
+
+    .tech-icons__pill {
+      flex: 1;
+      justify-content: center;
+      padding-top: 0.65rem;
+      padding-bottom: 0.65rem;
+    }
+
+    .repo-link {
+      text-decoration: none;
+      color: #ff8a3d;
+      background: rgba(255, 98, 0, 0.12);
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(255, 98, 0, 0.22);
+        color: #ffa35c;
+      }
+    }
+  }
+
+  &__results-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -0.5rem -1.75rem 0 -1.75rem;
+    padding: 1.1rem 1.75rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--accent);
+    font-size: var(--font-size-parrafo);
+    font-weight: 600;
+    line-height: 1;
+
+    @include respond-down("tablet") {
+      margin: -0.5rem -1.25rem 0 -1.25rem;
+      padding: 1.1rem 1.25rem;
+    }
+  }
+
+  .achievements-list {
+    list-style: none;
+    margin: 0.5rem 0 0 0;
+    padding: 0;
 
     li {
       position: relative;
       font-size: var(--font-size-parrafo);
       color: #d0d0d0;
-      margin-bottom: 0.6rem;
       line-height: 1.4;
-      padding-left: 1.5rem;
+      padding: 0 0 0.6rem 1.85rem;
+      margin-bottom: 0.6rem;
       display: flex;
       align-items: flex-start;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
 
       &::before {
         content: "";
         position: absolute;
         left: 0;
-        margin-left: 0.5rem;
-        top: 0.5rem;
-        width: 4px;
-        height: 4px;
+        margin-left: 0.4rem;
+        top: 0.6rem;
+        width: 7px;
+        height: 7px;
         background-color: var(--accent);
         border-radius: 50%;
         box-shadow:
@@ -234,5 +217,18 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
     }
+  }
+}
+
+@keyframes projectSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
