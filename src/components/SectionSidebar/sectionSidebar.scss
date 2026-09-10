@@ -95,6 +95,10 @@
         color: rgba(255, 255, 255, 0.95);
         background: rgba(15, 23, 36, 0.6);
 
+        .section-sidebar__icon img {
+          opacity: 0.95;
+        }
+
         .section-sidebar__label {
           opacity: 1;
           transform: translateX(0);
@@ -111,6 +115,10 @@
       color: #ffffff;
       border-color: rgba(255, 77, 79, 0.45);
       box-shadow: 0 0 14px rgba(255, 77, 79, 0.3);
+
+      .section-sidebar__icon img {
+        opacity: 1;
+      }
     }
 
     @include respond-down("tablet-l") {
@@ -181,6 +189,17 @@
       height: 1.3rem;
     }
 
+    // Home/Sobre mi son SVG inline (heredan "color" del item, ya
+    // atenuado via currentColor); el resto son <img> apuntando a un
+    // archivo .svg propio, que no puede heredar "color" -- sin esto
+    // quedaban mas solidos/blancos que los primeros dos. La opacidad
+    // imita el mismo canal alpha que usa "color" mas abajo (0.55 en
+    // reposo, 0.95 en hover/tap, 1 en activo) para que todos se vean
+    // igual de atenuados.
+    img {
+      opacity: 0.55;
+    }
+
     @include respond-down("tablet-l") {
       width: 2.75rem;
       height: 2.75rem;
@@ -200,8 +219,12 @@
     margin: -0.65rem;
     transition: opacity 0.3s ease, transform 0.4s ease;
 
+    // Mismo alpha 0.55 que el resto de los iconos en reposo (ver
+    // ".section-sidebar__icon img" mas arriba) -- este es de por si una
+    // <img>, no hereda "color", asi que sin esto quedaba mas solido que
+    // los demas.
     &--front {
-      opacity: 1;
+      opacity: 0.55;
       transform: rotate(0deg);
     }
     &--back {
@@ -222,7 +245,7 @@
         transform: rotate(90deg) scale(0.8);
       }
       .section-sidebar__lang-icon--back {
-        opacity: 1;
+        opacity: 0.95;
         transform: rotate(0deg) scale(1);
       }
     }
@@ -235,7 +258,7 @@
         transform: rotate(90deg) scale(0.8);
       }
       .section-sidebar__lang-icon--back {
-        opacity: 1;
+        opacity: 0.95;
         transform: rotate(0deg) scale(1);
       }
     }

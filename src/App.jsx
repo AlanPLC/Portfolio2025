@@ -1,4 +1,5 @@
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 import "./App.scss";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen.jsx";
 import BlobsBackground from "./components/Background/BlobsBackground.jsx";
@@ -27,6 +28,7 @@ function App() {
         <Projects />
         <Tools />
         <Footer />
+        <Analytics />
       </LanguageProvider>
     </ActiveSectionProvider>
   );
