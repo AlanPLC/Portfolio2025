@@ -40,15 +40,6 @@ export default function Projects() {
   }, []);
 
   useEffect(() => {
-    // Preload every slide's image up front so switching slides never shows
-    // an un-measured image at its CSS fallback width before shrinking down.
-    Object.keys(translatedProjects).forEach((id) => {
-      const src = projectsData[id]?.img;
-      if (src) new Image().src = src;
-    });
-  }, [translatedProjects]);
-
-  useEffect(() => {
     if (isPaused || projectEntries.length <= 1) return undefined;
 
     const timer = setInterval(() => {
@@ -105,14 +96,12 @@ export default function Projects() {
                   key={projectId}
                   title={proj.role}
                   desc={proj.description}
-                  image={staticData.img}
                   techs={staticData.tech}
                   results={translation.labels.keyResults}
                   achievements={proj.achievements}
                   live={staticData.liveUrl}
-                  code={staticData.codeUrl}
                   icon={PROJECT_ICONS[projectId]}
-                  viewRepoLabel={translation.labels.viewRepo}
+                  viewProjectLabel={translation.labels.viewProject}
                 />
               </div>
             </div>

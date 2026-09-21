@@ -23,14 +23,12 @@ export const experienceData = {
 
 export const projectsData = {
   project1: {
-    img: "./projects-imgs/placeholder.png", 
     tech: ["React", "Vite"],
-    codeUrl: "#",
+    liveUrl: "#",
   },
   project2: {
-    img: "./projects-imgs/placeholder.png", 
     tech: ["JavaScript"],
-    codeUrl: "#",
+    liveUrl: "#",
   },
 };
 

@@ -35,15 +35,12 @@ export const experienceData = {
 
 export const projectsData = {
   project1: {
-    img: "./projects-imgs/minimarket.png",
     tech: ["React", "Node.js", "Vite", "MySQL", "Express.js"],
-    // liveUrl:"lol",
-    codeUrl:"https://github.com/AlanPLC/TP-Final-Lab.-IV",
+    liveUrl: "",
   },
   project2: {
-    img: "./projects-imgs/poke.png",
     tech: ["ReactNative", "Expo"],
-    codeUrl:"https://github.com/AlanPLC/Pokedex",
+    liveUrl: "",
   },
 };
 

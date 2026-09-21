@@ -7,18 +7,12 @@
 }
 
 .project-slide {
-  display: flex;
-  align-items: stretch;
   box-sizing: border-box;
   width: 100%;
   border-radius: var(--card-radius);
   border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
   animation: projectSlideIn 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-
-  @include respond-down("laptop") {
-    flex-direction: column;
-  }
 
   @include reduced-motion {
     animation: none;
@@ -74,54 +68,6 @@
     font-size: var(--font-size-parrafo);
     line-height: 1.6;
     text-indent: 2rem;
-  }
-
-  &__image-wrap {
-    flex: 0 1 auto;
-    max-width: 50%;
-    min-width: 30%;
-    display: block;
-    padding: 0;
-    border: none;
-    appearance: none;
-    cursor: zoom-in;
-    overflow: hidden;
-    background:
-      linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01)),
-      #06111a;
-    backdrop-filter: blur(8px) saturate(120%);
-
-    @include respond-down("laptop") {
-      max-width: 100%;
-      width: 100%;
-      // Solo un piso chico (evita un salto brusco a 0 antes de que la
-      // imagen cargue) -- el alto real lo termina dando la imagen segun su
-      // propio aspect ratio (ver "img" mas abajo), no un valor fijo que la
-      // estire mas de lo necesario.
-      min-height: 80px;
-      // El componente calcula "flexBasis" en linea en JS como alto-de-fila
-      // x aspect-ratio, pensado SOLO para el layout de escritorio (fila),
-      // donde flex-basis controla el ANCHO. Aca (columna) flex-basis
-      // controla el ALTO -- sin este !important, ese calculo pensado para
-      // otro eje terminaba estirando la caja mucho mas alta de lo que la
-      // imagen necesita.
-      flex-basis: auto !important;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-
-      @include respond-down("laptop") {
-        // En mobile/tablet el contenedor ya no fuerza una altura fija: el
-        // alto lo da la imagen segun su propio aspect ratio para el 100%
-        // de ancho disponible, en vez de estirarse/recortarse con
-        // object-fit dentro de una caja de altura arbitraria.
-        height: auto;
-      }
-    }
   }
 
   .tech-icons {
