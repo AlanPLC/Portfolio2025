@@ -36,11 +36,11 @@ export const experienceData = {
 export const projectsData = {
   project1: {
     tech: ["React", "Node.js", "Vite", "MySQL", "Express.js"],
-    liveUrl: "",
+    liveUrl: "https://bitwardminimarket.vercel.app/",
   },
   project2: {
     tech: ["ReactNative", "Expo"],
-    liveUrl: "",
+    liveUrl: "https://pokedex-murex-mu.vercel.app/",
   },
 };
 
