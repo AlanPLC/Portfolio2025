@@ -219,15 +219,20 @@
     margin: -0.65rem;
     transition: opacity 0.3s ease, transform 0.4s ease;
 
-    // Mismo alpha 0.55 que el resto de los iconos en reposo (ver
+    // "&." (compuesto, no "&--" que solo concatena BEM) para ganarle en
+    // especificidad a ".section-sidebar__icon img" de mas arriba -- sin
+    // esto, esa regla generica (1 clase + 1 tipo) le ganaba a "--back" (1
+    // sola clase) y el icono de atras quedaba visible en 0.55 en vez de
+    // oculto, superpuesto con el de adelante.
+    // El alpha 0.55 en reposo es el mismo que el resto de los iconos (ver
     // ".section-sidebar__icon img" mas arriba) -- este es de por si una
     // <img>, no hereda "color", asi que sin esto quedaba mas solido que
     // los demas.
-    &--front {
+    &.section-sidebar__lang-icon--front {
       opacity: 0.55;
       transform: rotate(0deg);
     }
-    &--back {
+    &.section-sidebar__lang-icon--back {
       opacity: 0;
       transform: rotate(-90deg);
     }
@@ -240,11 +245,17 @@
     &__item--lang:hover,
     &__item--lang:focus-visible,
     &__item--lang.is-tapped {
-      .section-sidebar__lang-icon--front {
+      // Compuesto ("&." con la clase base repetida) para ganarle en
+      // especificidad a ".section-sidebar__item(.is-tapped) .section-
+      // sidebar__icon img" (la regla que ilumina los iconos en hover/tap):
+      // esa tambien matchea porque este boton carga las dos clases
+      // (section-sidebar__item Y section-sidebar__item--lang), y sin este
+      // extra nivel el "--front" se quedaba visible en vez de ocultarse.
+      .section-sidebar__lang-icon.section-sidebar__lang-icon--front {
         opacity: 0;
         transform: rotate(90deg) scale(0.8);
       }
-      .section-sidebar__lang-icon--back {
+      .section-sidebar__lang-icon.section-sidebar__lang-icon--back {
         opacity: 0.95;
         transform: rotate(0deg) scale(1);
       }
@@ -253,11 +264,17 @@
 
   @include respond-down("tablet-l") {
     &__item--lang.is-tapped {
-      .section-sidebar__lang-icon--front {
+      // Compuesto ("&." con la clase base repetida) para ganarle en
+      // especificidad a ".section-sidebar__item(.is-tapped) .section-
+      // sidebar__icon img" (la regla que ilumina los iconos en hover/tap):
+      // esa tambien matchea porque este boton carga las dos clases
+      // (section-sidebar__item Y section-sidebar__item--lang), y sin este
+      // extra nivel el "--front" se quedaba visible en vez de ocultarse.
+      .section-sidebar__lang-icon.section-sidebar__lang-icon--front {
         opacity: 0;
         transform: rotate(90deg) scale(0.8);
       }
-      .section-sidebar__lang-icon--back {
+      .section-sidebar__lang-icon.section-sidebar__lang-icon--back {
         opacity: 0.95;
         transform: rotate(0deg) scale(1);
       }
